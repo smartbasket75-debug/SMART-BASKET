@@ -3,199 +3,576 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Smart Basket | Smart Choices. Better Prices.</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f6f7f9;
-  color:#171717;
+  background:#fff;
+  color:#111;
 }
+
+/* HEADER */
 header{
-  background:#111;
-  color:white;
-  padding:16px 5%;
+  background:#fff;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.header{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 20px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  position:sticky;
-  top:0;
-  z-index:10;
 }
+
 .logo{
   font-size:24px;
-  font-weight:800;
-  letter-spacing:.5px;
+  font-weight:900;
+  letter-spacing:-1px;
 }
-nav a{
-  color:white;
+
+.logo span{
+  font-weight:400;
+}
+
+.nav{
+  display:flex;
+  gap:25px;
+}
+
+.nav a{
   text-decoration:none;
-  margin-left:20px;
-  font-size:14px;
-}
-.hero{
-  background:linear-gradient(135deg,#111,#333);
-  color:white;
-  padding:70px 7%;
-  text-align:center;
-}
-.hero h1{font-size:42px;margin-bottom:12px}
-.hero p{font-size:18px;color:#ddd;margin-bottom:25px}
-.btn{
-  display:inline-block;
-  background:#fff;
   color:#111;
-  padding:13px 25px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700;
+  font-size:14px;
+  font-weight:600;
 }
-.section{
-  padding:45px 6%;
+
+.menu{
+  display:none;
+  font-size:25px;
 }
-.section h2{
+
+/* HERO */
+.hero{
+  max-width:1200px;
+  margin:25px auto;
+  padding:70px 30px;
+  background:#f3f3f3;
   text-align:center;
-  margin-bottom:25px;
-  font-size:28px;
 }
+
+.hero h1{
+  font-size:48px;
+  margin-bottom:15px;
+  letter-spacing:-2px;
+}
+
+.hero p{
+  font-size:18px;
+  color:#555;
+  margin-bottom:28px;
+}
+
+.shop-btn{
+  display:inline-block;
+  background:#111;
+  color:#fff;
+  padding:15px 32px;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:2px;
+}
+
+/* CATEGORY */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+.title{
+  text-align:center;
+  margin:45px 0 25px;
+  font-size:30px;
+}
+
 .categories{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
 }
+
 .category{
-  background:white;
   padding:25px 10px;
+  border:1px solid #eee;
   text-align:center;
-  border-radius:12px;
-  box-shadow:0 3px 12px #00000010;
-  font-weight:700;
+  font-weight:bold;
+  background:#fff;
 }
+
+/* OFFER */
+.offer{
+  max-width:1200px;
+  margin:50px auto;
+  background:#111;
+  color:#fff;
+  padding:45px 20px;
+  text-align:center;
+}
+
+.offer h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.offer p{
+  color:#ddd;
+}
+
+/* PRODUCTS */
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:20px;
 }
+
 .product{
-  background:white;
-  border-radius:12px;
+  background:#fff;
+  border:1px solid #eee;
+  position:relative;
   overflow:hidden;
-  box-shadow:0 3px 15px #00000012;
-  padding-bottom:18px;
 }
+
 .product img{
   width:100%;
-  height:210px;
+  height:250px;
   object-fit:cover;
-  background:#eee;
+  background:#f2f2f2;
 }
+
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:#111;
+  color:#fff;
+  padding:6px 9px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.product-info{
+  padding:15px;
+}
+
 .product h3{
-  font-size:17px;
-  padding:14px 15px 5px;
+  font-size:16px;
+  margin-bottom:8px;
 }
+
 .price{
-  padding:0 15px;
   font-size:20px;
-  font-weight:800;
+  font-weight:bold;
 }
+
 .old{
+  font-size:13px;
   color:#999;
   text-decoration:line-through;
-  font-size:13px;
   margin-left:5px;
 }
+
 .order{
   display:block;
-  margin:13px 15px 0;
-  background:#111;
-  color:white;
   text-align:center;
-  padding:11px;
-  border-radius:7px;
+  margin-top:14px;
+  padding:12px;
+  background:#111;
+  color:#fff;
   text-decoration:none;
-  font-weight:700;
+  font-weight:bold;
 }
-.offer{
-  margin:20px 6%;
-  padding:35px 20px;
-  border-radius:14px;
-  background:#111;
-  color:white;
-  text-align:center;
-}
-.offer h2{margin-bottom:8px}
-.trust{
+
+/* FEATURES */
+.features{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:15px;
+  margin:45px 0;
 }
-.trust div{
-  background:white;
-  padding:25px;
+
+.feature{
+  background:#f7f7f7;
+  padding:30px 15px;
   text-align:center;
-  border-radius:12px;
 }
+
+.feature h3{
+  margin:10px 0;
+}
+
+.feature p{
+  color:#666;
+  font-size:14px;
+}
+
+/* FOOTER */
 footer{
   background:#111;
-  color:#aaa;
-  text-align:center;
-  padding:30px 15px;
-  margin-top:30px;
+  color:#fff;
+  margin-top:50px;
+  padding:45px 20px;
 }
-footer strong{color:white}
 
+.footer{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+
+.footer h2{
+  margin-bottom:10px;
+}
+
+.footer p{
+  color:#aaa;
+  margin:6px 0;
+}
+
+.whatsapp{
+  display:inline-block;
+  margin-top:20px;
+  background:#25D366;
+  color:#fff;
+  padding:13px 25px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* MOBILE */
 @media(max-width:800px){
-  nav{display:none}
-  .hero h1{font-size:32px}
-  .categories{grid-template-columns:repeat(2,1fr)}
-  .products{grid-template-columns:repeat(2,1fr);gap:12px}
-  .product img{height:160px}
-  .trust{grid-template-columns:1fr}
+
+  .nav{
+    display:none;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .hero{
+    margin:10px;
+    padding:55px 20px;
+  }
+
+  .hero h1{
+    font-size:35px;
+  }
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .product img{
+    height:180px;
+  }
+
+  .product h3{
+    font-size:14px;
+  }
+
+  .price{
+    font-size:17px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <div class="logo">🛒 SMART BASKET</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="header">
+
+    <div class="logo">
+      🛒 SMART<span> BASKET</span>
+    </div>
+
+    <nav class="nav">
+      <a href="#home">HOME</a>
+      <a href="#categories">CATEGORIES</a>
+      <a href="#products">SHOP</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <div class="menu">☰</div>
+
+  </div>
 </header>
 
+
+<!-- HERO -->
 <section class="hero" id="home">
-  <h1>Shop Smart. Save More.</h1>
-  <p>Smart Choices. Better Prices.</p>
-  <a class="btn" href="#products">Shop Now</a>
+
+  <h1>SHOP SMART.<br>SAVE MORE.</h1>
+
+  <p>
+    Discover useful products at prices you'll love.
+  </p>
+
+  <a href="#products" class="shop-btn">
+    SHOP NOW
+  </a>
+
 </section>
 
-<section class="section" id="categories">
-  <h2>Shop by Category</h2>
+
+<!-- CATEGORIES -->
+<div class="container" id="categories">
+
+  <h2 class="title">SHOP BY CATEGORY</h2>
+
   <div class="categories">
-    <div class="category">🏠 Home & Kitchen</div>
-    <div class="category">📱 Gadgets</div>k
-    <div class="category">✨ Beauty</div>
-    <div class="category">🛍️ Daily Essentials</div>
-  </div>
-</section>
 
-<div class="offer">
-  <h2>🔥 Special Deals</h2>
-  <p>Great products. Amazing prices. Limited-time offers.</p>
+    <div class="category">🏠<br>HOME</div>
+
+    <div class="category">🍳<br>KITCHEN</div>
+
+    <div class="category">📱<br>GADGETS</div>
+
+    <div class="category">✨<br>BEAUTY</div>
+
+    <div class="category">🛍️<br>DAILY USE</div>
+
+  </div>
+
 </div>
 
-<section class="section" id="products">
-  <h2>Featured Products</h2>
+
+<!-- OFFER -->
+<section class="offer">
+
+  <h2>🔥 SPECIAL DEALS</h2>
+
+  <p>
+    Great products. Better prices. Limited-time offers.
+  </p>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<div class="container" id="products">
+
+  <h2 class="title">FEATURED PRODUCTS</h2>
 
   <div class="products">
 
+
+    <!-- PRODUCT 1 -->
     <div class="product">
-      <img src="https://via.placeholder.com/500x400?text=Product+1" alt="Product">
-      <h3>Premium Product</h3>
-      <div class="price">₹499 <span class="old">₹799</span></div>
-      <a class="order" href="https://wa.me/918921678
+
+      <span class="badge">BEST SELLER</span>
+
+      <img
+        src="https://via.placeholder.com/600x600?text=Your+Product"
+        alt="Product"
+      >
+
+      <div class="product-info">
+
+        <h3>Premium Useful Product</h3>
+
+        <div class="price">
+          ₹499
+          <span class="old">₹799</span>
+        </div>
+
+        <a
+          class="order"
+          href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Premium%20Useful%20Product."
+        >
+          ORDER NOW
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUCT 2 -->
+    <div class="product">
+
+      <span class="badge">HOT DEAL</span>
+
+      <img
+        src="https://via.placeholder.com/600x600?text=Your+Product"
+        alt="Product"
+      >
+
+      <div class="product-info">
+
+        <h3>Smart Home Product</h3>
+
+        <div class="price">
+          ₹399
+          <span class="old">₹699</span>
+        </div>
+
+        <a
+          class="order"
+          href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Smart%20Home%20Product."
+        >
+          ORDER NOW
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUCT 3 -->
+    <div class="product">
+
+      <span class="badge">NEW</span>
+
+      <img
+        src="https://via.placeholder.com/600x600?text=Your+Product"
+        alt="Product"
+      >
+
+      <div class="product-info">
+
+        <h3>Useful Gadget</h3>
+
+        <div class="price">
+          ₹599
+          <span class="old">₹999</span>
+        </div>
+
+        <a
+          class="order"
+          href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Useful%20Gadget."
+        >
+          ORDER NOW
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUCT 4 -->
+    <div class="product">
+
+      <span class="badge">SALE</span>
+
+      <img
+        src="https://via.placeholder.com/600x600?text=Your+Product"
+        alt="Product"
+      >
+
+      <div class="product-info">
+
+        <h3>Daily Essential</h3>
+
+        <div class="price">
+          ₹299
+          <span class="old">₹499</span>
+        </div>
+
+        <a
+          class="order"
+          href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Daily%20Essential."
+        >
+          ORDER NOW
+        </a>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<!-- FEATURES -->
+<div class="container">
+
+  <div class="features">
+
+    <div class="feature">
+      🚚
+      <h3>FAST DELIVERY</h3>
+      <p>Reliable delivery to your doorstep.</p>
+    </div>
+
+    <div class="feature">
+      🔒
+      <h3>SAFE SHOPPING</h3>
+      <p>Shop with confidence.</p>
+    </div>
+
+    <div class="feature">
+      💬
+      <h3>WHATSAPP ORDER</h3>
+      <p>Easy ordering directly through WhatsApp.</p>
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer id="contact">
+
+  <div class="footer">
+
+    <h2>🛒 SMART BASKET</h2>
+
+    <p>Smart Choices. Better Prices.</p>
+
+    <p>Online Store • Quality Products • Great Deals</p>
+
+    <a
+      class="whatsapp"
+      href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20need%20more%20information."
+    >
+      💬 CHAT ON WHATSAPP
+    </a>
+
+    <p style="margin-top:25px;">
+      © 2026 Smart Basket. All Rights Reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
