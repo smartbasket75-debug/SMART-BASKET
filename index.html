@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Basket | Smart Choices. Better Prices.</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f6f7f9;
+  color:#171717;
+}
+header{
+  background:#111;
+  color:white;
+  padding:16px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.logo{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
+.hero{
+  background:linear-gradient(135deg,#111,#333);
+  color:white;
+  padding:70px 7%;
+  text-align:center;
+}
+.hero h1{font-size:42px;margin-bottom:12px}
+.hero p{font-size:18px;color:#ddd;margin-bottom:25px}
+.btn{
+  display:inline-block;
+  background:#fff;
+  color:#111;
+  padding:13px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+}
+.section{
+  padding:45px 6%;
+}
+.section h2{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:28px;
+}
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+.category{
+  background:white;
+  padding:25px 10px;
+  text-align:center;
+  border-radius:12px;
+  box-shadow:0 3px 12px #00000010;
+  font-weight:700;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.product{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 3px 15px #00000012;
+  padding-bottom:18px;
+}
+.product img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  background:#eee;
+}
+.product h3{
+  font-size:17px;
+  padding:14px 15px 5px;
+}
+.price{
+  padding:0 15px;
+  font-size:20px;
+  font-weight:800;
+}
+.old{
+  color:#999;
+  text-decoration:line-through;
+  font-size:13px;
+  margin-left:5px;
+}
+.order{
+  display:block;
+  margin:13px 15px 0;
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:11px;
+  border-radius:7px;
+  text-decoration:none;
+  font-weight:700;
+}
+.offer{
+  margin:20px 6%;
+  padding:35px 20px;
+  border-radius:14px;
+  background:#111;
+  color:white;
+  text-align:center;
+}
+.offer h2{margin-bottom:8px}
+.trust{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+.trust div{
+  background:white;
+  padding:25px;
+  text-align:center;
+  border-radius:12px;
+}
+footer{
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:30px;
+}
+footer strong{color:white}
+
+@media(max-width:800px){
+  nav{display:none}
+  .hero h1{font-size:32px}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .products{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product img{height:160px}
+  .trust{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🛒 SMART BASKET</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h1>Shop Smart. Save More.</h1>
+  <p>Smart Choices. Better Prices.</p>
+  <a class="btn" href="#products">Shop Now</a>
+</section>
+
+<section class="section" id="categories">
+  <h2>Shop by Category</h2>
+  <div class="categories">
+    <div class="category">🏠 Home & Kitchen</div>
+    <div class="category">📱 Gadgets</div>k
+    <div class="category">✨ Beauty</div>
+    <div class="category">🛍️ Daily Essentials</div>
+  </div>
+</section>
+
+<div class="offer">
+  <h2>🔥 Special Deals</h2>
+  <p>Great products. Amazing prices. Limited-time offers.</p>
+</div>
+
+<section class="section" id="products">
+  <h2>Featured Products</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="https://via.placeholder.com/500x400?text=Product+1" alt="Product">
+      <h3>Premium Product</h3>
+      <div class="price">₹499 <span class="old">₹799</span></div>
+      <a class="order" href="https://wa.me/918921678
