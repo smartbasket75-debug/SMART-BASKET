@@ -13,8 +13,7 @@ a{text-decoration:none;color:inherit}
 
 header{
 position:sticky;top:0;z-index:100;
-background:rgba(11,11,11,.96);
-backdrop-filter:blur(12px);
+background:rgba(11,11,11,.97);
 padding:18px 6%;
 display:flex;justify-content:space-between;align-items:center;
 border-bottom:1px solid #302817
@@ -24,102 +23,127 @@ border-bottom:1px solid #302817
 .logo span{color:#d4af37;font-weight:400}
 
 nav a{
-margin-left:24px;font-size:11px;font-weight:bold;
-color:#ccc
+margin-left:22px;font-size:11px;font-weight:bold;color:#ccc
 }
 nav a:hover{color:#d4af37}
 
 .hero{
-width:94%;max-width:1200px;
-margin:20px auto;
-min-height:540px;
-border-radius:24px;
-display:flex;align-items:center;justify-content:center;
-text-align:center;
+width:94%;max-width:1200px;margin:20px auto;min-height:540px;
+border-radius:24px;display:flex;align-items:center;
+justify-content:center;text-align:center;
 background:radial-gradient(circle at center,#3b321b,#111 65%);
-border:1px solid #3d321a;
-padding:40px 20px
+border:1px solid #3d321a;padding:40px 20px
 }
 
 .hero-label{
-font-size:10px;letter-spacing:5px;
-color:#d4af37;font-weight:bold;
-margin-bottom:20px
+font-size:10px;letter-spacing:5px;color:#d4af37;
+font-weight:bold;margin-bottom:20px
 }
 
 .hero h1{
 font-size:clamp(48px,8vw,88px);
-line-height:.9;
-letter-spacing:-5px;
-margin-bottom:25px
+line-height:.9;letter-spacing:-5px;margin-bottom:25px
 }
 
 .hero h1 span{color:#d4af37}
 
 .hero p{
-max-width:550px;
-margin:auto;
-color:#aaa;
-font-size:14px;
-line-height:1.8;
-margin-bottom:30px
+max-width:550px;margin:auto;color:#aaa;
+font-size:14px;line-height:1.8;margin-bottom:30px
 }
 
 .btn{
-display:inline-block;
-background:#d4af37;
-color:#111;
-padding:15px 30px;
-border-radius:30px;
-font-size:11px;
-font-weight:bold
+display:inline-block;background:#d4af37;color:#111;
+padding:15px 30px;border-radius:30px;
+font-size:11px;font-weight:bold
 }
 
 .mini-features{
-width:94%;max-width:1200px;
-margin:20px auto;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-background:#121212;
-border:1px solid #29251f;
-border-radius:18px;
-overflow:hidden
+width:94%;max-width:1200px;margin:20px auto;
+display:grid;grid-template-columns:repeat(4,1fr);
+background:#121212;border:1px solid #29251f;
+border-radius:18px;overflow:hidden
 }
 
 .mini{
-text-align:center;
-padding:24px 10px;
+text-align:center;padding:24px 10px;
 border-right:1px solid #29251f
 }
+
 .mini:last-child{border:0}
 .mini strong{display:block;font-size:11px;margin-bottom:6px}
 .mini span{font-size:10px;color:#777}
 
 .section{
-width:94%;max-width:1200px;
-margin:auto;
-padding:70px 0
+width:94%;max-width:1200px;margin:auto;padding:70px 0
 }
 
 .heading{margin-bottom:30px}
 .heading h2{font-size:34px}
 .heading p{color:#777;font-size:13px;margin-top:7px}
 
+.about{
+width:94%;max-width:1200px;margin:70px auto 0;
+padding:80px 30px;
+background:linear-gradient(135deg,#18150f,#0d0d0d);
+border:1px solid #302817;border-radius:22px
+}
+
+.about-inner{
+max-width:850px;margin:auto;text-align:center
+}
+
+.about-label{
+font-size:9px;letter-spacing:5px;color:#d4af37;
+font-weight:bold;margin-bottom:18px
+}
+
+.about h2{
+font-size:clamp(35px,6vw,55px);
+line-height:1;letter-spacing:-2px;margin-bottom:25px
+}
+
+.about h2 span{color:#d4af37}
+
+.about p{
+color:#888;font-size:13px;line-height:1.9;
+max-width:720px;margin:0 auto 12px
+}
+
+.nature-quote{
+margin:32px auto;padding:22px;max-width:650px;
+border-top:1px solid #3b321d;
+border-bottom:1px solid #3b321d;
+color:#d4af37;font-size:15px;font-weight:bold
+}
+
+.about-points{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:12px;margin-top:35px
+}
+
+.about-points div{
+background:#121212;border:1px solid #29251f;
+border-radius:15px;padding:22px 12px
+}
+
+.about-points strong{
+display:block;font-size:10px;margin-bottom:8px;color:#eee
+}
+
+.about-points span{
+font-size:10px;color:#666;line-height:1.5
+}
+
 .categories{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px
+display:grid;grid-template-columns:repeat(4,1fr);gap:15px
 }
 
 .category{
-height:170px;
-background:#121212;
-border:1px solid #29251f;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center
+height:170px;background:#121212;border:1px solid #29251f;
+border-radius:18px;display:flex;align-items:center;
+justify-content:center;text-align:center;
+transition:.3s
 }
 
 .category:hover{
@@ -130,170 +154,113 @@ transform:translateY(-5px)
 .category-icon{
 display:block;font-size:32px;margin-bottom:12px
 }
+
 .category-name{font-size:12px;font-weight:bold}
 
 .deal{
-width:94%;max-width:1160px;
-margin:auto;
-padding:65px 20px;
+width:94%;max-width:1160px;margin:auto;padding:65px 20px;
 background:linear-gradient(135deg,#19160f,#0d0d0d);
-border:1px solid #4b3c18;
-border-radius:22px;
-text-align:center
+border:1px solid #4b3c18;border-radius:22px;text-align:center
 }
 
 .deal-small{
-font-size:9px;
-letter-spacing:5px;
-color:#d4af37;
-margin-bottom:15px
+font-size:9px;letter-spacing:5px;color:#d4af37;margin-bottom:15px
 }
 
 .deal h2{font-size:40px;margin-bottom:10px}
 .deal p{color:#777;font-size:13px}
 
 .products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px
+display:grid;grid-template-columns:repeat(4,1fr);gap:18px
 }
 
 .product{
-background:#121212;
-border:1px solid #29251f;
-border-radius:18px;
-overflow:hidden
+background:#121212;border:1px solid #29251f;
+border-radius:18px;overflow:hidden
 }
 
 .product-image{
-position:relative;
-background:#181818
+position:relative;background:#181818
 }
 
 .product img{
-width:100%;
-height:240px;
-object-fit:cover;
-display:block
+width:100%;height:240px;object-fit:cover;display:block
 }
 
 .badge{
-position:absolute;
-top:12px;left:12px;
-background:#d4af37;
-color:#111;
-padding:7px 10px;
-border-radius:20px;
-font-size:8px;
-font-weight:bold
+position:absolute;top:12px;left:12px;
+background:#d4af37;color:#111;
+padding:7px 10px;border-radius:20px;
+font-size:8px;font-weight:bold
 }
 
 .product-info{padding:18px}
 .product h3{font-size:15px;margin-bottom:7px}
+.description{font-size:11px;color:#777;margin-bottom:13px}
 
-.description{
-font-size:11px;
-color:#777;
-margin-bottom:13px
-}
-
-.price{
-font-size:20px;
-font-weight:bold
-}
-
+.price{font-size:20px;font-weight:bold}
 .old{
-font-size:11px;
-color:#666;
-text-decoration:line-through;
+font-size:11px;color:#666;text-decoration:line-through;
 margin-left:5px
 }
 
 .order,.buy{
-display:block;
-width:100%;
-border:0;
-text-align:center;
-padding:13px;
-margin-top:10px;
-border-radius:25px;
-font-size:10px;
-font-weight:bold;
-cursor:pointer
+display:block;width:100%;border:0;text-align:center;
+padding:13px;margin-top:10px;border-radius:25px;
+font-size:10px;font-weight:bold;cursor:pointer
 }
 
 .order{
-background:#25231f;
-color:white;
+background:#25231f;color:white;
 border:1px solid #38342d
 }
 
 .buy{
-background:#d4af37;
-color:#111
+background:#d4af37;color:#111
 }
 
 .buy:hover{background:#f0cc55}
 
 .feature{
-width:94%;max-width:1160px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-background:#15130f;
-border:1px solid #302817;
-border-radius:22px;
-overflow:hidden
+width:94%;max-width:1160px;margin:auto;
+display:grid;grid-template-columns:1fr 1fr;
+background:#15130f;border:1px solid #302817;
+border-radius:22px;overflow:hidden
 }
 
 .feature-content{
-padding:60px;
-display:flex;
-flex-direction:column;
-justify-content:center
+padding:60px;display:flex;
+flex-direction:column;justify-content:center
 }
 
 .feature-label{
-font-size:9px;
-letter-spacing:4px;
-color:#d4af37;
-margin-bottom:15px
+font-size:9px;letter-spacing:4px;
+color:#d4af37;margin-bottom:15px
 }
 
 .feature h2{
-font-size:43px;
-line-height:.95;
-margin-bottom:18px
+font-size:43px;line-height:.95;margin-bottom:18px
 }
 
 .feature p{
-color:#888;
-font-size:13px;
-line-height:1.7;
+color:#888;font-size:13px;line-height:1.7;
 margin-bottom:25px
 }
 
 .feature-image{
-min-height:350px;
-display:flex;
-align-items:center;
-justify-content:center;
+min-height:350px;display:flex;
+align-items:center;justify-content:center;
 background:radial-gradient(circle,#332b19,#141414);
-color:#665b43;
-letter-spacing:4px
+color:#665b43;letter-spacing:4px
 }
 
 .why{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px
+display:grid;grid-template-columns:repeat(3,1fr);gap:15px
 }
 
 .why-box{
-background:#121212;
-border:1px solid #29251f;
-border-radius:18px;
-padding:30px 20px
+background:#121212;border:1px solid #29251f;
+border-radius:18px;padding:30px 20px
 }
 
 .why-icon{font-size:27px;margin-bottom:15px}
@@ -301,90 +268,69 @@ padding:30px 20px
 .why-box p{font-size:11px;color:#777;line-height:1.7}
 
 .cta{
-width:94%;max-width:1200px;
-margin:auto;
-padding:70px 20px;
-text-align:center;
+width:94%;max-width:1200px;margin:auto;
+padding:70px 20px;text-align:center;
 background:radial-gradient(circle,#292112,#111);
-border:1px solid #3e3218;
-border-radius:22px
+border:1px solid #3e3218;border-radius:22px
 }
 
 .cta h2{font-size:38px;margin-bottom:10px}
 .cta p{color:#777;font-size:13px;margin-bottom:25px}
 
 footer{
-margin-top:70px;
-padding:50px 20px 25px;
-text-align:center;
-background:#070707;
+margin-top:70px;padding:50px 20px 25px;
+text-align:center;background:#070707;
 border-top:1px solid #29251f
 }
 
 footer h2 span{color:#d4af37}
 footer p{font-size:11px;color:#666;margin-top:8px}
 
-.whatsapp{
-display:inline-block;
-background:#25D366;
-color:white;
-padding:13px 23px;
-border-radius:25px;
-margin-top:20px;
-font-size:10px;
-font-weight:bold
+.contact-buttons{
+display:flex;justify-content:center;
+gap:10px;flex-wrap:wrap;margin-top:20px
 }
 
-/* CHECKOUT MODAL */
+.whatsapp,.email-btn{
+display:inline-block;color:white;
+padding:13px 23px;border-radius:25px;
+font-size:10px;font-weight:bold
+}
+
+.whatsapp{background:#25D366}
+.email-btn{background:#d4af37;color:#111}
+
+
+/* CHECKOUT */
 
 #checkoutModal{
-display:none;
-position:fixed;
-inset:0;
-z-index:9999;
-background:rgba(0,0,0,.85);
-padding:20px;
-overflow:auto
+display:none;position:fixed;inset:0;z-index:9999;
+background:rgba(0,0,0,.9);padding:20px;overflow:auto
 }
 
 .checkout-box{
-width:100%;
-max-width:520px;
-margin:30px auto;
-background:#121212;
-border:1px solid #4b3c18;
-border-radius:22px;
-padding:25px
+width:100%;max-width:520px;margin:30px auto;
+background:#121212;border:1px solid #4b3c18;
+border-radius:22px;padding:25px
 }
 
 .checkout-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:20px
+display:flex;justify-content:space-between;
+align-items:center;margin-bottom:20px
 }
 
 .checkout-header h2{font-size:22px}
 
 .close-btn{
-width:36px;
-height:36px;
-border:0;
-border-radius:50%;
-background:#29251f;
-color:white;
-font-size:20px;
-cursor:pointer
+width:36px;height:36px;border:0;
+border-radius:50%;background:#29251f;
+color:white;font-size:20px;cursor:pointer
 }
 
 .summary{
-background:#1a1814;
-border:1px solid #302817;
-border-radius:14px;
-padding:15px;
-margin-bottom:18px;
-font-size:12px;
-line-height:1.8
+background:#1a1814;border:1px solid #302817;
+border-radius:14px;padding:15px;margin-bottom:18px;
+font-size:12px;line-height:1.8
 }
 
 .summary strong{color:#d4af37}
@@ -392,91 +338,74 @@ line-height:1.8
 .field{margin-bottom:13px}
 
 .field label{
-display:block;
-font-size:10px;
-color:#999;
-margin-bottom:6px
+display:block;font-size:10px;
+color:#999;margin-bottom:6px
 }
 
-.field input,
-.field textarea{
-width:100%;
-background:#0b0b0b;
-border:1px solid #302f2a;
-border-radius:10px;
-padding:13px;
-color:white;
-font-size:12px;
-outline:none
+.field input,.field textarea{
+width:100%;background:#0b0b0b;
+border:1px solid #302f2a;border-radius:10px;
+padding:13px;color:white;font-size:12px;outline:none
 }
 
-.field input:focus,
-.field textarea:focus{
+.field input:focus,.field textarea:focus{
 border-color:#d4af37
 }
 
 .field textarea{
-height:75px;
-resize:vertical
+height:75px;resize:vertical
 }
 
-.payment-box{
-margin-top:18px;
-padding:16px;
-background:#19160f;
-border:1px solid #4b3c18;
-border-radius:14px
+.payment-title{
+font-size:11px;color:#d4af37;margin:20px 0 10px
 }
 
-.payment-box h3{
-font-size:12px;
-color:#d4af37;
-margin-bottom:7px
+.payment-options{
+display:grid;grid-template-columns:1fr 1fr;gap:10px
 }
 
-.payment-box p{
-font-size:10px;
-color:#888;
-line-height:1.6
+.payment-option{
+padding:14px;border:1px solid #39352d;
+border-radius:12px;background:#0b0b0b;
+color:white;text-align:center;
+cursor:pointer;font-size:11px
 }
 
-.pay-button{
-display:block;
-width:100%;
-border:0;
-background:#d4af37;
-color:#111;
-padding:14px;
-border-radius:25px;
-margin-top:12px;
-font-size:11px;
-font-weight:bold;
-cursor:pointer
+.payment-option.active{
+border-color:#d4af37;
+background:#211c10;color:#d4af37
 }
 
-.confirm-button{
-display:block;
-width:100%;
-background:#25D366;
-color:white;
-text-align:center;
-padding:14px;
-border-radius:25px;
-margin-top:10px;
-font-size:11px;
-font-weight:bold
+.payment-action{
+display:block;width:100%;border:0;
+padding:14px;border-radius:25px;
+margin-top:12px;font-size:11px;
+font-weight:bold;cursor:pointer;text-align:center
 }
+
+.upi-btn{background:#d4af37;color:#111}
+.cod-btn{background:#25D366;color:white}
 
 .small-note{
-font-size:9px;
-color:#666;
-text-align:center;
-margin-top:10px
+font-size:9px;color:#666;
+text-align:center;margin-top:10px
 }
+
+
+/* MOBILE */
 
 @media(max-width:800px){
 
 nav{display:none}
+
+.hero{
+min-height:450px
+}
+
+.hero h1{
+font-size:46px;
+letter-spacing:-3px
+}
 
 .mini-features{
 grid-template-columns:repeat(2,1fr)
@@ -519,29 +448,49 @@ min-height:220px
 grid-template-columns:1fr
 }
 
+.about{
+padding:55px 20px
+}
+
+.about-points{
+grid-template-columns:1fr
+}
+
 }
 </style>
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-<div class="logo">🛒 SMART<span> BASKET</span></div>
+
+<div class="logo">
+🛒 SMART<span> BASKET</span>
+</div>
 
 <nav>
 <a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
 <a href="#categories">CATEGORIES</a>
 <a href="#products">SHOP</a>
 <a href="#contact">CONTACT</a>
 </nav>
+
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero" id="home">
 
 <div>
 
-<div class="hero-label">WELCOME TO SMART BASKET</div>
+<div class="hero-label">
+WELCOME TO SMART BASKET
+</div>
 
 <h1>
 SHOP <span>SMART.</span><br>
@@ -549,7 +498,8 @@ SAVE MORE.
 </h1>
 
 <p>
-Discover useful products, everyday essentials and exciting deals — all in one premium shopping space.
+Discover useful products, everyday essentials and exciting deals —
+all in one premium shopping space.
 </p>
 
 <a href="#products" class="btn">
@@ -560,6 +510,8 @@ EXPLORE PRODUCTS →
 
 </section>
 
+
+<!-- FEATURES -->
 
 <div class="mini-features">
 
@@ -586,11 +538,73 @@ EXPLORE PRODUCTS →
 </div>
 
 
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="about-inner">
+
+<div class="about-label">
+ABOUT SMART BASKET
+</div>
+
+<h2>
+SMART SHOPPING.<br>
+<span>BETTER TOMORROW.</span>
+</h2>
+
+<p>
+Smart Basket is an online shopping space created to make everyday
+shopping simple, convenient and affordable. We bring useful products,
+everyday essentials and smart finds together in one place.
+</p>
+
+<p>
+We believe that smart shopping is not only about finding better products
+and better prices — it is also about making responsible choices for a
+better tomorrow.
+</p>
+
+<div class="nature-quote">
+🌱 “Shop smart. Live better. Protect nature.”
+</div>
+
+<div class="about-points">
+
+<div>
+<strong>🛍️ USEFUL PRODUCTS</strong>
+<span>Products chosen with everyday needs in mind.</span>
+</div>
+
+<div>
+<strong>💰 SMART PRICES</strong>
+<span>Better value without unnecessary complexity.</span>
+</div>
+
+<div>
+<strong>🌱 BETTER TOMORROW</strong>
+<span>Making thoughtful choices for a cleaner future.</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
 <section class="section" id="categories">
 
 <div class="heading">
+
 <h2>Shop by Category</h2>
-<p>Explore our collection of useful products.</p>
+
+<p>
+Explore our collection of useful products.
+</p>
+
 </div>
 
 <div class="categories">
@@ -624,8 +638,11 @@ EXPLORE PRODUCTS →
 </div>
 
 </div>
+
 </section>
 
+
+<!-- DEAL -->
 
 <div class="deal">
 
@@ -633,7 +650,9 @@ EXPLORE PRODUCTS →
 SMART BASKET SPECIAL
 </div>
 
-<h2>FIND A BETTER DEAL.</h2>
+<h2>
+FIND A BETTER DEAL.
+</h2>
 
 <p>
 Good products. Simple shopping. Better prices.
@@ -642,11 +661,20 @@ Good products. Simple shopping. Better prices.
 </div>
 
 
+<!-- PRODUCTS -->
+
 <section class="section" id="products">
 
 <div class="heading">
-<h2>Featured Products</h2>
-<p>Our current smart picks.</p>
+
+<h2>
+Featured Products
+</h2>
+
+<p>
+Our current smart picks.
+</p>
+
 </div>
 
 
@@ -659,7 +687,9 @@ Good products. Simple shopping. Better prices.
 
 <div class="product-image">
 
-<span class="badge">BEST SELLER</span>
+<span class="badge">
+BEST SELLER
+</span>
 
 <img src="https://via.placeholder.com/500x400?text=Product+1">
 
@@ -667,7 +697,9 @@ Good products. Simple shopping. Better prices.
 
 <div class="product-info">
 
-<h3>Premium Product</h3>
+<h3>
+Premium Product
+</h3>
 
 <div class="description">
 Useful for everyday life.
@@ -678,22 +710,22 @@ Useful for everyday life.
 <span class="old">₹799</span>
 </div>
 
-<a
-class="order"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Premium%20Product."
->
+<a class="order"
+href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Premium%20Product.">
+
 💬 ORDER ON WHATSAPP
+
 </a>
 
-<button
-class="buy"
-type="button"
-onclick="openCheckout('Premium Product',499)"
->
-💳 BUY NOW • PAY ₹499
+<button class="buy"
+onclick="openCheckout('Premium Product',499)">
+
+💳 BUY NOW • ₹499
+
 </button>
 
 </div>
+
 </div>
 
 
@@ -703,7 +735,9 @@ onclick="openCheckout('Premium Product',499)"
 
 <div class="product-image">
 
-<span class="badge">HOT DEAL</span>
+<span class="badge">
+HOT DEAL
+</span>
 
 <img src="https://via.placeholder.com/500x400?text=Product+2">
 
@@ -711,7 +745,9 @@ onclick="openCheckout('Premium Product',499)"
 
 <div class="product-info">
 
-<h3>Smart Home Product</h3>
+<h3>
+Smart Home Product
+</h3>
 
 <div class="description">
 A useful addition to your home.
@@ -722,22 +758,22 @@ A useful addition to your home.
 <span class="old">₹699</span>
 </div>
 
-<a
-class="order"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Smart%20Home%20Product."
->
+<a class="order"
+href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Smart%20Home%20Product.">
+
 💬 ORDER ON WHATSAPP
+
 </a>
 
-<button
-class="buy"
-type="button"
-onclick="openCheckout('Smart Home Product',399)"
->
-💳 BUY NOW • PAY ₹399
+<button class="buy"
+onclick="openCheckout('Smart Home Product',399)">
+
+💳 BUY NOW • ₹399
+
 </button>
 
 </div>
+
 </div>
 
 
@@ -747,7 +783,9 @@ onclick="openCheckout('Smart Home Product',399)"
 
 <div class="product-image">
 
-<span class="badge">NEW</span>
+<span class="badge">
+NEW
+</span>
 
 <img src="https://via.placeholder.com/500x400?text=Product+3">
 
@@ -755,7 +793,9 @@ onclick="openCheckout('Smart Home Product',399)"
 
 <div class="product-info">
 
-<h3>Useful Gadget</h3>
+<h3>
+Useful Gadget
+</h3>
 
 <div class="description">
 Make everyday tasks easier.
@@ -766,22 +806,22 @@ Make everyday tasks easier.
 <span class="old">₹999</span>
 </div>
 
-<a
-class="order"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Useful%20Gadget."
->
+<a class="order"
+href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Useful%20Gadget.">
+
 💬 ORDER ON WHATSAPP
+
 </a>
 
-<button
-class="buy"
-type="button"
-onclick="openCheckout('Useful Gadget',599)"
->
-💳 BUY NOW • PAY ₹599
+<button class="buy"
+onclick="openCheckout('Useful Gadget',599)">
+
+💳 BUY NOW • ₹599
+
 </button>
 
 </div>
+
 </div>
 
 
@@ -791,7 +831,9 @@ onclick="openCheckout('Useful Gadget',599)"
 
 <div class="product-image">
 
-<span class="badge">SALE</span>
+<span class="badge">
+SALE
+</span>
 
 <img src="https://via.placeholder.com/500x400?text=Product+4">
 
@@ -799,7 +841,9 @@ onclick="openCheckout('Useful Gadget',599)"
 
 <div class="product-info">
 
-<h3>Daily Essential</h3>
+<h3>
+Daily Essential
+</h3>
 
 <div class="description">
 Simple, useful and affordable.
@@ -810,28 +854,31 @@ Simple, useful and affordable.
 <span class="old">₹499</span>
 </div>
 
-<a
-class="order"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Daily%20Essential."
->
+<a class="order"
+href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Daily%20Essential.">
+
 💬 ORDER ON WHATSAPP
+
 </a>
 
-<button
-class="buy"
-type="button"
-onclick="openCheckout('Daily Essential',299)"
->
-💳 BUY NOW • PAY ₹299
+<button class="buy"
+onclick="openCheckout('Daily Essential',299)">
+
+💳 BUY NOW • ₹299
+
 </button>
 
 </div>
+
 </div>
 
 
 </div>
+
 </section>
 
+
+<!-- FEATURE -->
 
 <div class="feature">
 
@@ -847,7 +894,8 @@ MORE SMART.
 </h2>
 
 <p>
-Smart Basket brings useful products, everyday essentials and interesting finds together in one simple shopping space.
+Smart Basket brings useful products, everyday essentials and interesting
+finds together in one simple shopping space.
 </p>
 
 <a href="#products" class="btn">
@@ -863,40 +911,80 @@ SMART BASKET
 </div>
 
 
+<!-- WHY -->
+
 <section class="section">
 
 <div class="heading">
-<h2>Why Smart Basket?</h2>
-<p>Made for simple and smarter shopping.</p>
+
+<h2>
+Why Smart Basket?
+</h2>
+
+<p>
+Made for simple and smarter shopping.
+</p>
+
 </div>
 
 <div class="why">
 
 <div class="why-box">
+
 <div class="why-icon">🚚</div>
-<h3>Fast Delivery</h3>
-<p>Reliable delivery straight to your doorstep.</p>
+
+<h3>
+Fast Delivery
+</h3>
+
+<p>
+Reliable delivery straight to your doorstep.
+</p>
+
 </div>
 
+
 <div class="why-box">
+
 <div class="why-icon">💰</div>
-<h3>Better Prices</h3>
-<p>Great products at prices that make sense.</p>
+
+<h3>
+Better Prices
+</h3>
+
+<p>
+Great products at prices that make sense.
+</p>
+
 </div>
+
 
 <div class="why-box">
+
 <div class="why-icon">💬</div>
-<h3>Easy Ordering</h3>
-<p>Choose your product and complete your order easily.</p>
+
+<h3>
+Easy Ordering
+</h3>
+
+<p>
+Choose your product and complete your order easily.
+</p>
+
 </div>
 
 </div>
+
 </section>
 
 
+<!-- CTA -->
+
 <div class="cta">
 
-<h2>Ready to Shop Smart?</h2>
+<h2>
+Ready to Shop Smart?
+</h2>
 
 <p>
 Discover something useful today.
@@ -909,6 +997,8 @@ START SHOPPING →
 </div>
 
 
+<!-- FOOTER -->
+
 <footer id="contact">
 
 <h2>
@@ -919,12 +1009,31 @@ START SHOPPING →
 Smart Choices. Better Prices.
 </p>
 
-<a
-class="whatsapp"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20need%20more%20information."
->
-💬 CHAT ON WHATSAPP
+<div class="contact-buttons">
+
+<a class="whatsapp"
+href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20need%20more%20information.">
+
+💬 WHATSAPP
+
 </a>
+
+<a class="email-btn"
+href="mailto:irshadiqu@gmail.com">
+
+✉️ EMAIL US
+
+</a>
+
+</div>
+
+<p>
+📱 +91 89216 78447
+</p>
+
+<p>
+📧 irshadiqu@gmail.com
+</p>
 
 <p>
 © 2026 Smart Basket. All Rights Reserved.
@@ -933,7 +1042,7 @@ href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20need%20more%
 </footer>
 
 
-<!-- CHECKOUT POPUP -->
+<!-- CHECKOUT MODAL -->
 
 <div id="checkoutModal">
 
@@ -941,13 +1050,12 @@ href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20need%20more%
 
 <div class="checkout-header">
 
-<h2>Complete Your Order</h2>
+<h2>
+Complete Your Order
+</h2>
 
-<button
-class="close-btn"
-type="button"
-onclick="closeCheckout()"
->
+<button class="close-btn"
+onclick="closeCheckout()">
 ×
 </button>
 
@@ -962,43 +1070,51 @@ Product:
 <br>
 
 Total:
-<strong>₹<span id="productPrice"></span></strong>
+<strong>
+₹<span id="productPrice"></span>
+</strong>
 
 </div>
 
 
 <form id="checkoutForm">
 
+
 <div class="field">
 
-<label>FULL NAME *</label>
+<label>
+FULL NAME *
+</label>
 
 <input
 id="customerName"
 type="text"
 required
-placeholder="Enter your name"
->
+placeholder="Enter your name">
 
 </div>
 
 
 <div class="field">
 
-<label>FULL ADDRESS *</label>
+<label>
+FULL ADDRESS *
+</label>
 
 <textarea
 id="customerAddress"
 required
-placeholder="House name, street, landmark..."
-></textarea>
+placeholder="House name, street, landmark...">
+</textarea>
 
 </div>
 
 
 <div class="field">
 
-<label>PIN CODE *</label>
+<label>
+PIN CODE *
+</label>
 
 <input
 id="customerPin"
@@ -1006,43 +1122,46 @@ type="text"
 inputmode="numeric"
 maxlength="6"
 required
-placeholder="6 digit PIN code"
->
+placeholder="6 digit PIN code">
 
 </div>
 
 
 <div class="field">
 
-<label>CITY *</label>
+<label>
+CITY *
+</label>
 
 <input
 id="customerCity"
 type="text"
 required
-placeholder="City"
->
+placeholder="City">
 
 </div>
 
 
 <div class="field">
 
-<label>TOWN / VILLAGE *</label>
+<label>
+TOWN / VILLAGE *
+</label>
 
 <input
 id="customerTown"
 type="text"
 required
-placeholder="Town / Village"
->
+placeholder="Town / Village">
 
 </div>
 
 
 <div class="field">
 
-<label>MOBILE NUMBER *</label>
+<label>
+MOBILE NUMBER *
+</label>
 
 <input
 id="customerMobile"
@@ -1050,58 +1169,80 @@ type="tel"
 inputmode="numeric"
 maxlength="10"
 required
-placeholder="10 digit mobile number"
->
+placeholder="10 digit mobile number">
 
 </div>
 
 
 <div class="field">
 
-<label>EMAIL *</label>
+<label>
+EMAIL *
+</label>
 
 <input
 id="customerEmail"
 type="email"
 required
-placeholder="your@email.com"
->
+placeholder="your@email.com">
 
 </div>
 
 
-<div class="payment-box">
+<div class="payment-title">
+SELECT PAYMENT METHOD
+</div>
 
-<h3>💳 PAYMENT</h3>
 
-<p>
-Your order total is ₹<strong id="paymentAmount"></strong>.
-Click below to open your UPI payment app.
-</p>
+<div class="payment-options">
+
+<div
+class="payment-option active"
+id="upiOption"
+onclick="selectPayment('UPI')">
+
+💳 UPI PAYMENT
+
+</div>
+
+
+<div
+class="payment-option"
+id="codOption"
+onclick="selectPayment('COD')">
+
+💵 CASH ON DELIVERY
+
+</div>
+
+</div>
 
 
 <button
+id="paymentButton"
 type="button"
-class="pay-button"
-onclick="payNow()"
->
-PAY ₹<span id="payAmount"></span> VIA UPI
+class="payment-action upi-btn"
+onclick="processOrder()">
+
+💳 PAY VIA UPI
+
 </button>
 
 
 <a
-id="confirmWhatsApp"
-class="confirm-button"
-href="#"
-target="_blank"
->
-💬 CONFIRM ORDER ON WHATSAPP
+id="whatsappConfirm"
+class="payment-action"
+style="display:none;background:#25D366;color:white"
+target="_blank">
+
+💬 CONFIRM COD ORDER
+
 </a>
 
 
 <div class="small-note">
-Complete the payment first, then confirm the order on WhatsApp.
-</div>
+
+Your order details will be sent to Smart Basket WhatsApp.
 
 </div>
 
@@ -1116,9 +1257,8 @@ Complete the payment first, then confirm the order on WhatsApp.
 
 let selectedProduct="";
 let selectedPrice=0;
+let paymentMethod="UPI";
 
-
-/* OPEN CHECKOUT */
 
 function openCheckout(product,price){
 
@@ -1129,20 +1269,14 @@ document.getElementById("productName").textContent=product;
 
 document.getElementById("productPrice").textContent=price;
 
-document.getElementById("paymentAmount").textContent=price;
-
-document.getElementById("payAmount").textContent=price;
-
 document.getElementById("checkoutModal").style.display="block";
 
 document.body.style.overflow="hidden";
 
-updateWhatsApp();
+selectPayment("UPI");
 
 }
 
-
-/* CLOSE CHECKOUT */
 
 function closeCheckout(){
 
@@ -1153,92 +1287,80 @@ document.body.style.overflow="auto";
 }
 
 
-/* PAYMENT */
+function selectPayment(method){
 
-function payNow(){
+paymentMethod=method;
 
-const upi =
-"upi://pay?pa=k63653390@oksbi"+
-"&pn=Smart%20Basket"+
-"&am="+selectedPrice+
-"&cu=INR";
+document.getElementById("upiOption")
+.classList.remove("active");
 
-window.location.href=upi;
+document.getElementById("codOption")
+.classList.remove("active");
+
+document.getElementById("whatsappConfirm")
+.style.display="none";
+
+
+if(method==="UPI"){
+
+document.getElementById("upiOption")
+.classList.add("active");
+
+document.getElementById("paymentButton")
+.style.display="block";
+
+document.getElementById("paymentButton")
+.className="payment-action upi-btn";
+
+document.getElementById("paymentButton")
+.innerHTML=
+"💳 PAY ₹"+selectedPrice+" VIA UPI";
+
+}
+
+else{
+
+document.getElementById("codOption")
+.classList.add("active");
+
+document.getElementById("paymentButton")
+.style.display="block";
+
+document.getElementById("paymentButton")
+.className="payment-action cod-btn";
+
+document.getElementById("paymentButton")
+.innerHTML=
+"💵 PLACE COD ORDER";
+
+}
 
 }
 
 
-/* WHATSAPP */
+function getOrderMessage(){
 
-function updateWhatsApp(){
+let name=document.getElementById("customerName").value.trim();
 
-const name=
-document.getElementById("customerName").value.trim();
+let address=document.getElementById("customerAddress").value.trim();
 
-const address=
-document.getElementById("customerAddress").value.trim();
+let pin=document.getElementById("customerPin").value.trim();
 
-const pin=
-document.getElementById("customerPin").value.trim();
+let city=document.getElementById("customerCity").value.trim();
 
-const city=
-document.getElementById("customerCity").value.trim();
+let town=document.getElementById("customerTown").value.trim();
 
-const town=
-document.getElementById("customerTown").value.trim();
+let mobile=document.getElementById("customerMobile").value.trim();
 
-const mobile=
-document.getElementById("customerMobile").value.trim();
-
-const email=
-document.getElementById("customerEmail").value.trim();
+let email=document.getElementById("customerEmail").value.trim();
 
 
-const message =
-"🛒 *NEW SMART BASKET ORDER*%0A%0A"+
-"📦 Product: "+selectedProduct+"%0A"+
-"💰 Amount: ₹"+selectedPrice+"%0A%0A"+
-"👤 Name: "+name+"%0A"+
-"🏠 Address: "+address+"%0A"+
-"📮 PIN Code: "+pin+"%0A"+
-"🏙️ City: "+city+"%0A"+
-"📍 Town/Village: "+town+"%0A"+
-"📱 Mobile: "+mobile+"%0A"+
-"📧 Email: "+email+"%0A%0A"+
-"💳 Payment: UPI";
+return "🛒 *NEW SMART BASKET ORDER*%0A%0A"+
 
+"📦 Product: "+encodeURIComponent(selectedProduct)+"%0A"+
 
-document.getElementById("confirmWhatsApp").href=
-"https://wa.me/918921678447?text="+message;
+"💰 Amount: ₹"+selectedPrice+"%0A"+
 
-}
+"💳 Payment: "+paymentMethod+"%0A%0A"+
 
-
-/* LIVE UPDATE */
-
-document.querySelectorAll(
-"#checkoutForm input,#checkoutForm textarea"
-).forEach(function(element){
-
-element.addEventListener("input",updateWhatsApp);
-
-});
-
-
-/* CLOSE BY OUTSIDE CLICK */
-
-document.getElementById("checkoutModal").addEventListener(
-"click",
-function(event){
-
-if(event.target===this){
-closeCheckout();
-}
-
-});
-
-
-</script>
-
-</body>
-</html>
+"👤 Name: "+encode
