@@ -1363,4 +1363,81 @@ return "🛒 *NEW SMART BASKET ORDER*%0A%0A"+
 
 "💳 Payment: "+paymentMethod+"%0A%0A"+
 
-"👤 Name: "+encode
+"👤 Name: "+encodeURIComponent(name)+"%0A"+
+
+"🏠 Address: "+encodeURIComponent(address)+"%0A"+
+
+"📮 PIN Code: "+encodeURIComponent(pin)+"%0A"+
+
+"🏙️ City: "+encodeURIComponent(city)+"%0A"+
+
+"📍 Town/Village: "+encodeURIComponent(town)+"%0A"+
+
+"📱 Mobile: "+encodeURIComponent(mobile)+"%0A"+
+
+"📧 Email: "+encodeURIComponent(email);
+
+}
+
+
+function processOrder(){
+
+let form=document.getElementById("checkoutForm");
+
+
+if(!form.checkValidity()){
+
+form.reportValidity();
+
+return;
+
+}
+
+
+if(paymentMethod==="COD"){
+
+let message=getOrderMessage();
+
+document.getElementById("paymentButton")
+.style.display="none";
+
+
+let wa=document.getElementById("whatsappConfirm");
+
+wa.href=
+"https://wa.me/918921678447?text="+message;
+
+wa.style.display="block";
+
+}
+
+else{
+
+let upi=
+"upi://pay?pa=k63653390@oksbi"+
+"&pn=Smart%20Basket"+
+"&am="+selectedPrice+
+"&cu=INR";
+
+window.location.href=upi;
+
+}
+
+}
+
+
+document.getElementById("checkoutModal")
+.addEventListener("click",function(e){
+
+if(e.target===this){
+
+closeCheckout();
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
