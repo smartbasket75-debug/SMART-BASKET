@@ -3,57 +3,374 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Smart Basket</title>
+<title>Smart Basket — Shop Smart</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#f5f3ef;color:#171717}
-header{background:#f5f3ef;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dedbd5;position:sticky;top:0;z-index:10}
-.logo{font-size:23px;font-weight:800}.logo span{font-weight:400}
-nav a{color:#171717;text-decoration:none;margin-left:25px;font-size:12px;font-weight:bold}
-.hero{max-width:1200px;margin:18px auto;min-height:500px;border-radius:18px;background:#ded9d0;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 20px}
-.hero-content{max-width:700px}.hero-label{font-size:10px;letter-spacing:4px;color:#6d675f;margin-bottom:20px;font-weight:bold}
-.hero h1{font-size:clamp(45px,7vw,78px);line-height:.92;letter-spacing:-5px;margin-bottom:25px}
-.hero p{max-width:500px;margin:auto;color:#615d57;line-height:1.7;margin-bottom:30px}
-.btn{display:inline-block;background:#171717;color:#fff;padding:14px 28px;border-radius:30px;text-decoration:none;font-size:11px;font-weight:bold;letter-spacing:1px}
-.mini-features{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:14px;overflow:hidden}
-.mini{text-align:center;padding:22px 10px;border-right:1px solid #e8e5df}.mini:last-child{border:0}
-.mini strong{display:block;font-size:11px;margin-bottom:5px}.mini span{font-size:10px;color:#89847c}
-.section{max-width:1200px;margin:auto;padding:70px 20px}
-.heading{margin-bottom:30px}.heading h2{font-size:32px;letter-spacing:-1.5px}.heading p{color:#858078;font-size:13px;margin-top:7px}
-.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.category{min-height:160px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px solid #e7e3dc;transition:.3s}
-.category:hover{transform:translateY(-5px);background:#171717;color:white}
-.category-icon{display:block;font-size:30px;margin-bottom:12px}.category-name{font-size:13px;font-weight:bold}
-.deal{max-width:1160px;margin:auto;padding:60px 30px;background:#171717;color:white;border-radius:18px;text-align:center}
-.deal-small{font-size:9px;letter-spacing:4px;color:#aaa;margin-bottom:14px}.deal h2{font-size:40px;margin-bottom:10px}.deal p{color:#aaa;font-size:13px}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.product{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e6e2db;transition:.3s}
-.product:hover{transform:translateY(-6px);box-shadow:0 18px 40px #0001}
-.product-image{position:relative;background:#ebe8e2}.product img{width:100%;height:245px;object-fit:cover;display:block}
-.badge{position:absolute;top:12px;left:12px;background:#171717;color:white;padding:6px 9px;border-radius:20px;font-size:8px;font-weight:bold}
-.product-info{padding:18px}.product h3{font-size:15px;margin-bottom:6px}.description{font-size:11px;color:#918c84;margin-bottom:13px}
-.price{font-size:19px;font-weight:bold}.old{font-size:11px;color:#aaa;text-decoration:line-through;margin-left:5px;font-weight:normal}
-.order{display:block;text-align:center;background:#171717;color:white;padding:12px;margin-top:10px;border-radius:25px;text-decoration:none;font-size:10px;font-weight:bold;letter-spacing:.5px}
-.buy{display:block;text-align:center;background:#25a244;color:white;padding:12px;margin-top:8px;border-radius:25px;text-decoration:none;font-size:10px;font-weight:bold;letter-spacing:.5px}
-.feature{max-width:1160px;margin:auto;display:grid;grid-template-columns:1fr 1fr;background:#e2ddd4;border-radius:18px;overflow:hidden}
-.feature-content{padding:65px;display:flex;flex-direction:column;justify-content:center}.feature-label{font-size:9px;letter-spacing:3px;font-weight:bold;color:#777168;margin-bottom:15px}
-.feature h2{font-size:43px;line-height:.95;letter-spacing:-3px;margin-bottom:18px}.feature p{color:#69635c;font-size:13px;line-height:1.7;margin-bottom:25px}
-.feature-image{min-height:350px;background:linear-gradient(135deg,#d4cec4,#eeeae4);display:flex;align-items:center;justify-content:center;color:#aaa;font-size:10px;letter-spacing:3px}
-.why{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.why-box{background:#fff;border:1px solid #e6e2db;border-radius:14px;padding:30px 20px}
-.why-icon{font-size:25px;margin-bottom:15px}.why-box h3{font-size:14px;margin-bottom:7px}.why-box p{color:#888;font-size:11px;line-height:1.6}
-.cta{max-width:1200px;margin:auto;background:#ded9d0;text-align:center;padding:70px 20px;border-radius:18px}.cta h2{font-size:38px;margin-bottom:10px}.cta p{color:#6d675f;font-size:13px;margin-bottom:25px}
-footer{background:#171717;color:white;margin-top:60px;padding:50px 20px 25px;text-align:center}footer h2{font-size:22px}footer p{color:#888;font-size:11px;margin-top:8px}
-.whatsapp{display:inline-block;background:#25D366;color:white;padding:12px 22px;border-radius:25px;text-decoration:none;margin-top:20px;font-size:10px;font-weight:bold}
+body{
+  font-family:Arial,sans-serif;
+  background:#0b0b0b;
+  color:#f5f2ea;
+}
+a{text-decoration:none;color:inherit}
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(11,11,11,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #29251c;
+  padding:18px 6%;
+  display:flex;justify-content:space-between;align-items:center
+}
+.logo{
+  font-size:22px;font-weight:900;letter-spacing:.5px
+}
+.logo span{font-weight:400;color:#d4af37}
+nav a{
+  margin-left:25px;font-size:11px;font-weight:bold;
+  color:#c9c5bc;transition:.2s
+}
+nav a:hover{color:#d4af37}
+
+.hero{
+  max-width:1200px;margin:20px auto;
+  min-height:560px;border-radius:24px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:50px 20px;
+  background:
+    radial-gradient(circle at 50% 30%,#3b321b 0,#18150f 35%,#101010 70%);
+  border:1px solid #302817;
+  overflow:hidden
+}
+.hero-content{max-width:760px}
+.hero-label{
+  color:#d4af37;font-size:10px;letter-spacing:5px;
+  font-weight:bold;margin-bottom:22px
+}
+.hero h1{
+  font-size:clamp(48px,8vw,88px);
+  line-height:.88;letter-spacing:-6px;
+  margin-bottom:25px
+}
+.hero h1 span{color:#d4af37}
+.hero p{
+  max-width:550px;margin:auto;
+  color:#aaa59b;line-height:1.8;
+  font-size:14px;margin-bottom:32px
+}
+.btn{
+  display:inline-block;
+  background:#d4af37;color:#111;
+  padding:15px 30px;border-radius:30px;
+  font-size:11px;font-weight:900;
+  letter-spacing:1px;
+  transition:.25s
+}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px #d4af3735
+}
+
+.mini-features{
+  max-width:1200px;margin:20px auto;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:#121212;border:1px solid #28251f;
+  border-radius:18px;overflow:hidden
+}
+.mini{
+  text-align:center;padding:24px 10px;
+  border-right:1px solid #29251f
+}
+.mini:last-child{border:0}
+.mini strong{display:block;font-size:11px;margin-bottom:6px}
+.mini span{font-size:10px;color:#77736b}
+
+.section{
+  max-width:1200px;margin:auto;padding:80px 20px
+}
+.heading{margin-bottom:32px}
+.heading h2{
+  font-size:34px;letter-spacing:-1.5px
+}
+.heading p{
+  color:#77736b;font-size:13px;margin-top:8px
+}
+
+.categories{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:15px
+}
+.category{
+  min-height:170px;
+  background:#121212;
+  border:1px solid #29251f;
+  border-radius:18px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;transition:.3s
+}
+.category:hover{
+  transform:translateY(-6px);
+  border-color:#d4af37;
+  box-shadow:0 15px 35px #000
+}
+.category-icon{
+  display:block;font-size:32px;margin-bottom:13px
+}
+.category-name{
+  font-size:12px;font-weight:bold;color:#d7d2c8
+}
+
+.deal{
+  max-width:1160px;margin:auto;
+  padding:70px 30px;
+  background:linear-gradient(135deg,#19160f,#0d0d0d);
+  border:1px solid #4b3c18;
+  border-radius:22px;text-align:center
+}
+.deal-small{
+  font-size:9px;letter-spacing:5px;
+  color:#d4af37;margin-bottom:15px
+}
+.deal h2{font-size:42px;margin-bottom:10px}
+.deal p{color:#77736b;font-size:13px}
+
+.products{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+}
+.product{
+  background:#121212;
+  border:1px solid #29251f;
+  border-radius:18px;
+  overflow:hidden;
+  transition:.3s
+}
+.product:hover{
+  transform:translateY(-7px);
+  border-color:#5b4a1d;
+  box-shadow:0 20px 45px #000
+}
+.product-image{
+  position:relative;background:#191919
+}
+.product img{
+  width:100%;height:245px;
+  object-fit:cover;display:block
+}
+.badge{
+  position:absolute;top:12px;left:12px;
+  background:#d4af37;color:#111;
+  padding:7px 10px;border-radius:20px;
+  font-size:8px;font-weight:900
+}
+.product-info{padding:19px}
+.product h3{font-size:15px;margin-bottom:7px}
+.description{
+  font-size:11px;color:#77736b;margin-bottom:14px
+}
+.price{
+  font-size:20px;font-weight:bold;color:#f3eee4
+}
+.old{
+  font-size:11px;color:#666;
+  text-decoration:line-through;
+  margin-left:5px;font-weight:normal
+}
+.order,.buy{
+  display:block;text-align:center;
+  padding:12px;margin-top:10px;
+  border-radius:25px;
+  font-size:10px;font-weight:bold;
+  letter-spacing:.5px;transition:.2s
+}
+.order{
+  background:#25231f;color:#f3eee4;
+  border:1px solid #373229
+}
+.order:hover{border-color:#d4af37}
+.buy{
+  background:#d4af37;color:#111
+}
+.buy:hover{
+  background:#f0cc55;
+  transform:translateY(-2px)
+}
+
+.feature{
+  max-width:1160px;margin:auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  background:#15130f;
+  border:1px solid #302817;
+  border-radius:22px;overflow:hidden
+}
+.feature-content{
+  padding:65px;display:flex;
+  flex-direction:column;justify-content:center
+}
+.feature-label{
+  font-size:9px;letter-spacing:4px;
+  font-weight:bold;color:#d4af37;
+  margin-bottom:15px
+}
+.feature h2{
+  font-size:43px;line-height:.95;
+  letter-spacing:-3px;margin-bottom:18px
+}
+.feature p{
+  color:#888278;font-size:13px;
+  line-height:1.7;margin-bottom:25px
+}
+.feature-image{
+  min-height:350px;
+  background:radial-gradient(circle,#332b19,#141414);
+  display:flex;align-items:center;
+  justify-content:center;
+  color:#655b43;font-size:10px;
+  letter-spacing:4px
+}
+
+.why{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:15px
+}
+.why-box{
+  background:#121212;
+  border:1px solid #29251f;
+  border-radius:18px;padding:32px 22px
+}
+.why-icon{font-size:27px;margin-bottom:15px}
+.why-box h3{font-size:14px;margin-bottom:8px}
+.why-box p{
+  color:#77736b;font-size:11px;line-height:1.7
+}
+
+.cta{
+  max-width:1200px;margin:auto;
+  background:radial-gradient(circle at center,#292112,#111);
+  border:1px solid #3e3218;
+  text-align:center;padding:75px 20px;
+  border-radius:22px
+}
+.cta h2{font-size:40px;margin-bottom:10px}
+.cta p{color:#888278;font-size:13px;margin-bottom:27px}
+
+footer{
+  background:#070707;
+  border-top:1px solid #242119;
+  margin-top:70px;padding:55px 20px 25px;
+  text-align:center
+}
+footer h2{font-size:22px}
+footer h2 span{color:#d4af37}
+footer p{color:#666;font-size:11px;margin-top:8px}
+.whatsapp{
+  display:inline-block;
+  background:#25D366;color:white;
+  padding:13px 23px;border-radius:25px;
+  margin-top:20px;font-size:10px;font-weight:bold
+}
+
+/* CHECKOUT MODAL */
+.modal{
+  display:none;
+  position:fixed;inset:0;
+  z-index:500;
+  background:#000b;
+  backdrop-filter:blur(8px);
+  padding:20px;
+  overflow:auto
+}
+.modal-box{
+  max-width:520px;
+  margin:40px auto;
+  background:#121212;
+  border:1px solid #3b311c;
+  border-radius:22px;
+  padding:25px
+}
+.modal-head{
+  display:flex;justify-content:space-between;
+  align-items:center;margin-bottom:22px
+}
+.modal-head h2{font-size:23px}
+.close{
+  background:#24221e;color:#fff;
+  border:0;width:35px;height:35px;
+  border-radius:50%;font-size:20px
+}
+.order-summary{
+  background:#1b1915;
+  border:1px solid #302817;
+  padding:15px;border-radius:14px;
+  margin-bottom:18px
+}
+.order-summary strong{color:#d4af37}
+.form-group{margin-bottom:13px}
+.form-group label{
+  display:block;font-size:10px;
+  color:#99948b;margin-bottom:6px
+}
+.form-group input,.form-group textarea{
+  width:100%;
+  background:#0d0d0d;
+  border:1px solid #302f2a;
+  color:#fff;
+  padding:13px;
+  border-radius:10px;
+  outline:none;font-size:12px
+}
+.form-group input:focus,.form-group textarea:focus{
+  border-color:#d4af37
+}
+.form-group textarea{
+  min-height:75px;resize:vertical
+}
+.payment{
+  margin-top:18px;
+  background:#19160f;
+  border:1px solid #4b3c18;
+  border-radius:14px;
+  padding:16px
+}
+.payment-title{
+  color:#d4af37;font-weight:bold;
+  font-size:12px;margin-bottom:7px
+}
+.payment p{
+  color:#888278;font-size:10px;
+  line-height:1.6
+}
+.pay-btn{
+  display:block;width:100%;
+  border:0;margin-top:12px;
+  background:#d4af37;color:#111;
+  padding:14px;border-radius:25px;
+  font-weight:bold;font-size:11px
+}
+.whatsapp-confirm{
+  display:block;text-align:center;
+  background:#25D366;color:#fff;
+  padding:14px;border-radius:25px;
+  margin-top:10px;
+  font-size:11px;font-weight:bold
+}
+.note{
+  color:#666;font-size:9px;
+  text-align:center;margin-top:10px
+}
 
 @media(max-width:800px){
-nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter-spacing:-3px}
-.mini-features{width:94%;grid-template-columns:repeat(2,1fr)}
-.categories{grid-template-columns:repeat(2,1fr)}
-.products{grid-template-columns:repeat(2,1fr);gap:10px}.product img{height:175px}.product-info{padding:13px}
-.feature{grid-template-columns:1fr;width:94%}.feature-content{padding:45px 25px}.feature-image{min-height:230px}
-.why{grid-template-columns:1fr}.deal{width:94%}.cta{width:94%}
+  nav{display:none}
+  .hero{width:94%;min-height:480px}
+  .hero h1{font-size:48px;letter-spacing:-4px}
+  .mini-features{width:94%;grid-template-columns:repeat(2,1fr)}
+  .mini:nth-child(2){border-right:0}
+  .categories{grid-template-columns:repeat(2,1fr)}
+  .products{grid-template-columns:repeat(2,1fr);gap:10px}
+  .product img{height:175px}
+  .product-info{padding:13px}
+  .feature{grid-template-columns:1fr;width:94%}
+  .feature-content{padding:45px 25px}
+  .feature-image{min-height:230px}
+  .why{grid-template-columns:1fr}
+  .deal,.cta{width:94%}
 }
 </style>
 </head>
@@ -73,8 +390,8 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 <section class="hero" id="home">
 <div class="hero-content">
 <div class="hero-label">WELCOME TO SMART BASKET</div>
-<h1>SHOP SMART.<br>SAVE MORE.</h1>
-<p>Discover useful products, everyday essentials and exciting deals — all in one place.</p>
+<h1>SHOP <span>SMART.</span><br>SAVE MORE.</h1>
+<p>Discover useful products, everyday essentials and exciting deals — all in one premium shopping space.</p>
 <a href="#products" class="btn">EXPLORE PRODUCTS →</a>
 </div>
 </section>
@@ -83,11 +400,15 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 <div class="mini"><strong>🚚 FAST DELIVERY</strong><span>Doorstep delivery</span></div>
 <div class="mini"><strong>💰 SMART PRICES</strong><span>Great everyday deals</span></div>
 <div class="mini"><strong>🔒 SAFE SHOPPING</strong><span>Shop with confidence</span></div>
-<div class="mini"><strong>💬 EASY ORDER</strong><span>WhatsApp ordering</span></div>
+<div class="mini"><strong>💬 EASY ORDER</strong><span>Simple ordering</span></div>
 </div>
 
 <section class="section" id="categories">
-<div class="heading"><h2>Shop by Category</h2><p>Explore our collection of useful products.</p></div>
+<div class="heading">
+<h2>Shop by Category</h2>
+<p>Explore our collection of useful products.</p>
+</div>
+
 <div class="categories">
 <div class="category"><div><span class="category-icon">🏠</span><span class="category-name">HOME & KITCHEN</span></div></div>
 <div class="category"><div><span class="category-icon">📱</span><span class="category-name">GADGETS</span></div></div>
@@ -103,7 +424,10 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 </div>
 
 <section class="section" id="products">
-<div class="heading"><h2>Featured Products</h2><p>Our current smart picks.</p></div>
+<div class="heading">
+<h2>Featured Products</h2>
+<p>Our current smart picks.</p>
+</div>
 
 <div class="products">
 
@@ -118,9 +442,13 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 <div class="description">Useful for everyday life.</div>
 <div class="price">₹499 <span class="old">₹799</span></div>
 
-<a class="order" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Premium%20Product.">💬 ORDER ON WHATSAPP</a>
+<a class="order" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Premium%20Product.">
+💬 ORDER ON WHATSAPP
+</a>
 
-<a class="buy" href="upi://pay?pa=k63653390@oksbi&pn=Smart%20Basket&am=499&cu=INR">💳 BUY NOW • PAY ₹499</a>
+<a class="buy" href="#" onclick="openCheckout('Premium Product',499);return false;">
+💳 BUY NOW • PAY ₹499
+</a>
 </div>
 </div>
 
@@ -135,9 +463,13 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 <div class="description">A useful addition to your home.</div>
 <div class="price">₹399 <span class="old">₹699</span></div>
 
-<a class="order" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Smart%20Home%20Product.">💬 ORDER ON WHATSAPP</a>
+<a class="order" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Smart%20Home%20Product.">
+💬 ORDER ON WHATSAPP
+</a>
 
-<a class="buy" href="upi://pay?pa=k63653390@oksbi&pn=Smart%20Basket&am=399&cu=INR">💳 BUY NOW • PAY ₹399</a>
+<a class="buy" href="#" onclick="openCheckout('Smart Home Product',399);return false;">
+💳 BUY NOW • PAY ₹399
+</a>
 </div>
 </div>
 
@@ -152,9 +484,13 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 <div class="description">Make everyday tasks easier.</div>
 <div class="price">₹599 <span class="old">₹999</span></div>
 
-<a class="order" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Useful%20Gadget.">💬 ORDER ON WHATSAPP</a>
+<a class="order" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Useful%20Gadget.">
+💬 ORDER ON WHATSAPP
+</a>
 
-<a class="buy" href="upi://pay?pa=k63653390@oksbi&pn=Smart%20Basket&am=599&cu=INR">💳 BUY NOW • PAY ₹599</a>
+<a class="buy" href="#" onclick="openCheckout('Useful Gadget',599);return false;">
+💳 BUY NOW • PAY ₹599
+</a>
 </div>
 </div>
 
@@ -169,9 +505,13 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 <div class="description">Simple, useful and affordable.</div>
 <div class="price">₹299 <span class="old">₹499</span></div>
 
-<a class="order" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Daily%20Essential.">💬 ORDER ON WHATSAPP</a>
+<a class="order" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Daily%20Essential.">
+💬 ORDER ON WHATSAPP
+</a>
 
-<a class="buy" href="upi://pay?pa=k63653390@oksbi&pn=Smart%20Basket&am=299&cu=INR">💳 BUY NOW • PAY ₹299</a>
+<a class="buy" href="#" onclick="openCheckout('Daily Essential',299);return false;">
+💳 BUY NOW • PAY ₹299
+</a>
 </div>
 </div>
 
@@ -185,15 +525,33 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 <p>Smart Basket brings useful products, everyday essentials and interesting finds together in one simple shopping space.</p>
 <a href="#products" class="btn">SHOP COLLECTION →</a>
 </div>
-<div class="feature-image">PRODUCT IMAGE</div>
+<div class="feature-image">SMART BASKET</div>
 </div>
 
 <section class="section">
-<div class="heading"><h2>Why Smart Basket?</h2><p>Made for simple and smarter shopping.</p></div>
+<div class="heading">
+<h2>Why Smart Basket?</h2>
+<p>Made for simple and smarter shopping.</p>
+</div>
+
 <div class="why">
-<div class="why-box"><div class="why-icon">🚚</div><h3>Fast Delivery</h3><p>Reliable delivery straight to your doorstep.</p></div>
-<div class="why-box"><div class="why-icon">💰</div><h3>Better Prices</h3><p>Great products at prices that make sense.</p></div>
-<div class="why-box"><div class="why-icon">💬</div><h3>Easy Ordering</h3><p>Choose your product and order directly through WhatsApp.</p></div>
+<div class="why-box">
+<div class="why-icon">🚚</div>
+<h3>Fast Delivery</h3>
+<p>Reliable delivery straight to your doorstep.</p>
+</div>
+
+<div class="why-box">
+<div class="why-icon">💰</div>
+<h3>Better Prices</h3>
+<p>Great products at prices that make sense.</p>
+</div>
+
+<div class="why-box">
+<div class="why-icon">💬</div>
+<h3>Easy Ordering</h3>
+<p>Choose your product and complete your order easily.</p>
+</div>
 </div>
 </section>
 
@@ -204,11 +562,130 @@ nav{display:none}.hero{width:94%;min-height:450px}.hero h1{font-size:46px;letter
 </div>
 
 <footer id="contact">
-<h2>🛒 SMART BASKET</h2>
+<h2>🛒 SMART<span> BASKET</span></h2>
 <p>Smart Choices. Better Prices.</p>
-<a class="whatsapp" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20need%20more%20information.">💬 CHAT ON WHATSAPP</a>
+
+<a class="whatsapp" href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20need%20more%20information.">
+💬 CHAT ON WHATSAPP
+</a>
+
 <p>© 2026 Smart Basket. All Rights Reserved.</p>
 </footer>
 
-</body>
-</html>
+<!-- CHECKOUT -->
+<div class="modal" id="checkoutModal">
+<div class="modal-box">
+
+<div class="modal-head">
+<h2>Complete Your Order</h2>
+<button class="close" onclick="closeCheckout()">×</button>
+</div>
+
+<div class="order-summary">
+Product: <strong id="summaryProduct"></strong><br>
+Total: <strong>₹<span id="summaryPrice"></span></strong>
+</div>
+
+<form id="checkoutForm">
+
+<div class="form-group">
+<label>FULL NAME *</label>
+<input id="name" required placeholder="Enter your name">
+</div>
+
+<div class="form-group">
+<label>FULL ADDRESS *</label>
+<textarea id="address" required placeholder="House name, street, landmark..."></textarea>
+</div>
+
+<div class="form-group">
+<label>PIN CODE *</label>
+<input id="pin" required inputmode="numeric" maxlength="6" placeholder="6 digit PIN code">
+</div>
+
+<div class="form-group">
+<label>CITY *</label>
+<input id="city" required placeholder="City">
+</div>
+
+<div class="form-group">
+<label>TOWN / VILLAGE *</label>
+<input id="town" required placeholder="Town or Village">
+</div>
+
+<div class="form-group">
+<label>MOBILE NUMBER *</label>
+<input id="mobile" required type="tel" inputmode="numeric" maxlength="10" placeholder="10 digit mobile number">
+</div>
+
+<div class="form-group">
+<label>EMAIL *</label>
+<input id="email" required type="email" placeholder="your@email.com">
+</div>
+
+<div class="payment">
+<div class="payment-title">💳 PAYMENT</div>
+<p>
+Click the button below to open your UPI app and pay the exact order amount.
+After payment, return here and confirm your order.
+</p>
+
+<button type="button" class="pay-btn" onclick="makePayment()">
+PAY ₹<span id="payAmount"></span> VIA UPI
+</button>
+
+<a id="whatsappConfirm" class="whatsapp-confirm" href="#" target="_blank">
+💬 CONFIRM ORDER ON WHATSAPP
+</a>
+
+<div class="note">
+UPI payment is not automatically verified by this website.
+Please complete the payment before confirming the order.
+</div>
+</div>
+
+</form>
+</div>
+</div>
+
+<script>
+let selectedProduct="";
+let selectedPrice=0;
+
+function openCheckout(product,price){
+  selectedProduct=product;
+  selectedPrice=price;
+
+  document.getElementById("summaryProduct").textContent=product;
+  document.getElementById("summaryPrice").textContent=price;
+  document.getElementById("payAmount").textContent=price;
+
+  document.getElementById("checkoutModal").style.display="block";
+  document.body.style.overflow="hidden";
+
+  updateWhatsApp();
+}
+
+function closeCheckout(){
+  document.getElementById("checkoutModal").style.display="none";
+  document.body.style.overflow="auto";
+}
+
+function makePayment(){
+  const upi =
+  "upi://pay?pa=k63653390@oksbi"+
+  "&pn=Smart%20Basket"+
+  "&am="+selectedPrice+
+  "&cu=INR";
+
+  window.location.href=upi;
+}
+
+function updateWhatsApp(){
+
+  const name=document.getElementById("name").value.trim();
+  const address=document.getElementById("address").value.trim();
+  const pin=document.getElementById("pin").value.trim();
+  const city=document.getElementById("city").value.trim();
+  const town=document.getElementById("town").value.trim();
+  const mobile
