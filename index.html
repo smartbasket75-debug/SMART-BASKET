@@ -2,509 +2,563 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Smart Basket</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Basket | Premium Products</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#0b0b0b;color:#f5f2ea}
-a{text-decoration:none;color:inherit}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
 
+body{
+    background:#f7f7f7;
+    color:#111;
+}
+
+/* HEADER */
 header{
-position:sticky;top:0;z-index:100;
-background:rgba(11,11,11,.97);
-padding:18px 6%;
-display:flex;justify-content:space-between;align-items:center;
-border-bottom:1px solid #302817
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #eee;
 }
 
-.logo{font-size:22px;font-weight:900}
-.logo span{color:#d4af37;font-weight:400}
-
-nav a{
-margin-left:22px;font-size:11px;font-weight:bold;color:#ccc
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    gap:20px;
 }
-nav a:hover{color:#d4af37}
 
+.logo{
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#e60023;
+}
+
+.search{
+    flex:1;
+    background:#f1f1f1;
+    border-radius:30px;
+    padding:13px 20px;
+    border:none;
+    outline:none;
+    font-size:15px;
+}
+
+.cart{
+    background:#111;
+    color:white;
+    border:none;
+    border-radius:50px;
+    padding:11px 17px;
+    cursor:pointer;
+}
+
+/* HERO */
 .hero{
-width:94%;max-width:1200px;margin:20px auto;min-height:540px;
-border-radius:24px;display:flex;align-items:center;
-justify-content:center;text-align:center;
-background:radial-gradient(circle at center,#3b321b,#111 65%);
-border:1px solid #3d321a;padding:40px 20px
+    max-width:1200px;
+    margin:25px auto 10px;
+    padding:0 20px;
 }
 
-.hero-label{
-font-size:10px;letter-spacing:5px;color:#d4af37;
-font-weight:bold;margin-bottom:20px
+.hero-box{
+    background:linear-gradient(135deg,#111,#292929);
+    border-radius:28px;
+    padding:35px;
+    color:white;
+    overflow:hidden;
+    position:relative;
 }
 
 .hero h1{
-font-size:clamp(48px,8vw,88px);
-line-height:.9;letter-spacing:-5px;margin-bottom:25px
+    font-size:38px;
+    max-width:600px;
+    line-height:1.1;
 }
-
-.hero h1 span{color:#d4af37}
 
 .hero p{
-max-width:550px;margin:auto;color:#aaa;
-font-size:14px;line-height:1.8;margin-bottom:30px
+    margin-top:12px;
+    color:#ccc;
 }
 
-.btn{
-display:inline-block;background:#d4af37;color:#111;
-padding:15px 30px;border-radius:30px;
-font-size:11px;font-weight:bold
-}
-
-.mini-features{
-width:94%;max-width:1200px;margin:20px auto;
-display:grid;grid-template-columns:repeat(4,1fr);
-background:#121212;border:1px solid #29251f;
-border-radius:18px;overflow:hidden
-}
-
-.mini{
-text-align:center;padding:24px 10px;
-border-right:1px solid #29251f
-}
-
-.mini:last-child{border:0}
-.mini strong{display:block;font-size:11px;margin-bottom:6px}
-.mini span{font-size:10px;color:#777}
-
-.section{
-width:94%;max-width:1200px;margin:auto;padding:70px 0
-}
-
-.heading{margin-bottom:30px}
-.heading h2{font-size:34px}
-.heading p{color:#777;font-size:13px;margin-top:7px}
-
-.about{
-width:94%;max-width:1200px;margin:70px auto 0;
-padding:80px 30px;
-background:linear-gradient(135deg,#18150f,#0d0d0d);
-border:1px solid #302817;border-radius:22px
-}
-
-.about-inner{
-max-width:850px;margin:auto;text-align:center
-}
-
-.about-label{
-font-size:9px;letter-spacing:5px;color:#d4af37;
-font-weight:bold;margin-bottom:18px
-}
-
-.about h2{
-font-size:clamp(35px,6vw,55px);
-line-height:1;letter-spacing:-2px;margin-bottom:25px
-}
-
-.about h2 span{color:#d4af37}
-
-.about p{
-color:#888;font-size:13px;line-height:1.9;
-max-width:720px;margin:0 auto 12px
-}
-
-.nature-quote{
-margin:32px auto;padding:22px;max-width:650px;
-border-top:1px solid #3b321d;
-border-bottom:1px solid #3b321d;
-color:#d4af37;font-size:15px;font-weight:bold
-}
-
-.about-points{
-display:grid;grid-template-columns:repeat(3,1fr);
-gap:12px;margin-top:35px
-}
-
-.about-points div{
-background:#121212;border:1px solid #29251f;
-border-radius:15px;padding:22px 12px
-}
-
-.about-points strong{
-display:block;font-size:10px;margin-bottom:8px;color:#eee
-}
-
-.about-points span{
-font-size:10px;color:#666;line-height:1.5
-}
-
+/* CATEGORY */
 .categories{
-display:grid;grid-template-columns:repeat(4,1fr);gap:15px
+    max-width:1200px;
+    margin:25px auto;
+    padding:0 20px;
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
 }
 
-.category{
-height:170px;background:#121212;border:1px solid #29251f;
-border-radius:18px;display:flex;align-items:center;
-justify-content:center;text-align:center;
-transition:.3s
+.categories button{
+    white-space:nowrap;
+    border:0;
+    background:white;
+    padding:11px 18px;
+    border-radius:30px;
+    cursor:pointer;
 }
 
-.category:hover{
-border-color:#d4af37;
-transform:translateY(-5px)
+.categories button.active{
+    background:#111;
+    color:white;
 }
 
-.category-icon{
-display:block;font-size:32px;margin-bottom:12px
-}
-
-.category-name{font-size:12px;font-weight:bold}
-
-.deal{
-width:94%;max-width:1160px;margin:auto;padding:65px 20px;
-background:linear-gradient(135deg,#19160f,#0d0d0d);
-border:1px solid #4b3c18;border-radius:22px;text-align:center
-}
-
-.deal-small{
-font-size:9px;letter-spacing:5px;color:#d4af37;margin-bottom:15px
-}
-
-.deal h2{font-size:40px;margin-bottom:10px}
-.deal p{color:#777;font-size:13px}
-
+/* PINTEREST GRID */
 .products{
-display:grid;grid-template-columns:repeat(4,1fr);gap:18px
+    max-width:1200px;
+    margin:auto;
+    padding:10px 20px 50px;
+
+    column-count:4;
+    column-gap:16px;
 }
 
-.product{
-background:#121212;border:1px solid #29251f;
-border-radius:18px;overflow:hidden
+.card{
+    display:inline-block;
+    width:100%;
+    margin-bottom:16px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    break-inside:avoid;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
 }
 
 .product-image{
-position:relative;background:#181818
+    width:100%;
+    display:block;
+    background:#eee;
 }
 
-.product img{
-width:100%;height:240px;object-fit:cover;display:block
+.info{
+    padding:15px;
 }
 
-.badge{
-position:absolute;top:12px;left:12px;
-background:#d4af37;color:#111;
-padding:7px 10px;border-radius:20px;
-font-size:8px;font-weight:bold
+.tag{
+    display:inline-block;
+    background:#ffe5ea;
+    color:#e60023;
+    font-size:11px;
+    font-weight:700;
+    padding:5px 9px;
+    border-radius:20px;
+    margin-bottom:8px;
 }
 
-.product-info{padding:18px}
-.product h3{font-size:15px;margin-bottom:7px}
-.description{font-size:11px;color:#777;margin-bottom:13px}
-
-.price{font-size:20px;font-weight:bold}
-.old{
-font-size:11px;color:#666;text-decoration:line-through;
-margin-left:5px
+.info h2{
+    font-size:17px;
+    margin-bottom:7px;
 }
 
-.order,.buy{
-display:block;width:100%;border:0;text-align:center;
-padding:13px;margin-top:10px;border-radius:25px;
-font-size:10px;font-weight:bold;cursor:pointer
+.desc{
+    color:#777;
+    font-size:13px;
+    line-height:1.5;
 }
 
-.order{
-background:#25231f;color:white;
-border:1px solid #38342d
+.price{
+    margin-top:12px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.offer{
+    font-size:22px;
+    font-weight:800;
+}
+
+.original{
+    color:#999;
+    text-decoration:line-through;
+    font-size:13px;
+}
+
+.discount{
+    color:#16833b;
+    font-size:12px;
+    font-weight:700;
 }
 
 .buy{
-background:#d4af37;color:#111
+    width:100%;
+    border:0;
+    background:#e60023;
+    color:white;
+    padding:13px;
+    border-radius:12px;
+    margin-top:13px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
 }
 
-.buy:hover{background:#f0cc55}
+.buy:hover{
+    background:#c9001e;
+}
 
+/* PRODUCT FEATURE */
 .feature{
-width:94%;max-width:1160px;margin:auto;
-display:grid;grid-template-columns:1fr 1fr;
-background:#15130f;border:1px solid #302817;
-border-radius:22px;overflow:hidden
+    max-width:1200px;
+    margin:20px auto 40px;
+    padding:0 20px;
 }
 
-.feature-content{
-padding:60px;display:flex;
-flex-direction:column;justify-content:center
+.feature-box{
+    background:white;
+    border-radius:25px;
+    padding:25px;
 }
 
-.feature-label{
-font-size:9px;letter-spacing:4px;
-color:#d4af37;margin-bottom:15px
+.feature-box h2{
+    margin-bottom:15px;
 }
 
-.feature h2{
-font-size:43px;line-height:.95;margin-bottom:18px
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
 }
 
-.feature p{
-color:#888;font-size:13px;line-height:1.7;
-margin-bottom:25px
+.feature-item{
+    background:#f7f7f7;
+    padding:18px;
+    border-radius:17px;
 }
 
-.feature-image{
-min-height:350px;display:flex;
-align-items:center;justify-content:center;
-background:radial-gradient(circle,#332b19,#141414);
-color:#665b43;letter-spacing:4px
+.feature-item b{
+    display:block;
+    margin-bottom:5px;
 }
 
-.why{
-display:grid;grid-template-columns:repeat(3,1fr);gap:15px
+.feature-item span{
+    color:#777;
+    font-size:13px;
 }
 
-.why-box{
-background:#121212;border:1px solid #29251f;
-border-radius:18px;padding:30px 20px
-}
-
-.why-icon{font-size:27px;margin-bottom:15px}
-.why-box h3{font-size:14px;margin-bottom:8px}
-.why-box p{font-size:11px;color:#777;line-height:1.7}
-
-.cta{
-width:94%;max-width:1200px;margin:auto;
-padding:70px 20px;text-align:center;
-background:radial-gradient(circle,#292112,#111);
-border:1px solid #3e3218;border-radius:22px
-}
-
-.cta h2{font-size:38px;margin-bottom:10px}
-.cta p{color:#777;font-size:13px;margin-bottom:25px}
-
+/* FOOTER */
 footer{
-margin-top:70px;padding:50px 20px 25px;
-text-align:center;background:#070707;
-border-top:1px solid #29251f
+    background:#111;
+    color:white;
+    padding:35px 20px;
+    text-align:center;
 }
 
-footer h2 span{color:#d4af37}
-footer p{font-size:11px;color:#666;margin-top:8px}
-
-.contact-buttons{
-display:flex;justify-content:center;
-gap:10px;flex-wrap:wrap;margin-top:20px
+footer p{
+    color:#aaa;
+    margin-top:8px;
+    font-size:13px;
 }
-
-.whatsapp,.email-btn{
-display:inline-block;color:white;
-padding:13px 23px;border-radius:25px;
-font-size:10px;font-weight:bold
-}
-
-.whatsapp{background:#25D366}
-.email-btn{background:#d4af37;color:#111}
-
-
-/* CHECKOUT */
-
-#checkoutModal{
-display:none;position:fixed;inset:0;z-index:9999;
-background:rgba(0,0,0,.9);padding:20px;overflow:auto
-}
-
-.checkout-box{
-width:100%;max-width:520px;margin:30px auto;
-background:#121212;border:1px solid #4b3c18;
-border-radius:22px;padding:25px
-}
-
-.checkout-header{
-display:flex;justify-content:space-between;
-align-items:center;margin-bottom:20px
-}
-
-.checkout-header h2{font-size:22px}
-
-.close-btn{
-width:36px;height:36px;border:0;
-border-radius:50%;background:#29251f;
-color:white;font-size:20px;cursor:pointer
-}
-
-.summary{
-background:#1a1814;border:1px solid #302817;
-border-radius:14px;padding:15px;margin-bottom:18px;
-font-size:12px;line-height:1.8
-}
-
-.summary strong{color:#d4af37}
-
-.field{margin-bottom:13px}
-
-.field label{
-display:block;font-size:10px;
-color:#999;margin-bottom:6px
-}
-
-.field input,.field textarea{
-width:100%;background:#0b0b0b;
-border:1px solid #302f2a;border-radius:10px;
-padding:13px;color:white;font-size:12px;outline:none
-}
-
-.field input:focus,.field textarea:focus{
-border-color:#d4af37
-}
-
-.field textarea{
-height:75px;resize:vertical
-}
-
-.payment-title{
-font-size:11px;color:#d4af37;margin:20px 0 10px
-}
-
-.payment-options{
-display:grid;grid-template-columns:1fr 1fr;gap:10px
-}
-
-.payment-option{
-padding:14px;border:1px solid #39352d;
-border-radius:12px;background:#0b0b0b;
-color:white;text-align:center;
-cursor:pointer;font-size:11px
-}
-
-.payment-option.active{
-border-color:#d4af37;
-background:#211c10;color:#d4af37
-}
-
-.payment-action{
-display:block;width:100%;border:0;
-padding:14px;border-radius:25px;
-margin-top:12px;font-size:11px;
-font-weight:bold;cursor:pointer;text-align:center
-}
-
-.upi-btn{background:#d4af37;color:#111}
-.cod-btn{background:#25D366;color:white}
-
-.small-note{
-font-size:9px;color:#666;
-text-align:center;margin-top:10px
-}
-
 
 /* MOBILE */
+@media(max-width:900px){
+    .products{
+        column-count:3;
+    }
 
-@media(max-width:800px){
-
-nav{display:none}
-
-.hero{
-min-height:450px
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-.hero h1{
-font-size:46px;
-letter-spacing:-3px
-}
+@media(max-width:600px){
+    .nav{
+        gap:10px;
+    }
 
-.mini-features{
-grid-template-columns:repeat(2,1fr)
-}
+    .logo{
+        font-size:20px;
+    }
 
-.mini:nth-child(2){
-border-right:0
-}
+    .search{
+        padding:10px 13px;
+        min-width:0;
+    }
 
-.categories{
-grid-template-columns:repeat(2,1fr)
-}
+    .cart{
+        padding:10px 13px;
+    }
 
-.products{
-grid-template-columns:repeat(2,1fr);
-gap:10px
-}
+    .hero-box{
+        padding:25px;
+    }
 
-.product img{
-height:175px
-}
+    .hero h1{
+        font-size:29px;
+    }
 
-.product-info{
-padding:13px
-}
+    .products{
+        column-count:2;
+        column-gap:10px;
+        padding:10px;
+    }
 
-.feature{
-grid-template-columns:1fr
-}
+    .card{
+        margin-bottom:10px;
+        border-radius:15px;
+    }
 
-.feature-content{
-padding:45px 25px
-}
+    .info{
+        padding:11px;
+    }
 
-.feature-image{
-min-height:220px
-}
+    .info h2{
+        font-size:15px;
+    }
 
-.why{
-grid-template-columns:1fr
-}
+    .offer{
+        font-size:19px;
+    }
 
-.about{
-padding:55px 20px
-}
+    .buy{
+        padding:11px;
+        font-size:13px;
+    }
 
-.about-points{
-grid-template-columns:1fr
-}
-
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
-
 <!-- HEADER -->
-
 <header>
+<div class="nav">
 
-<div class="logo">
-🛒 SMART<span> BASKET</span>
+    <div class="logo">
+        Smart<span>Basket</span>
+    </div>
+
+    <input
+        class="search"
+        type="search"
+        placeholder="Search products..."
+        id="search"
+        onkeyup="searchProducts()"
+    >
+
+    <button class="cart" onclick="showCart()">
+        🛒 <span id="cartCount">0</span>
+    </button>
+
 </div>
-
-<nav>
-<a href="#home">HOME</a>
-<a href="#about">ABOUT</a>
-<a href="#categories">CATEGORIES</a>
-<a href="#products">SHOP</a>
-<a href="#contact">CONTACT</a>
-</nav>
-
 </header>
 
 
 <!-- HERO -->
+<section class="hero">
+<div class="hero-box">
 
-<section class="hero" id="home">
+    <h1>
+        Discover products<br>
+        you’ll love.
+    </h1>
 
-<div>
+    <p>
+        Trending • Useful • Affordable
+    </p>
 
-<div class="hero-label">
-WELCOME TO SMART BASKET
+</div>
+</section>
+
+
+<!-- CATEGORIES -->
+<div class="categories">
+
+    <button class="active">All</button>
+    <button>Electronics</button>
+    <button>Gadgets</button>
+    <button>Home</button>
+    <button>Accessories</button>
+
 </div>
 
-<h1>
-SHOP <span>SMART.</span><br>
-SAVE MORE.
-</h1>
 
-<p>
-Discover useful products, everyday essentials and exciting deals —
-all in one premium shopping space.
-</p>
+<!-- PRODUCTS -->
+<section class="products" id="products">
 
-<a href="#products" class="btn">
-EXPLORE PRODUCTS →
-</a>
+
+<!-- SPEAKER -->
+<div class="card">
+
+    <img
+        class="product-image"
+        src="speaker1.jpg"
+        alt="Premium Wireless Speaker"
+    >
+
+    <div class="info">
+
+        <span class="tag">🔥 BEST SELLER</span>
+
+        <h2>Premium Wireless Bluetooth Speaker</h2>
+
+        <p class="desc">
+            Retro premium design with powerful sound.
+            Perfect for home, travel and parties.
+        </p>
+
+        <div class="price">
+
+            <span class="offer">₹599</span>
+
+            <span class="original">
+                ₹1,259
+            </span>
+
+            <span class="discount">
+                52% OFF
+            </span>
+
+        </div>
+
+        <button class="buy"
+            onclick="addToCart('Premium Wireless Speaker',599)">
+            Add to Cart
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- SECOND IMAGE CARD -->
+<div class="card">
+
+    <img
+        class="product-image"
+        src="speaker2.jpg"
+        alt="Wireless Speaker"
+    >
+
+    <div class="info">
+
+        <span class="tag">PREMIUM</span>
+
+        <h2>Retro Wireless Speaker</h2>
+
+        <p class="desc">
+            Stylish retro design with Bluetooth connectivity.
+        </p>
+
+        <div class="price">
+
+            <span class="offer">₹599</span>
+
+            <span class="original">
+                ₹1,259
+            </span>
+
+        </div>
+
+        <button class="buy"
+            onclick="addToCart('Retro Wireless Speaker',599)">
+            Add to Cart
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- CONNECTIVITY CARD -->
+<div class="card">
+
+    <img
+        class="product-image"
+        src="speaker3.jpg"
+        alt="Bluetooth FM USB Speaker"
+    >
+
+    <div class="info">
+
+        <span class="tag">MULTI CONNECTIVITY</span>
+
+        <h2>Bluetooth FM USB Speaker</h2>
+
+        <p class="desc">
+            Bluetooth • FM • TF/SD Card • USB
+        </p>
+
+        <div class="price">
+
+            <span class="offer">₹599</span>
+
+            <span class="original">
+                ₹1,259
+            </span>
+
+        </div>
+
+        <button class="buy"
+            onclick="addToCart('Bluetooth FM USB Speaker',599)">
+            Add to Cart
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- EXTRA PRODUCT -->
+<div class="card">
+
+    <img
+        class="product-image"
+        src="speaker4.jpg"
+        alt="5W Premium Speaker"
+    >
+
+    <div class="info">
+
+        <span class="tag">NEW</span>
+
+        <h2>5W Premium Wireless Speaker</h2>
+
+        <p class="desc">
+            Compact wireless speaker with USB Type-C charging.
+        </p>
+
+        <div class="price">
+
+            <span class="offer">₹599</span>
+
+            <span class="original">
+                ₹1,259
+            </span>
+
+        </div>
+
+        <button class="buy"
+            onclick="addToCart('5W Premium Wireless Speaker',599)">
+            Add to Cart
+        </button>
+
+    </div>
 
 </div>
 
@@ -512,930 +566,144 @@ EXPLORE PRODUCTS →
 
 
 <!-- FEATURES -->
+<section class="feature">
 
-<div class="mini-features">
+<div class="feature-box">
 
-<div class="mini">
-<strong>🚚 FAST DELIVERY</strong>
-<span>Doorstep delivery</span>
-</div>
+<h2>Why you'll love it ❤️</h2>
 
-<div class="mini">
-<strong>💰 SMART PRICES</strong>
-<span>Great everyday deals</span>
-</div>
+<div class="features">
 
-<div class="mini">
-<strong>🔒 SAFE SHOPPING</strong>
-<span>Shop with confidence</span>
-</div>
+    <div class="feature-item">
+        <b>🔵 Bluetooth</b>
+        <span>Connect easily with your phone.</span>
+    </div>
 
-<div class="mini">
-<strong>💬 EASY ORDER</strong>
-<span>Simple ordering</span>
-</div>
+    <div class="feature-item">
+        <b>📻 FM Radio</b>
+        <span>Enjoy FM radio anytime.</span>
+    </div>
 
-</div>
+    <div class="feature-item">
+        <b>💾 TF / SD Card</b>
+        <span>Play your own music.</span>
+    </div>
 
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-<div class="about-inner">
-
-<div class="about-label">
-ABOUT SMART BASKET
-</div>
-
-<h2>
-SMART SHOPPING.<br>
-<span>BETTER TOMORROW.</span>
-</h2>
-
-<p>
-Smart Basket is an online shopping space created to make everyday
-shopping simple, convenient and affordable. We bring useful products,
-everyday essentials and smart finds together in one place.
-</p>
-
-<p>
-We believe that smart shopping is not only about finding better products
-and better prices — it is also about making responsible choices for a
-better tomorrow.
-</p>
-
-<div class="nature-quote">
-🌱 “Shop smart. Live better. Protect nature.”
-</div>
-
-<div class="about-points">
-
-<div>
-<strong>🛍️ USEFUL PRODUCTS</strong>
-<span>Products chosen with everyday needs in mind.</span>
-</div>
-
-<div>
-<strong>💰 SMART PRICES</strong>
-<span>Better value without unnecessary complexity.</span>
-</div>
-
-<div>
-<strong>🌱 BETTER TOMORROW</strong>
-<span>Making thoughtful choices for a cleaner future.</span>
-</div>
+    <div class="feature-item">
+        <b>🔌 USB Type-C</b>
+        <span>Convenient charging.</span>
+    </div>
 
 </div>
 
 </div>
 
 </section>
-
-
-<!-- CATEGORIES -->
-
-<section class="section" id="categories">
-
-<div class="heading">
-
-<h2>Shop by Category</h2>
-
-<p>
-Explore our collection of useful products.
-</p>
-
-</div>
-
-<div class="categories">
-
-<div class="category">
-<div>
-<span class="category-icon">🏠</span>
-<span class="category-name">HOME & KITCHEN</span>
-</div>
-</div>
-
-<div class="category">
-<div>
-<span class="category-icon">📱</span>
-<span class="category-name">GADGETS</span>
-</div>
-</div>
-
-<div class="category">
-<div>
-<span class="category-icon">✨</span>
-<span class="category-name">BEAUTY</span>
-</div>
-</div>
-
-<div class="category">
-<div>
-<span class="category-icon">🛍️</span>
-<span class="category-name">DAILY ESSENTIALS</span>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- DEAL -->
-
-<div class="deal">
-
-<div class="deal-small">
-SMART BASKET SPECIAL
-</div>
-
-<h2>
-FIND A BETTER DEAL.
-</h2>
-
-<p>
-Good products. Simple shopping. Better prices.
-</p>
-
-</div>
-
-
-<!-- PRODUCTS -->
-
-<section class="section" id="products">
-
-<div class="heading">
-
-<h2>
-Featured Products
-</h2>
-
-<p>
-Our current smart picks.
-</p>
-
-</div>
-
-
-<div class="products">
-
-
-<!-- PRODUCT 1 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<span class="badge">
-BEST SELLER
-</span>
-
-<img src="https://via.placeholder.com/500x400?text=Product+1">
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Premium Product
-</h3>
-
-<div class="description">
-Useful for everyday life.
-</div>
-
-<div class="price">
-₹499
-<span class="old">₹799</span>
-</div>
-
-<a class="order"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Premium%20Product.">
-
-💬 ORDER ON WHATSAPP
-
-</a>
-
-<button class="buy"
-onclick="openCheckout('Premium Product',499)">
-
-💳 BUY NOW • ₹499
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- PRODUCT 2 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<span class="badge">
-HOT DEAL
-</span>
-
-<img src="https://via.placeholder.com/500x400?text=Product+2">
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Smart Home Product
-</h3>
-
-<div class="description">
-A useful addition to your home.
-</div>
-
-<div class="price">
-₹399
-<span class="old">₹699</span>
-</div>
-
-<a class="order"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Smart%20Home%20Product.">
-
-💬 ORDER ON WHATSAPP
-
-</a>
-
-<button class="buy"
-onclick="openCheckout('Smart Home Product',399)">
-
-💳 BUY NOW • ₹399
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- PRODUCT 3 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<span class="badge">
-NEW
-</span>
-
-<img src="https://via.placeholder.com/500x400?text=Product+3">
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Useful Gadget
-</h3>
-
-<div class="description">
-Make everyday tasks easier.
-</div>
-
-<div class="price">
-₹599
-<span class="old">₹999</span>
-</div>
-
-<a class="order"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Useful%20Gadget.">
-
-💬 ORDER ON WHATSAPP
-
-</a>
-
-<button class="buy"
-onclick="openCheckout('Useful Gadget',599)">
-
-💳 BUY NOW • ₹599
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- PRODUCT 4 -->
-
-<div class="product">
-
-<div class="product-image">
-
-<span class="badge">
-SALE
-</span>
-
-<img src="https://via.placeholder.com/500x400?text=Product+4">
-
-</div>
-
-<div class="product-info">
-
-<h3>
-Daily Essential
-</h3>
-
-<div class="description">
-Simple, useful and affordable.
-</div>
-
-<div class="price">
-₹299
-<span class="old">₹499</span>
-</div>
-
-<a class="order"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20want%20to%20order%20Daily%20Essential.">
-
-💬 ORDER ON WHATSAPP
-
-</a>
-
-<button class="buy"
-onclick="openCheckout('Daily Essential',299)">
-
-💳 BUY NOW • ₹299
-
-</button>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- FEATURE -->
-
-<div class="feature">
-
-<div class="feature-content">
-
-<div class="feature-label">
-SMART SHOPPING
-</div>
-
-<h2>
-LESS SEARCH.<br>
-MORE SMART.
-</h2>
-
-<p>
-Smart Basket brings useful products, everyday essentials and interesting
-finds together in one simple shopping space.
-</p>
-
-<a href="#products" class="btn">
-SHOP COLLECTION →
-</a>
-
-</div>
-
-<div class="feature-image">
-SMART BASKET
-</div>
-
-</div>
-
-
-<!-- WHY -->
-
-<section class="section">
-
-<div class="heading">
-
-<h2>
-Why Smart Basket?
-</h2>
-
-<p>
-Made for simple and smarter shopping.
-</p>
-
-</div>
-
-<div class="why">
-
-<div class="why-box">
-
-<div class="why-icon">🚚</div>
-
-<h3>
-Fast Delivery
-</h3>
-
-<p>
-Reliable delivery straight to your doorstep.
-</p>
-
-</div>
-
-
-<div class="why-box">
-
-<div class="why-icon">💰</div>
-
-<h3>
-Better Prices
-</h3>
-
-<p>
-Great products at prices that make sense.
-</p>
-
-</div>
-
-
-<div class="why-box">
-
-<div class="why-icon">💬</div>
-
-<h3>
-Easy Ordering
-</h3>
-
-<p>
-Choose your product and complete your order easily.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CTA -->
-
-<div class="cta">
-
-<h2>
-Ready to Shop Smart?
-</h2>
-
-<p>
-Discover something useful today.
-</p>
-
-<a href="#products" class="btn">
-START SHOPPING →
-</a>
-
-</div>
 
 
 <!-- FOOTER -->
+<footer>
 
-<footer id="contact">
+    <h2>SmartBasket</h2>
 
-<h2>
-🛒 SMART<span> BASKET</span>
-</h2>
+    <p>
+        Smart products. Smart prices.
+    </p>
 
-<p>
-Smart Choices. Better Prices.
-</p>
-
-<div class="contact-buttons">
-
-<a class="whatsapp"
-href="https://wa.me/918921678447?text=Hello%20Smart%20Basket,%20I%20need%20more%20information.">
-
-💬 WHATSAPP
-
-</a>
-
-<a class="email-btn"
-href="mailto:irshadiqu@gmail.com">
-
-✉️ EMAIL US
-
-</a>
-
-</div>
-
-<p>
-📱 +91 89216 78447
-</p>
-
-<p>
-📧 irshadiqu@gmail.com
-</p>
-
-<p>
-© 2026 Smart Basket. All Rights Reserved.
-</p>
+    <p>
+        © 2026 SmartBasket
+    </p>
 
 </footer>
 
 
-<!-- CHECKOUT MODAL -->
-
-<div id="checkoutModal">
-
-<div class="checkout-box">
-
-<div class="checkout-header">
-
-<h2>
-Complete Your Order
-</h2>
-
-<button class="close-btn"
-onclick="closeCheckout()">
-×
-</button>
-
-</div>
-
-
-<div class="summary">
-
-Product:
-<strong id="productName"></strong>
-
-<br>
-
-Total:
-<strong>
-₹<span id="productPrice"></span>
-</strong>
-
-</div>
-
-
-<form id="checkoutForm">
-
-
-<div class="field">
-
-<label>
-FULL NAME *
-</label>
-
-<input
-id="customerName"
-type="text"
-required
-placeholder="Enter your name">
-
-</div>
-
-
-<div class="field">
-
-<label>
-FULL ADDRESS *
-</label>
-
-<textarea
-id="customerAddress"
-required
-placeholder="House name, street, landmark...">
-</textarea>
-
-</div>
-
-
-<div class="field">
-
-<label>
-PIN CODE *
-</label>
-
-<input
-id="customerPin"
-type="text"
-inputmode="numeric"
-maxlength="6"
-required
-placeholder="6 digit PIN code">
-
-</div>
-
-
-<div class="field">
-
-<label>
-CITY *
-</label>
-
-<input
-id="customerCity"
-type="text"
-required
-placeholder="City">
-
-</div>
-
-
-<div class="field">
-
-<label>
-TOWN / VILLAGE *
-</label>
-
-<input
-id="customerTown"
-type="text"
-required
-placeholder="Town / Village">
-
-</div>
-
-
-<div class="field">
-
-<label>
-MOBILE NUMBER *
-</label>
-
-<input
-id="customerMobile"
-type="tel"
-inputmode="numeric"
-maxlength="10"
-required
-placeholder="10 digit mobile number">
-
-</div>
-
-
-<div class="field">
-
-<label>
-EMAIL *
-</label>
-
-<input
-id="customerEmail"
-type="email"
-required
-placeholder="your@email.com">
-
-</div>
-
-
-<div class="payment-title">
-SELECT PAYMENT METHOD
-</div>
-
-
-<div class="payment-options">
-
-<div
-class="payment-option active"
-id="upiOption"
-onclick="selectPayment('UPI')">
-
-💳 UPI PAYMENT
-
-</div>
-
-
-<div
-class="payment-option"
-id="codOption"
-onclick="selectPayment('COD')">
-
-💵 CASH ON DELIVERY
-
-</div>
-
-</div>
-
-
-<button
-id="paymentButton"
-type="button"
-class="payment-action upi-btn"
-onclick="processOrder()">
-
-💳 PAY VIA UPI
-
-</button>
-
-
-<a
-id="whatsappConfirm"
-class="payment-action"
-style="display:none;background:#25D366;color:white"
-target="_blank">
-
-💬 CONFIRM COD ORDER
-
-</a>
-
-
-<div class="small-note">
-
-Your order details will be sent to Smart Basket WhatsApp.
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-
 <script>
 
-let selectedProduct="";
-let selectedPrice=0;
-let paymentMethod="UPI";
+let cart = [];
 
+function addToCart(name,price){
 
-function openCheckout(product,price){
+    cart.push({
+        name:name,
+        price:price
+    });
 
-selectedProduct=product;
-selectedPrice=price;
+    document.getElementById("cartCount").innerText =
+        cart.length;
 
-document.getElementById("productName").textContent=product;
-
-document.getElementById("productPrice").textContent=price;
-
-document.getElementById("checkoutModal").style.display="block";
-
-document.body.style.overflow="hidden";
-
-selectPayment("UPI");
-
+    alert(
+        name +
+        " added to cart 🛒"
+    );
 }
 
 
-function closeCheckout(){
+function showCart(){
 
-document.getElementById("checkoutModal").style.display="none";
+    if(cart.length === 0){
 
-document.body.style.overflow="auto";
+        alert("Your cart is empty 🛒");
 
+        return;
+    }
+
+    let message = "YOUR CART\n\n";
+
+    let total = 0;
+
+    cart.forEach((item,index)=>{
+
+        message +=
+            (index+1) +
+            ". " +
+            item.name +
+            " - ₹" +
+            item.price +
+            "\n";
+
+        total += item.price;
+
+    });
+
+    message +=
+        "\nTotal: ₹" +
+        total;
+
+    alert(message);
 }
 
 
-function selectPayment(method){
+function searchProducts(){
 
-paymentMethod=method;
+    let search =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
 
-document.getElementById("upiOption")
-.classList.remove("active");
+    let cards =
+        document.querySelectorAll(".card");
 
-document.getElementById("codOption")
-.classList.remove("active");
+    cards.forEach(card=>{
 
-document.getElementById("whatsappConfirm")
-.style.display="none";
+        let text =
+            card.innerText.toLowerCase();
 
+        if(text.includes(search)){
 
-if(method==="UPI"){
+            card.style.display =
+                "inline-block";
 
-document.getElementById("upiOption")
-.classList.add("active");
+        }else{
 
-document.getElementById("paymentButton")
-.style.display="block";
+            card.style.display =
+                "none";
 
-document.getElementById("paymentButton")
-.className="payment-action upi-btn";
+        }
 
-document.getElementById("paymentButton")
-.innerHTML=
-"💳 PAY ₹"+selectedPrice+" VIA UPI";
-
-}
-
-else{
-
-document.getElementById("codOption")
-.classList.add("active");
-
-document.getElementById("paymentButton")
-.style.display="block";
-
-document.getElementById("paymentButton")
-.className="payment-action cod-btn";
-
-document.getElementById("paymentButton")
-.innerHTML=
-"💵 PLACE COD ORDER";
+    });
 
 }
-
-}
-
-
-function getOrderMessage(){
-
-let name=document.getElementById("customerName").value.trim();
-
-let address=document.getElementById("customerAddress").value.trim();
-
-let pin=document.getElementById("customerPin").value.trim();
-
-let city=document.getElementById("customerCity").value.trim();
-
-let town=document.getElementById("customerTown").value.trim();
-
-let mobile=document.getElementById("customerMobile").value.trim();
-
-let email=document.getElementById("customerEmail").value.trim();
-
-
-return "🛒 *NEW SMART BASKET ORDER*%0A%0A"+
-
-"📦 Product: "+encodeURIComponent(selectedProduct)+"%0A"+
-
-"💰 Amount: ₹"+selectedPrice+"%0A"+
-
-"💳 Payment: "+paymentMethod+"%0A%0A"+
-
-"👤 Name: "+encodeURIComponent(name)+"%0A"+
-
-"🏠 Address: "+encodeURIComponent(address)+"%0A"+
-
-"📮 PIN Code: "+encodeURIComponent(pin)+"%0A"+
-
-"🏙️ City: "+encodeURIComponent(city)+"%0A"+
-
-"📍 Town/Village: "+encodeURIComponent(town)+"%0A"+
-
-"📱 Mobile: "+encodeURIComponent(mobile)+"%0A"+
-
-"📧 Email: "+encodeURIComponent(email);
-
-}
-
-
-function processOrder(){
-
-let form=document.getElementById("checkoutForm");
-
-
-if(!form.checkValidity()){
-
-form.reportValidity();
-
-return;
-
-}
-
-
-if(paymentMethod==="COD"){
-
-let message=getOrderMessage();
-
-document.getElementById("paymentButton")
-.style.display="none";
-
-
-let wa=document.getElementById("whatsappConfirm");
-
-wa.href=
-"https://wa.me/918921678447?text="+message;
-
-wa.style.display="block";
-
-}
-
-else{
-
-let upi=
-"upi://pay?pa=k63653390@oksbi"+
-"&pn=Smart%20Basket"+
-"&am="+selectedPrice+
-"&cu=INR";
-
-window.location.href=upi;
-
-}
-
-}
-
-
-document.getElementById("checkoutModal")
-.addEventListener("click",function(e){
-
-if(e.target===this){
-
-closeCheckout();
-
-}
-
-});
 
 </script>
 
