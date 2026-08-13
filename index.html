@@ -19,7 +19,7 @@ body{
   color:#111;
 }
 
-button,input{
+button,input,textarea{
   font:inherit;
 }
 
@@ -28,6 +28,7 @@ button{
 }
 
 /* HEADER */
+
 header{
   position:sticky;
   top:0;
@@ -92,6 +93,7 @@ header{
 }
 
 /* HERO */
+
 .hero{
   max-width:1250px;
   margin:24px auto 10px;
@@ -137,6 +139,7 @@ header{
 }
 
 /* CATEGORIES */
+
 .categories{
   max-width:1250px;
   margin:20px auto;
@@ -164,6 +167,7 @@ header{
 }
 
 /* PRODUCTS */
+
 .products{
   max-width:1250px;
   margin:auto;
@@ -274,6 +278,7 @@ header{
 }
 
 /* FEATURES */
+
 .feature{
   max-width:1250px;
   margin:0 auto 40px;
@@ -313,6 +318,7 @@ header{
 }
 
 /* FOOTER */
+
 footer{
   background:#111;
   color:#fff;
@@ -331,6 +337,7 @@ footer p{
   display:flex;
   justify-content:center;
   gap:18px;
+  flex-wrap:wrap;
 }
 
 .footer-links a{
@@ -338,7 +345,8 @@ footer p{
   text-decoration:none;
 }
 
-/* MODAL */
+/* MODALS */
+
 .modal-bg{
   display:none;
   position:fixed;
@@ -363,18 +371,6 @@ footer p{
   max-height:90vh;
   overflow:auto;
   position:relative;
-  animation:popup .2s ease;
-}
-
-@keyframes popup{
-  from{
-    transform:scale(.92);
-    opacity:0;
-  }
-  to{
-    transform:scale(1);
-    opacity:1;
-  }
 }
 
 .close{
@@ -436,6 +432,7 @@ footer p{
 }
 
 /* CART */
+
 .cart-item{
   display:flex;
   justify-content:space-between;
@@ -466,7 +463,24 @@ footer p{
   padding:18px 0;
 }
 
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.small-note{
+  font-size:12px;
+  color:#777;
+  margin-bottom:14px;
+}
+
 /* MOBILE */
+
 @media(max-width:1000px){
 
   .products{
@@ -526,6 +540,14 @@ footer p{
     grid-template-columns:1fr 1fr;
   }
 
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
 }
 
 @media(max-width:430px){
@@ -544,135 +566,136 @@ footer p{
 
 <body>
 
-<!-- HEADER -->
 <header>
 
 <div class="nav">
 
-  <div class="logo">
-    Smart<span>Basket</span>
-  </div>
+<div class="logo">
+Smart<span>Basket</span>
+</div>
 
-  <input
-    class="search"
-    id="search"
-    type="search"
-    placeholder="Search products..."
-  >
+<input
+class="search"
+id="search"
+type="search"
+placeholder="Search products..."
+>
 
-  <span
-    class="user-name"
-    id="userName">
-  </span>
+<span
+class="user-name"
+id="userName">
+</span>
 
-  <button
-    class="nav-btn light"
-    id="accountBtn">
-    Login
-  </button>
+<button
+class="nav-btn light"
+id="accountBtn"
+type="button">
+Login
+</button>
 
-  <button
-    class="nav-btn"
-    id="cartButton">
-    🛒 <span id="cartCount">0</span>
-  </button>
+<button
+class="nav-btn"
+id="cartButton"
+type="button">
+🛒 <span id="cartCount">0</span>
+</button>
 
 </div>
 
 </header>
 
 
-<!-- HERO -->
 <section class="hero">
 
 <div class="hero-box">
 
-  <div>
+<div>
 
-    <h1>
-      Discover products<br>
-      you'll love.
-    </h1>
+<h1>
+Discover products<br>
+you'll love.
+</h1>
 
-    <p>
-      Trending • Useful • Affordable
-    </p>
+<p>
+Trending • Useful • Affordable
+</p>
 
-  </div>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- CATEGORIES -->
 <div class="categories">
 
-<button class="category active"
-        data-category="all">
-  All
+<button
+class="category active"
+data-category="all">
+All
 </button>
 
-<button class="category"
-        data-category="electronics">
-  Electronics
+<button
+class="category"
+data-category="electronics">
+Electronics
 </button>
 
-<button class="category"
-        data-category="gadgets">
-  Gadgets
+<button
+class="category"
+data-category="gadgets">
+Gadgets
 </button>
 
-<button class="category"
-        data-category="accessories">
-  Accessories
+<button
+class="category"
+data-category="accessories">
+Accessories
 </button>
 
 </div>
 
 
-<!-- PRODUCTS -->
 <section class="products">
 
 
-<!-- EARBUDS -->
-<div class="card"
-     data-category="electronics gadgets"
-     data-name="Premium True Wireless Earbuds">
+<div
+class="card"
+data-category="electronics gadgets">
 
 <img
-  class="product-image"
-  src="earbuds.jpg"
-  alt="Premium True Wireless Earbuds"
+class="product-image"
+src="earbuds.jpg"
+alt="Premium True Wireless Earbuds"
 >
 
 <div class="info">
 
 <span class="tag">
-  🔥 BEST SELLER
+🔥 BEST SELLER
 </span>
 
 <h2>
-  Premium True Wireless Earbuds
+Premium True Wireless Earbuds
 </h2>
 
 <p class="desc">
-  Clear sound, stable Bluetooth connection,
-  clear calls and stylish charging case.
+Clear sound, stable Bluetooth connection,
+clear calls and stylish charging case.
 </p>
 
 <div class="price">
 
 <span class="offer">
-  ₹599
+₹599
 </span>
 
 <span class="original">
-  ₹1,200
+₹1,200
 </span>
 
 <span class="discount">
-  50% OFF
+50% OFF
 </span>
 
 </div>
@@ -680,61 +703,61 @@ footer p{
 <div class="buy-row">
 
 <button
-  class="buy"
-  onclick="buyNow('Premium True Wireless Earbuds',599)">
-  Buy Now
+class="buy"
+onclick="buyNow('Premium True Wireless Earbuds',599)">
+Buy Now
 </button>
 
 <button
-  class="cart-btn"
-  onclick="addToCart('Premium True Wireless Earbuds',599)">
-  🛒
+class="cart-btn"
+onclick="addToCart('Premium True Wireless Earbuds',599)">
+🛒
 </button>
 
 </div>
 
 </div>
+
 </div>
 
 
-<!-- CHARGER -->
-<div class="card"
-     data-category="accessories electronics"
-     data-name="Premium Charger Case">
+<div
+class="card"
+data-category="accessories electronics">
 
 <img
-  class="product-image"
-  src="charger-case.jpg"
-  alt="Premium Charger Case"
+class="product-image"
+src="charger-case.jpg"
+alt="Premium Charger Case"
 >
 
 <div class="info">
 
 <span class="tag">
-  ⚡ HOT DEAL
+⚡ HOT DEAL
 </span>
 
 <h2>
-  Premium Charger Case
+Premium Charger Case
 </h2>
 
 <p class="desc">
-  Compact and convenient charging accessory
-  for everyday use.
+Compact and convenient charging accessory
+for everyday use.
 </p>
 
 <div class="price">
 
 <span class="offer">
-  ₹199
+₹199
 </span>
 
 <span class="original">
-  ₹799
+₹799
 </span>
 
 <span class="discount">
-  75% OFF
+75% OFF
 </span>
 
 </div>
@@ -742,61 +765,61 @@ footer p{
 <div class="buy-row">
 
 <button
-  class="buy"
-  onclick="buyNow('Premium Charger Case',199)">
-  Buy Now
+class="buy"
+onclick="buyNow('Premium Charger Case',199)">
+Buy Now
 </button>
 
 <button
-  class="cart-btn"
-  onclick="addToCart('Premium Charger Case',199)">
-  🛒
+class="cart-btn"
+onclick="addToCart('Premium Charger Case',199)">
+🛒
 </button>
 
 </div>
 
 </div>
+
 </div>
 
 
-<!-- ASTRONAUT SPEAKER -->
-<div class="card"
-     data-category="electronics gadgets"
-     data-name="Astronaut Bluetooth Speaker">
+<div
+class="card"
+data-category="electronics gadgets">
 
 <img
-  class="product-image"
-  src="astronaut-speaker.jpg"
-  alt="Astronaut Bluetooth Speaker"
+class="product-image"
+src="astronaut-speaker.jpg"
+alt="Astronaut Bluetooth Speaker"
 >
 
 <div class="info">
 
 <span class="tag">
-  🚀 TRENDING
+🚀 TRENDING
 </span>
 
 <h2>
-  Astronaut Bluetooth Speaker
+Astronaut Bluetooth Speaker
 </h2>
 
 <p class="desc">
-  Stylish astronaut design with RGB lighting,
-  Bluetooth and multiple playback options.
+Stylish astronaut design with RGB lighting,
+Bluetooth and multiple playback options.
 </p>
 
 <div class="price">
 
 <span class="offer">
-  ₹499
+₹499
 </span>
 
 <span class="original">
-  ₹1,299
+₹1,299
 </span>
 
 <span class="discount">
-  62% OFF
+62% OFF
 </span>
 
 </div>
@@ -804,61 +827,61 @@ footer p{
 <div class="buy-row">
 
 <button
-  class="buy"
-  onclick="buyNow('Astronaut Bluetooth Speaker',499)">
-  Buy Now
+class="buy"
+onclick="buyNow('Astronaut Bluetooth Speaker',499)">
+Buy Now
 </button>
 
 <button
-  class="cart-btn"
-  onclick="addToCart('Astronaut Bluetooth Speaker',499)">
-  🛒
+class="cart-btn"
+onclick="addToCart('Astronaut Bluetooth Speaker',499)">
+🛒
 </button>
 
 </div>
 
 </div>
+
 </div>
 
 
-<!-- RETRO SPEAKER -->
-<div class="card"
-     data-category="electronics gadgets"
-     data-name="Premium Retro Wireless Speaker">
+<div
+class="card"
+data-category="electronics gadgets">
 
 <img
-  class="product-image"
-  src="retro-speaker.jpg"
-  alt="Premium Retro Wireless Speaker"
+class="product-image"
+src="retro-speaker.jpg"
+alt="Premium Retro Wireless Speaker"
 >
 
 <div class="info">
 
 <span class="tag">
-  ✨ PREMIUM
+✨ PREMIUM
 </span>
 
 <h2>
-  Premium Retro Wireless Speaker
+Premium Retro Wireless Speaker
 </h2>
 
 <p class="desc">
-  Retro design with Bluetooth, FM Radio,
-  USB, TF/SD card and Type-C charging.
+Retro design with Bluetooth, FM Radio,
+USB, TF/SD card and Type-C charging.
 </p>
 
 <div class="price">
 
 <span class="offer">
-  ₹599
+₹599
 </span>
 
 <span class="original">
-  ₹1,259
+₹1,259
 </span>
 
 <span class="discount">
-  52% OFF
+52% OFF
 </span>
 
 </div>
@@ -866,32 +889,32 @@ footer p{
 <div class="buy-row">
 
 <button
-  class="buy"
-  onclick="buyNow('Premium Retro Wireless Speaker',599)">
-  Buy Now
+class="buy"
+onclick="buyNow('Premium Retro Wireless Speaker',599)">
+Buy Now
 </button>
 
 <button
-  class="cart-btn"
-  onclick="addToCart('Premium Retro Wireless Speaker',599)">
-  🛒
+class="cart-btn"
+onclick="addToCart('Premium Retro Wireless Speaker',599)">
+🛒
 </button>
 
 </div>
 
 </div>
+
 </div>
 
 </section>
 
 
-<!-- FEATURES -->
 <section class="feature">
 
 <div class="feature-box">
 
 <h2>
-  Why shop with Smart Basket ❤️
+Why shop with Smart Basket ❤️
 </h2>
 
 <div class="features">
@@ -899,28 +922,28 @@ footer p{
 <div class="feature-item">
 <b>🚚 Fast Delivery</b>
 <span>
-  Delivery to your doorstep.
+Delivery to your doorstep.
 </span>
 </div>
 
 <div class="feature-item">
 <b>💵 COD Available</b>
 <span>
-  Pay when your order arrives.
+Pay when your order arrives.
 </span>
 </div>
 
 <div class="feature-item">
 <b>📦 Secure Packaging</b>
 <span>
-  Carefully packed products.
+Carefully packed products.
 </span>
 </div>
 
 <div class="feature-item">
 <b>🤝 Customer Support</b>
 <span>
-  We're here to help.
+We're here to help.
 </span>
 </div>
 
@@ -931,1042 +954,1038 @@ footer p{
 </section>
 
 
-<!-- FOOTER -->
 <footer>
 
 <h2>
-  SmartBasket
+SmartBasket
 </h2>
 
 <p>
-  Smart products. Better prices.
+Smart products. Better prices.
 </p>
 
 <div class="footer-links">
 
 <a href="mailto:irshadiqu@gmail.com">
-  📧 Email
+📧 irshadiqu@gmail.com
+</a>
+
+<a href="tel:8848763849">
+📞 8848763849
 </a>
 
 <a
-  href="https://wa.me/YOUR_WHATSAPP_NUMBER"
-  target="_blank">
-  📲 WhatsApp
+href="https://wa.me/918921678447"
+target="_blank">
+📲 WhatsApp
 </a>
 
 </div>
 
 <p>
-  © 2026 Smart Basket. All Rights Reserved.
+© 2026 Smart Basket. All Rights Reserved.
 </p>
 
 </footer>
 
 
-<!-- LOGIN / SIGNUP MODAL -->
+<!-- LOGIN -->
+
 <div
-  class="modal-bg"
-  id="authModal">
+class="modal-bg"
+id="authModal">
 
 <div class="modal">
 
 <button
-  class="close"
-  id="closeAuth">
-  ✕
+class="close"
+id="closeAuth"
+type="button">
+✕
 </button>
 
 <h2 id="authTitle">
-  Login
+Login
 </h2>
 
+<p class="small-note">
+Login with your Smart Basket account.
+</p>
+
 <input
-  class="form-input"
-  id="authEmail"
-  type="email"
-  placeholder="Email address"
+class="form-input"
+id="authEmail"
+type="email"
+placeholder="Email address"
 >
 
 <input
-  class="form-input"
-  id="authPassword"
-  type="password"
-  placeholder="Password"
+class="form-input"
+id="authPassword"
+type="password"
+placeholder="Password"
 >
 
 <button
-  class="primary"
-  id="authSubmit">
-  Login
+class="primary"
+id="authSubmit"
+type="button">
+Login
 </button>
 
 <button
-  class="switch"
-  id="authSwitch">
-  Create a new account
+class="switch"
+id="authSwitch"
+type="button">
+Create a new account
 </button>
 
 <div
-  class="message"
-  id="authMessage">
+class="message"
+id="authMessage">
 </div>
 
 </div>
+
 </div>
 
 
-<!-- CART MODAL -->
+<!-- CART -->
+
 <div
-  class="modal-bg"
-  id="cartModal">
+class="modal-bg"
+id="cartModal">
 
 <div class="modal">
 
 <button
-  class="close"
-  id="closeCart">
-  ✕
+class="close"
+id="closeCart"
+type="button">
+✕
 </button>
 
 <h2>
-  🛒 Your Cart
+🛒 Your Cart
 </h2>
 
-<div id="cartItems"></div>
+<div id="cartItems">
+</div>
 
 <div class="total">
 
 <span>
-  Total
+Total
 </span>
 
 <span id="cartTotal">
-  ₹0
+₹0
 </span>
 
 </div>
 
 <button
-  class="primary red-btn"
-  id="cartOrder">
-  Order on WhatsApp
+class="primary red-btn"
+id="cartOrder"
+type="button">
+Order on WhatsApp
 </button>
 
 </div>
+
 </div>
 
 
-<!-- BUY NOW MODAL -->
+<!-- CUSTOMER CHECKOUT -->
+
 <div
-  class="modal-bg"
-  id="buyModal">
+class="modal-bg"
+id="checkoutModal">
 
 <div class="modal">
 
 <button
-  class="close"
-  id="closeBuy">
-  ✕
+class="close"
+id="closeCheckout"
+type="button">
+✕
 </button>
 
 <h2>
-  🛍️ Place Order
+🛍️ Complete Order
 </h2>
 
 <p
-  id="buyProduct"
-  style="font-weight:800;margin-bottom:5px;">
+class="small-note"
+id="checkoutSummary">
 </p>
 
-<p
-  id="buyPrice"
-  style="margin-bottom:15px;">
-</p>
+<div class="form-grid">
 
 <input
-  class="form-input"
-  id="customerName"
-  placeholder="Your name"
+class="form-input"
+id="customerName"
+placeholder="Name"
 >
 
 <input
-  class="form-input"
-  id="customerPhone"
-  type="tel"
-  placeholder="Phone number"
+class="form-input"
+id="customerPhone"
+type="tel"
+placeholder="Mobile Number"
+>
+
+<textarea
+class="form-input full"
+id="customerAddress"
+rows="3"
+placeholder="Address">
+</textarea>
+
+<input
+class="form-input"
+id="customerPin"
+inputmode="numeric"
+maxlength="6"
+placeholder="PIN Code"
 >
 
 <input
-  class="form-input"
-  id="customerAddress"
-  placeholder="Delivery address"
+class="form-input"
+id="customerCity"
+placeholder="City"
 >
+
+<input
+class="form-input full"
+id="customerState"
+placeholder="State"
+>
+
+</div>
 
 <button
-  class="primary"
-  id="whatsappOrder">
-  📲 Confirm via WhatsApp
-</button>
-
-<button
-  class="primary red-btn"
-  id="emailOrder">
-  📧 Order by Email
+class="primary red-btn"
+id="whatsappOrder"
+type="button">
+📲 Confirm Order on WhatsApp
 </button>
 
 </div>
+
 </div>
 
 
-<!-- SUPABASE + WEBSITE SCRIPT -->
-<script type="module">
+<script>
 
-import {
-  createClient
-} from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-
-
-/* =========================================
-   SUPABASE SETTINGS
-   ========================================= */
-
-const SUPABASE_URL =
-"YOUR_SUPABASE_URL";
-
-const SUPABASE_PUBLISHABLE_KEY =
-"YOUR_SUPABASE_PUBLISHABLE_KEY";
-
-
-const supabase =
-  createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
-
-
-/* =========================================
-   CONTACT SETTINGS
-   ========================================= */
+/* =====================================
+SMART BASKET SETTINGS
+===================================== */
 
 const WHATSAPP_NUMBER =
-"YOUR_WHATSAPP_NUMBER";
+"918921678447";
 
-const EMAIL =
+const CONTACT_EMAIL =
 "irshadiqu@gmail.com";
 
 
-/* =========================================
-   ELEMENTS
-   ========================================= */
+/* =====================================
+ELEMENT HELPER
+===================================== */
 
-const authModal =
-document.getElementById("authModal");
+const $ = id =>
+document.getElementById(id);
 
-const cartModal =
-document.getElementById("cartModal");
 
-const buyModal =
-document.getElementById("buyModal");
-
-const accountBtn =
-document.getElementById("accountBtn");
-
-const cartButton =
-document.getElementById("cartButton");
-
-
-/* =========================================
-   AUTH
-   ========================================= */
-
-let authMode =
-"login";
-
-
-function openAuth(){
-
-  authModal.classList.add("show");
-
-}
-
-
-function closeAuth(){
-
-  authModal.classList.remove("show");
-
-  document.getElementById("authMessage")
-    .innerText="";
-
-}
-
-
-function toggleAuth(){
-
-  if(authMode === "login"){
-
-    authMode="signup";
-
-    document.getElementById("authTitle")
-      .innerText="Create Account";
-
-    document.getElementById("authSubmit")
-      .innerText="Sign Up";
-
-    document.getElementById("authSwitch")
-      .innerText="Already have an account? Login";
-
-  }else{
-
-    authMode="login";
-
-    document.getElementById("authTitle")
-      .innerText="Login";
-
-    document.getElementById("authSubmit")
-      .innerText="Login";
-
-    document.getElementById("authSwitch")
-      .innerText="Create a new account";
-
-  }
-
-}
-
-
-async function submitAuth(){
-
-  const email =
-    document.getElementById("authEmail")
-      .value.trim();
-
-  const password =
-    document.getElementById("authPassword")
-      .value;
-
-  const message =
-    document.getElementById("authMessage");
-
-
-  if(!email || !password){
-
-    message.innerText =
-      "Please enter email and password.";
-
-    return;
-
-  }
-
-
-  if(password.length < 6){
-
-    message.innerText =
-      "Password must contain at least 6 characters.";
-
-    return;
-
-  }
-
-
-  message.innerText =
-    "Please wait...";
-
-
-  if(authMode === "signup"){
-
-    const {
-      error
-    } =
-    await supabase.auth.signUp({
-
-      email:email,
-
-      password:password,
-
-      options:{
-        emailRedirectTo:
-        window.location.origin +
-        window.location.pathname
-      }
-
-    });
-
-
-    if(error){
-
-      message.innerText =
-        error.message;
-
-      return;
-
-    }
-
-
-    message.innerText =
-      "Account created! Check your email to confirm your account.";
-
-  }else{
-
-
-    const {
-      error
-    } =
-    await supabase.auth
-      .signInWithPassword({
-
-        email:email,
-
-        password:password
-
-      });
-
-
-    if(error){
-
-      message.innerText =
-        error.message;
-
-      return;
-
-    }
-
-
-    closeAuth();
-
-    updateUserUI();
-
-  }
-
-}
-
-
-async function logout(){
-
-  await supabase.auth.signOut();
-
-  updateUserUI();
-
-}
-
-
-async function updateUserUI(){
-
-  const {
-    data
-  } =
-  await supabase.auth.getUser();
-
-  const user =
-    data.user;
-
-
-  if(user){
-
-    document.getElementById("userName")
-      .innerText =
-      user.email;
-
-    accountBtn.innerText =
-      "Logout";
-
-    accountBtn.onclick =
-      logout;
-
-  }else{
-
-    document.getElementById("userName")
-      .innerText="";
-
-    accountBtn.innerText =
-      "Login";
-
-    accountBtn.onclick =
-      openAuth;
-
-  }
-
-}
-
-
-/* =========================================
-   CART
-   ========================================= */
+/* =====================================
+CART
+===================================== */
 
 let cart =
 JSON.parse(
-  localStorage.getItem("smartbasket_cart") || "[]"
+localStorage.getItem("smartbasket_cart") || "[]"
 );
 
 
 function saveCart(){
 
-  localStorage.setItem(
-    "smartbasket_cart",
-    JSON.stringify(cart)
-  );
+localStorage.setItem(
+"smartbasket_cart",
+JSON.stringify(cart)
+);
 
-  updateCartCount();
+updateCartCount();
 
 }
 
 
 function updateCartCount(){
 
-  let count =
-    cart.reduce(
-      (sum,item)=>sum + item.qty,
-      0
-    );
+const count =
+cart.reduce(
+(total,item)=>
+total + item.qty,
+0
+);
 
-  document.getElementById("cartCount")
-    .innerText=count;
+$("cartCount").textContent =
+count;
 
 }
 
 
 function addToCart(name,price){
 
-  const existing =
-    cart.find(
-      item=>item.name===name
-    );
+const existing =
+cart.find(
+item =>
+item.name === name
+);
 
 
-  if(existing){
+if(existing){
 
-    existing.qty++;
+existing.qty++;
 
-  }else{
+}else{
 
-    cart.push({
-      name:name,
-      price:price,
-      qty:1
-    });
+cart.push({
 
-  }
+name:name,
+price:price,
+qty:1
 
-
-  saveCart();
-
-  alert(
-    "Added to cart 🛒"
-  );
+});
 
 }
 
 
-function openCart(){
+saveCart();
 
-  renderCart();
-
-  cartModal.classList.add("show");
+openCart();
 
 }
 
 
-function closeCart(){
+function changeQty(index,amount){
 
-  cartModal.classList.remove("show");
+if(!cart[index])
+return;
+
+
+cart[index].qty += amount;
+
+
+if(cart[index].qty <= 0){
+
+cart.splice(index,1);
+
+}
+
+
+saveCart();
+
+renderCart();
 
 }
 
 
 function renderCart(){
 
-  const container =
-    document.getElementById("cartItems");
+const box =
+$("cartItems");
 
 
-  if(cart.length===0){
+if(cart.length === 0){
 
-    container.innerHTML =
-      "<p>Your cart is empty 🛒</p>";
+box.innerHTML =
+"<p>Your cart is empty 🛒</p>";
 
-    document.getElementById("cartTotal")
-      .innerText="₹<div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
-  <div style="background:white; padding:20px; border-radius:15px; width:300px;">
-    <h2>Login</h2>
+$("cartTotal").textContent =
+"₹0";
 
-    <input type="email" placeholder="Email"
-      style="width:100%; padding:10px; margin-bottom:10px;">
+return;
 
-    <input type="password" placeholder="Password"
-      style="width:100%; padding:10px; margin-bottom:10px;">
+}
 
-    <button style="width:100%; padding:10px; background:black; color:white; border:none; border-radius:10px;">
-      Login
-    </button>
 
-    <button onclick="closeLogin()"
-      style="margin-top:10px; width:100%; padding:10px;">
-      Close
-    </button>
-  </div>
+let total = 0;
+
+
+box.innerHTML =
+cart.map(
+(item,index)=>{
+
+total +=
+item.price *
+item.qty;
+
+
+return `
+
+<div class="cart-item">
+
+<div>
+
+<b>
+${escapeHtml(item.name)}
+</b>
+
+<br>
+
+<small>
+₹${item.price} × ${item.qty}
+</small>
+
 </div>
 
-<script>
-function openLogin(){
-  document.getElementById("loginModal").style.display = "flex";
-}
+<div class="qty">
 
-function closeLogin(){
-  document.getElementById("loginModal").style.display = "none";
-}
-</script>
+<button
+onclick="changeQty(${index},-1)">
+−
+</button>
 
+<b>
+${item.qty}
+</b>
 
-  let total=0;
+<button
+onclick="changeQty(${index},1)">
++
+</button>
 
+</div>
 
-  container.innerHTML =
-  cart.map((item,index)=>{
+</div>
 
-    total +=
-      item.price * item.qty;
+`;
 
-
-    return `
-
-    <div class="cart-item">
-
-      <div>
-
-        <b>
-          ${escapeHtml(item.name)}
-        </b>
-
-        <br>
-
-        <small>
-          ₹${item.price} × ${item.qty}
-        </small>
-
-      </div>
-
-      <div class="qty">
-
-        <button
-          onclick="changeQty(${index},-1)">
-          −
-        </button>
-
-        <b>
-          ${item.qty}
-        </b>
-
-        <button
-          onclick="changeQty(${index},1)">
-          +
-        </button>
-
-      </div>
-
-    </div>
-
-    `;
-
-  }).join("");
+}).join("");
 
 
-  document.getElementById("cartTotal")
-    .innerText =
-    "₹"+total;
+$("cartTotal").textContent =
+"₹" +
+total.toLocaleString("en-IN");
 
 }
 
 
-window.changeQty =
-function(index,change){
+function openCart(){
 
-  cart[index].qty += change;
+renderCart();
 
-
-  if(cart[index].qty <= 0){
-
-    cart.splice(index,1);
-
-  }
-
-
-  saveCart();
-
-  renderCart();
-
-};
-
-
-function orderCart(){
-
-  if(cart.length===0){
-
-    alert("Your cart is empty.");
-
-    return;
-
-  }
-
-
-  let message =
-    "Hello Smart Basket 👋\n\n" +
-    "I want to place an order:\n\n";
-
-
-  let total=0;
-
-
-  cart.forEach(item=>{
-
-    const itemTotal =
-      item.price * item.qty;
-
-    total += itemTotal;
-
-    message +=
-      "• "+
-      item.name+
-      " × "+
-      item.qty+
-      " = ₹"+
-      itemTotal+
-      "\n";
-
-  });
-
-
-  message +=
-    "\nTotal: ₹"+
-    total+
-    "\n\nPayment: Cash on Delivery";
-
-
-  window.open(
-    "https://wa.me/"+
-    WHATSAPP_NUMBER+
-    "?text="+
-    encodeURIComponent(message),
-    "_blank"
-  );
+$("cartModal")
+.classList.add("show");
 
 }
 
 
-/* =========================================
-   BUY NOW
-   ========================================= */
+function closeCart(){
 
-let selectedProduct =
-null;
+$("cartModal")
+.classList.remove("show");
+
+}
+
+
+/* =====================================
+BUY NOW
+===================================== */
+
+let selectedProduct = null;
 
 
 function buyNow(name,price){
 
-  selectedProduct={
-    name:name,
-    price:price
-  };
+selectedProduct = {
+
+name:name,
+price:price
+
+};
 
 
-  document.getElementById("buyProduct")
-    .innerText=name;
+$("checkoutSummary").textContent =
+"Product: " +
+name +
+" • ₹" +
+price.toLocaleString("en-IN");
 
 
-  document.getElementById("buyPrice")
-    .innerText=
-    "Offer Price: ₹"+price;
+$("checkoutModal")
+.classList.add("show");
+
+}
 
 
-  buyModal.classList.add("show");
+function closeCheckout(){
+
+$("checkoutModal")
+.classList.remove("show");
+
+}
+
+
+/* =====================================
+CHECKOUT
+===================================== */
+
+function validateCustomer(){
+
+const fields = [
+
+"customerName",
+"customerPhone",
+"customerAddress",
+"customerPin",
+"customerCity",
+"customerState"
+
+];
+
+
+return fields.every(
+id =>
+$(id).value.trim()
+);
+
+}
+
+
+function buildOrderMessage(){
+
+let message =
+"🛍️ SMART BASKET - NEW ORDER\n\n";
+
+
+let total = 0;
+
+
+if(cart.length){
+
+message +=
+"ORDER ITEMS:\n";
+
+
+cart.forEach(item=>{
+
+const subtotal =
+item.price *
+item.qty;
+
+
+total += subtotal;
+
+
+message +=
+"• " +
+item.name +
+" × " +
+item.qty +
+" = ₹" +
+subtotal +
+"\n";
+
+});
+
+
+message +=
+"\nTOTAL: ₹" +
+total.toLocaleString("en-IN") +
+"\n\n";
+
+}
+
+
+else if(selectedProduct){
+
+total =
+selectedProduct.price;
+
+
+message +=
+"PRODUCT: " +
+selectedProduct.name +
+"\n";
+
+message +=
+"PRICE: ₹" +
+selectedProduct.price +
+"\n\n";
+
+}
+
+
+message +=
+"CUSTOMER DETAILS:\n";
+
+
+message +=
+"Name: " +
+$("customerName").value.trim() +
+"\n";
+
+
+message +=
+"Mobile: " +
+$("customerPhone").value.trim() +
+"\n";
+
+
+message +=
+"Address: " +
+$("customerAddress").value.trim() +
+"\n";
+
+
+message +=
+"PIN Code: " +
+$("customerPin").value.trim() +
+"\n";
+
+
+message +=
+"City: " +
+$("customerCity").value.trim() +
+"\n";
+
+
+message +=
+"State: " +
+$("customerState").value.trim() +
+"\n\n";
+
+
+message +=
+"Payment: Cash on Delivery";
+
+
+return message;
 
 }
 
 
 function sendWhatsAppOrder(){
 
-  if(!selectedProduct){
-    return;
-  }
+if(!validateCustomer()){
 
+alert(
+"Please fill all customer details."
+);
 
-  const name =
-    document.getElementById("customerName")
-      .value.trim();
-
-  const phone =
-    document.getElementById("customerPhone")
-      .value.trim();
-
-  const address =
-    document.getElementById("customerAddress")
-      .value.trim();
-
-
-  if(!name || !phone || !address){
-
-    alert(
-      "Please fill all details."
-    );
-
-    return;
-
-  }
-
-
-  const message =
-    "Hello Smart Basket 👋\n\n"+
-    "NEW ORDER\n\n"+
-    "Product: "+
-    selectedProduct.name+
-    "\nPrice: ₹"+
-    selectedProduct.price+
-    "\n\nCustomer Name: "+
-    name+
-    "\nPhone: "+
-    phone+
-    "\nAddress: "+
-    address+
-    "\n\nPayment: Cash on Delivery";
-
-
-  window.open(
-    "https://wa.me/"+
-    WHATSAPP_NUMBER+
-    "?text="+
-    encodeURIComponent(message),
-    "_blank"
-  );
+return;
 
 }
 
 
-function emailOrder(){
-
-  if(!selectedProduct){
-    return;
-  }
+const message =
+buildOrderMessage();
 
 
-  const name =
-    document.getElementById("customerName")
-      .value.trim();
+window.open(
 
-  const phone =
-    document.getElementById("customerPhone")
-      .value.trim();
+"https://wa.me/" +
+WHATSAPP_NUMBER +
+"?text=" +
+encodeURIComponent(message),
 
-  const address =
-    document.getElementById("customerAddress")
-      .value.trim();
+"_blank"
 
-
-  const subject =
-    "Smart Basket Order - "+
-    selectedProduct.name;
+);
 
 
-  const body =
-    "NEW SMART BASKET ORDER\n\n"+
-    "Product: "+
-    selectedProduct.name+
-    "\nPrice: ₹"+
-    selectedProduct.price+
-    "\n\nCustomer Name: "+
-    name+
-    "\nPhone: "+
-    phone+
-    "\nAddress: "+
-    address+
-    "\n\nPayment: Cash on Delivery";
+cart = [];
 
+saveCart();
 
-  window.location.href =
-    "mailto:"+
-    EMAIL+
-    "?subject="+
-    encodeURIComponent(subject)+
-    "&body="+
-    encodeURIComponent(body);
+closeCheckout();
+
+closeCart();
 
 }
 
 
-/* =========================================
-   SEARCH
-   ========================================= */
+/* =====================================
+CART ORDER
+===================================== */
 
-function searchProducts(){
+function orderCart(){
 
-  const query =
-    document.getElementById("search")
-      .value
-      .toLowerCase();
+if(!cart.length){
 
+alert(
+"Your cart is empty."
+);
 
-  document.querySelectorAll(".card")
-    .forEach(card=>{
-
-      const text =
-        card.innerText.toLowerCase();
-
-      card.style.display =
-        text.includes(query)
-        ? "inline-block"
-        : "none";
-
-    });
+return;
 
 }
 
 
-/* =========================================
-   CATEGORY
-   ========================================= */
-
-function filterCategory(category){
-
-  document.querySelectorAll(".category")
-    .forEach(btn=>{
-      btn.classList.remove("active");
-    });
+selectedProduct = null;
 
 
-  event.target.classList.add("active");
+$("checkoutSummary").textContent =
+"Your cart items are ready to order.";
 
 
-  document.querySelectorAll(".card")
-    .forEach(card=>{
-
-      if(category==="all"){
-
-        card.style.display=
-          "inline-block";
-
-        return;
-
-      }
+closeCart();
 
 
-      const categories =
-        card.dataset.category;
-
-
-      card.style.display =
-        categories.includes(category)
-        ? "inline-block"
-        : "none";
-
-    });
+$("checkoutModal")
+.classList.add("show");
 
 }
 
 
-/* =========================================
-   SECURITY HELPER
-   ========================================= */
+/* =====================================
+LOGIN
+===================================== */
 
-function escapeHtml(text){
+function openAuth(){
 
-  const div =
-    document.createElement("div");
-
-  div.textContent=text;
-
-  return div.innerHTML;
+$("authModal")
+.classList.add("show");
 
 }
 
 
-/* =========================================
-   BUTTON EVENTS
-   ========================================= */
+function closeAuth(){
 
-document.getElementById("closeAuth")
-  .onclick=closeAuth;
+$("authModal")
+.classList.remove("show");
 
-document.getElementById("authSwitch")
-  .onclick=toggleAuth;
+$("authMessage")
+.textContent = "";
 
-document.getElementById("authSubmit")
-  .onclick=submitAuth;
-
-document.getElementById("cartButton")
-  .onclick=openCart;
-
-document.getElementById("closeCart")
-  .onclick=closeCart;
-
-document.getElementById("cartOrder")
-  .onclick=orderCart;
-
-document.getElementById("closeBuy")
-  .onclick=()=>{
-    buyModal.classList.remove("show");
-  };
-
-document.getElementById("whatsappOrder")
-  .onclick=sendWhatsAppOrder;
-
-document.getElementById("emailOrder")
-  .onclick=emailOrder;
-
-document.getElementById("search")
-  .oninput=searchProducts;
+}
 
 
-document.querySelectorAll(".category")
-  .forEach(button=>{
-
-    button.onclick=()=>{
-
-      document.querySelectorAll(".category")
-        .forEach(b=>
-          b.classList.remove("active")
-        );
-
-      button.classList.add("active");
-
-      const category =
-        button.dataset.category;
+let authMode = "login";
 
 
-      document.querySelectorAll(".card")
-        .forEach(card=>{
+function toggleAuth(){
 
-          if(category==="all"){
+if(authMode === "login"){
 
-            card.style.display=
-              "inline-block";
+authMode = "signup";
 
-          }else{
+$("authTitle").textContent =
+"Create Account";
 
-            card.style.display =
-              card.dataset.category
-                .includes(category)
-              ? "inline-block"
-              : "none";
+$("authSubmit").textContent =
+"Sign Up";
 
-          }
+$("authSwitch").textContent =
+"Already have an account? Login";
 
-        });
+}else{
 
-    };
+authMode = "login";
 
-  });
+$("authTitle").textContent =
+"Login";
+
+$("authSubmit").textContent =
+"Login";
+
+$("authSwitch").textContent =
+"Create a new account";
+
+}
+
+}
 
 
-/* =========================================
-   START
-   ========================================= */
+/*
+IMPORTANT:
+
+This Login popup works immediately.
+
+For Supabase authentication,
+add your Supabase URL and key
+later.
+*/
+
+async function submitAuth(){
+
+const email =
+$("authEmail").value.trim();
+
+const password =
+$("authPassword").value;
+
+
+if(!email || !password){
+
+$("authMessage").textContent =
+"Please enter email and password.";
+
+return;
+
+}
+
+
+if(password.length < 6){
+
+$("authMessage").textContent =
+"Password must contain at least 6 characters.";
+
+return;
+
+}
+
+
+/*
+Temporary browser login.
+
+Supabase can be connected later.
+*/
+
+localStorage.setItem(
+"smartbasket_user",
+email
+);
+
+
+$("userName").textContent =
+email;
+
+
+$("accountBtn").textContent =
+"Logout";
+
+
+$("accountBtn").onclick =
+logout;
+
+
+closeAuth();
+
+}
+
+
+function logout(){
+
+localStorage.removeItem(
+"smartbasket_user"
+);
+
+
+$("userName").textContent =
+"";
+
+
+$("accountBtn").textContent =
+"Login";
+
+
+$("accountBtn").onclick =
+openAuth;
+
+}
+
+
+/* =====================================
+SEARCH
+===================================== */
+
+$("search")
+.addEventListener(
+"input",
+function(){
+
+const query =
+this.value
+.toLowerCase()
+.trim();
+
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+const text =
+card.innerText
+.toLowerCase();
+
+
+card.style.display =
+text.includes(query)
+? "inline-block"
+: "none";
+
+});
+
+});
+
+
+/* =====================================
+CATEGORY
+===================================== */
+
+document
+.querySelectorAll(".category")
+.forEach(button=>{
+
+button.addEventListener(
+"click",
+()=>{
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>
+btn.classList.remove("active")
+);
+
+
+button.classList.add("active");
+
+
+const category =
+button.dataset.category;
+
+
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
+if(category === "all"){
+
+card.style.display =
+"inline-block";
+
+}else{
+
+card.style.display =
+card.dataset.category
+.includes(category)
+? "inline-block"
+: "none";
+
+}
+
+});
+
+});
+
+});
+
+
+/* =====================================
+MODAL BUTTONS
+===================================== */
+
+$("accountBtn").onclick =
+openAuth;
+
+
+$("cartButton").onclick =
+openCart;
+
+
+$("closeAuth").onclick =
+closeAuth;
+
+
+$("authSwitch").onclick =
+toggleAuth;
+
+
+$("authSubmit").onclick =
+submitAuth;
+
+
+$("closeCart").onclick =
+closeCart;
+
+
+$("cartOrder").onclick =
+orderCart;
+
+
+$("closeCheckout").onclick =
+closeCheckout;
+
+
+$("whatsappOrder").onclick =
+sendWhatsAppOrder;
+
+
+/* =====================================
+CLICK OUTSIDE MODAL
+===================================== */
+
+document
+.querySelectorAll(".modal-bg")
+.forEach(bg=>{
+
+bg.addEventListener(
+"click",
+function(event){
+
+if(event.target === bg){
+
+bg.classList.remove("show");
+
+}
+
+});
+
+});
+
+
+/* =====================================
+ESCAPE KEY
+===================================== */
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Escape"){
+
+document
+.querySelectorAll(".modal-bg")
+.forEach(modal=>
+modal.classList.remove("show")
+);
+
+}
+
+});
+
+
+/* =====================================
+LOAD USER
+===================================== */
+
+const savedUser =
+localStorage.getItem(
+"smartbasket_user"
+);
+
+
+if(savedUser){
+
+$("userName").textContent =
+savedUser;
+
+$("accountBtn").textContent =
+"Logout";
+
+$("accountBtn").onclick =
+logout;
+
+}
+
+
+/* =====================================
+START
+===================================== */
 
 updateCartCount();
-
-updateUserUI();
-
-
-supabase.auth.onAuthStateChange(
-  ()=>{
-    updateUserUI();
-  }
-);
 
 </script>
 
