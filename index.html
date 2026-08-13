@@ -11,555 +11,388 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 }
 
 body{
-  background:#f7f7f7;
+  background:#f5f5f5;
   color:#111;
 }
 
-button,input,textarea{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-/* HEADER */
-
 header{
+  background:#080808;
+  color:white;
+  padding:18px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid #eee;
-}
-
-.nav{
-  max-width:1250px;
-  margin:auto;
-  padding:13px 18px;
-  display:flex;
-  align-items:center;
-  gap:12px;
+  box-shadow:0 3px 15px rgba(0,0,0,.25);
 }
 
 .logo{
-  font-size:24px;
-  font-weight:900;
-  letter-spacing:-1px;
-  white-space:nowrap;
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
 .logo span{
-  color:#e60023;
+  color:#d4af37;
 }
 
-.search{
-  flex:1;
-  min-width:80px;
-  border:0;
-  outline:0;
-  background:#f1f1f1;
-  padding:13px 19px;
-  border-radius:30px;
+nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
 }
 
-.nav-btn{
-  border:0;
-  background:#111;
-  color:#fff;
-  padding:11px 16px;
-  border-radius:25px;
-  white-space:nowrap;
+nav button{
+  background:transparent;
+  color:white;
+  border:1px solid #444;
+  padding:9px 14px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+.cart-btn{
+  background:#d4af37 !important;
+  color:#000 !important;
+  border:none !important;
   font-weight:700;
 }
-
-.nav-btn.light{
-  background:#eee;
-  color:#111;
-}
-
-.user-name{
-  font-size:12px;
-  font-weight:700;
-  max-width:110px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
-
-/* HERO */
 
 .hero{
-  max-width:1250px;
-  margin:24px auto 10px;
-  padding:0 18px;
-}
-
-.hero-box{
-  min-height:230px;
-  border-radius:28px;
-  padding:38px;
-  color:#fff;
-  background:linear-gradient(135deg,#111,#303030);
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero-box:after{
-  content:"";
-  position:absolute;
-  width:280px;
-  height:280px;
-  border-radius:50%;
-  background:#e60023;
-  right:-90px;
-  top:-120px;
-  opacity:.8;
+  background:linear-gradient(135deg,#050505,#242424);
+  color:white;
+  padding:65px 6%;
+  text-align:center;
 }
 
 .hero h1{
-  position:relative;
-  z-index:2;
   font-size:42px;
-  line-height:1.08;
-}
-
-.hero p{
-  position:relative;
-  z-index:2;
-  margin-top:13px;
-  color:#ccc;
-}
-
-/* CATEGORIES */
-
-.categories{
-  max-width:1250px;
-  margin:20px auto;
-  padding:0 18px;
-  display:flex;
-  gap:9px;
-  overflow-x:auto;
-}
-
-.categories::-webkit-scrollbar{
-  display:none;
-}
-
-.category{
-  border:0;
-  background:#fff;
-  padding:10px 17px;
-  border-radius:30px;
-  white-space:nowrap;
-}
-
-.category.active{
-  background:#111;
-  color:#fff;
-}
-
-/* PRODUCTS */
-
-.products{
-  max-width:1250px;
-  margin:auto;
-  padding:5px 18px 45px;
-  column-count:4;
-  column-gap:16px;
-}
-
-.card{
-  width:100%;
-  display:inline-block;
-  margin:0 0 16px;
-  background:#fff;
-  border-radius:20px;
-  overflow:hidden;
-  break-inside:avoid;
-  box-shadow:0 3px 15px rgba(0,0,0,.06);
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 30px rgba(0,0,0,.12);
-}
-
-.product-image{
-  width:100%;
-  display:block;
-  background:#eee;
-}
-
-.info{
-  padding:15px;
-}
-
-.tag{
-  display:inline-block;
-  background:#ffe6eb;
-  color:#e60023;
-  font-size:10px;
-  font-weight:800;
-  padding:5px 9px;
-  border-radius:20px;
-  margin-bottom:8px;
-}
-
-.info h2{
-  font-size:17px;
-  line-height:1.25;
-  margin-bottom:7px;
-}
-
-.desc{
-  color:#777;
-  font-size:13px;
-  line-height:1.5;
-}
-
-.price{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-top:12px;
-}
-
-.offer{
-  font-size:22px;
-  font-weight:900;
-}
-
-.original{
-  font-size:13px;
-  color:#999;
-  text-decoration:line-through;
-}
-
-.discount{
-  color:#16833b;
-  font-size:11px;
-  font-weight:800;
-}
-
-.buy-row{
-  display:flex;
-  gap:8px;
-  margin-top:13px;
-}
-
-.buy,
-.cart-btn{
-  border:0;
-  padding:12px;
-  border-radius:11px;
-  font-weight:800;
-}
-
-.buy{
-  flex:1;
-  background:#e60023;
-  color:#fff;
-}
-
-.cart-btn{
-  background:#111;
-  color:#fff;
-  min-width:52px;
-}
-
-/* FEATURES */
-
-.feature{
-  max-width:1250px;
-  margin:0 auto 40px;
-  padding:0 18px;
-}
-
-.feature-box{
-  background:#fff;
-  border-radius:25px;
-  padding:25px;
-}
-
-.feature-box h2{
-  margin-bottom:17px;
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-
-.feature-item{
-  background:#f7f7f7;
-  padding:18px;
-  border-radius:17px;
-}
-
-.feature-item b{
-  display:block;
-  margin-bottom:5px;
-}
-
-.feature-item span{
-  color:#777;
-  font-size:13px;
-}
-
-/* FOOTER */
-
-footer{
-  background:#111;
-  color:#fff;
-  padding:38px 20px;
-  text-align:center;
-}
-
-footer p{
-  color:#aaa;
-  margin-top:8px;
-  font-size:13px;
-}
-
-.footer-links{
-  margin-top:16px;
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
-}
-
-.footer-links a{
-  color:#fff;
-  text-decoration:none;
-}
-
-/* MODALS */
-
-.modal-bg{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  z-index:9999;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
-}
-
-.modal-bg.show{
-  display:flex;
-}
-
-.modal{
-  width:100%;
-  max-width:430px;
-  background:#fff;
-  border-radius:25px;
-  padding:25px;
-  max-height:90vh;
-  overflow:auto;
-  position:relative;
-}
-
-.close{
-  position:absolute;
-  right:18px;
-  top:18px;
-  border:0;
-  background:#eee;
-  width:32px;
-  height:32px;
-  border-radius:50%;
-}
-
-.modal h2{
-  margin-bottom:20px;
-}
-
-.form-input{
-  width:100%;
-  padding:13px;
-  border:1px solid #ddd;
-  border-radius:11px;
-  outline:none;
   margin-bottom:10px;
 }
 
-.form-input:focus{
-  border-color:#111;
+.hero h1 span{
+  color:#d4af37;
 }
 
-.primary{
-  width:100%;
+.hero p{
+  color:#ccc;
+  font-size:17px;
+  margin-bottom:25px;
+}
+
+.hero button{
+  background:#d4af37;
   border:0;
-  background:#111;
-  color:#fff;
-  padding:13px;
-  border-radius:11px;
-  font-weight:800;
+  padding:14px 30px;
+  border-radius:30px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.products{
+  padding:40px 6%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.section-title h2{
+  font-size:30px;
+}
+
+.section-title p{
+  color:#777;
   margin-top:5px;
 }
 
-.red-btn{
-  background:#e60023;
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
 }
 
-.switch{
-  display:block;
+.product{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  transition:.25s;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 28px rgba(0,0,0,.15);
+}
+
+.product img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  background:#eee;
+}
+
+.product-info{
+  padding:18px;
+}
+
+.product-info h3{
+  font-size:18px;
+  margin-bottom:7px;
+}
+
+.product-info p{
+  color:#777;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+.price{
+  font-size:21px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+.add{
+  width:100%;
+  padding:12px;
   border:0;
-  background:none;
-  color:#e60023;
+  background:#111;
+  color:white;
+  border-radius:10px;
+  cursor:pointer;
   font-weight:700;
-  margin:15px auto 0;
 }
 
-.message{
-  font-size:13px;
-  margin-top:12px;
-  text-align:center;
+.add:hover{
+  background:#d4af37;
+  color:#000;
 }
 
 /* CART */
 
-.cart-item{
+.cart{
+  position:fixed;
+  right:-420px;
+  top:0;
+  width:390px;
+  max-width:95%;
+  height:100%;
+  background:white;
+  z-index:2000;
+  box-shadow:-5px 0 25px rgba(0,0,0,.25);
+  transition:.3s;
+  padding:25px;
+  overflow-y:auto;
+}
+
+.cart.open{
+  right:0;
+}
+
+.cart-header{
   display:flex;
   justify-content:space-between;
-  gap:10px;
-  padding:13px 0;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.close{
+  border:0;
+  background:#eee;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.cart-item{
+  display:flex;
+  gap:12px;
+  margin-bottom:18px;
+  padding-bottom:15px;
   border-bottom:1px solid #eee;
 }
 
-.qty{
-  display:flex;
-  align-items:center;
-  gap:8px;
+.cart-item img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border-radius:10px;
 }
 
-.qty button{
-  width:28px;
-  height:28px;
-  border:0;
-  border-radius:50%;
-  background:#eee;
+.cart-item h4{
+  font-size:15px;
+}
+
+.cart-item p{
+  color:#666;
+  margin-top:5px;
 }
 
 .total{
+  border-top:2px solid #111;
+  padding-top:15px;
+  margin-top:20px;
+}
+
+.total-row{
   display:flex;
   justify-content:space-between;
-  font-size:19px;
-  font-weight:900;
-  padding:18px 0;
+  margin:8px 0;
 }
 
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
+.grand{
+  font-size:21px;
+  font-weight:800;
 }
 
-.full{
-  grid-column:1/-1;
+/* CHECKOUT */
+
+.checkout{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  z-index:3000;
+  overflow-y:auto;
+  padding:30px 15px;
 }
 
-.small-note{
-  font-size:12px;
-  color:#777;
-  margin-bottom:14px;
+.checkout-box{
+  background:white;
+  max-width:500px;
+  margin:auto;
+  border-radius:20px;
+  padding:25px;
 }
 
-/* MOBILE */
-
-@media(max-width:1000px){
-
-  .products{
-    column-count:3;
-  }
-
+.checkout-box h2{
+  margin-bottom:20px;
 }
 
-@media(max-width:700px){
+input,textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  margin-bottom:12px;
+  font-size:15px;
+}
 
-  .nav{
-    flex-wrap:wrap;
-  }
+.payment{
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:15px;
+  margin:12px 0;
+  cursor:pointer;
+}
 
-  .logo{
-    font-size:20px;
-  }
+.payment.active{
+  border:2px solid #d4af37;
+  background:#fffaf0;
+}
 
-  .search{
-    order:3;
-    flex-basis:100%;
-  }
+.payment input{
+  width:auto;
+  margin-right:8px;
+}
 
-  .hero-box{
-    padding:28px;
-  }
+.upi-box{
+  display:none;
+  background:#f7f7f7;
+  padding:15px;
+  border-radius:12px;
+  margin-top:10px;
+}
 
+.upi-id{
+  font-weight:800;
+  font-size:18px;
+  word-break:break-all;
+}
+
+.pay-btn{
+  width:100%;
+  padding:15px;
+  background:#111;
+  color:white;
+  border:0;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.cancel{
+  width:100%;
+  padding:12px;
+  background:#eee;
+  border:0;
+  border-radius:12px;
+  margin-top:8px;
+  cursor:pointer;
+}
+
+/* LOGIN */
+
+.login{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  z-index:4000;
+  padding:30px 15px;
+}
+
+.login-box{
+  max-width:400px;
+  background:white;
+  margin:80px auto;
+  padding:30px;
+  border-radius:20px;
+}
+
+.login-box h2{
+  margin-bottom:20px;
+}
+
+footer{
+  background:#080808;
+  color:#aaa;
+  text-align:center;
+  padding:30px;
+  margin-top:40px;
+}
+
+footer strong{
+  color:white;
+}
+
+@media(max-width:600px){
   .hero h1{
     font-size:32px;
   }
 
-  .products{
-    column-count:2;
-    column-gap:10px;
-    padding-left:10px;
-    padding-right:10px;
+  .logo{
+    font-size:21px;
   }
 
-  .card{
-    margin-bottom:10px;
-    border-radius:15px;
+  nav button{
+    padding:8px 10px;
   }
 
-  .info{
-    padding:11px;
+  .product img{
+    height:210px;
   }
-
-  .info h2{
-    font-size:15px;
-  }
-
-  .offer{
-    font-size:19px;
-  }
-
-  .features{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .full{
-    grid-column:auto;
-  }
-
-}
-
-@media(max-width:430px){
-
-  .user-name{
-    display:none;
-  }
-
-  .nav-btn{
-    padding:9px 11px;
-  }
-
 }
 </style>
 </head>
@@ -567,1425 +400,455 @@ footer p{
 <body>
 
 <header>
+  <div class="logo">SMART <span>BASKET</span></div>
 
-<div class="nav">
-
-<div class="logo">
-Smart<span>Basket</span>
-</div>
-
-<input
-class="search"
-id="search"
-type="search"
-placeholder="Search products..."
->
-
-<span
-class="user-name"
-id="userName">
-</span>
-
-<button
-class="nav-btn light"
-id="accountBtn"
-type="button">
-Login
-</button>
-
-<button
-class="nav-btn"
-id="cartButton"
-type="button">
-🛒 <span id="cartCount">0</span>
-</button>
-
-</div>
-
+  <nav>
+    <button onclick="openLogin()">Login</button>
+    <button class="cart-btn" onclick="openCart()">
+      🛒 Cart (<span id="cartCount">0</span>)
+    </button>
+  </nav>
 </header>
 
-
 <section class="hero">
-
-<div class="hero-box">
-
-<div>
-
-<h1>
-Discover products<br>
-you'll love.
-</h1>
-
-<p>
-Trending • Useful • Affordable
-</p>
-
-</div>
-
-</div>
-
+  <h1>Premium Products. <span>Smart Prices.</span></h1>
+  <p>Quality products at budget-friendly prices.</p>
+  <button onclick="document.getElementById('products').scrollIntoView()">
+    Shop Now
+  </button>
 </section>
 
-
-<div class="categories">
-
-<button
-class="category active"
-data-category="all">
-All
-</button>
-
-<button
-class="category"
-data-category="electronics">
-Electronics
-</button>
-
-<button
-class="category"
-data-category="gadgets">
-Gadgets
-</button>
-
-<button
-class="category"
-data-category="accessories">
-Accessories
-</button>
-
-</div>
-
-
-<section class="products">
-
-
-<div
-class="card"
-data-category="electronics gadgets">
-
-<img
-class="product-image"
-src="earbuds.jpg"
-alt="Premium True Wireless Earbuds"
->
-
-<div class="info">
-
-<span class="tag">
-🔥 BEST SELLER
-</span>
-
-<h2>
-Premium True Wireless Earbuds
-</h2>
-
-<p class="desc">
-Clear sound, stable Bluetooth connection,
-clear calls and stylish charging case.
-</p>
-
-<div class="price">
-
-<span class="offer">
-₹599
-</span>
-
-<span class="original">
-₹1,200
-</span>
-
-<span class="discount">
-50% OFF
-</span>
-
-</div>
-
-<div class="buy-row">
-
-<button
-class="buy"
-onclick="buyNow('Premium True Wireless Earbuds',599)">
-Buy Now
-</button>
-
-<button
-class="cart-btn"
-onclick="addToCart('Premium True Wireless Earbuds',599)">
-🛒
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="card"
-data-category="accessories electronics">
-
-<img
-class="product-image"
-src="charger-case.jpg"
-alt="Premium Charger Case"
->
-
-<div class="info">
-
-<span class="tag">
-⚡ HOT DEAL
-</span>
-
-<h2>
-Premium Charger Case
-</h2>
-
-<p class="desc">
-Compact and convenient charging accessory
-for everyday use.
-</p>
-
-<div class="price">
-
-<span class="offer">
-₹199
-</span>
-
-<span class="original">
-₹799
-</span>
-
-<span class="discount">
-75% OFF
-</span>
-
-</div>
-
-<div class="buy-row">
-
-<button
-class="buy"
-onclick="buyNow('Premium Charger Case',199)">
-Buy Now
-</button>
-
-<button
-class="cart-btn"
-onclick="addToCart('Premium Charger Case',199)">
-🛒
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="card"
-data-category="electronics gadgets">
-
-<img
-class="product-image"
-src="astronaut-speaker.jpg"
-alt="Astronaut Bluetooth Speaker"
->
-
-<div class="info">
-
-<span class="tag">
-🚀 TRENDING
-</span>
-
-<h2>
-Astronaut Bluetooth Speaker
-</h2>
-
-<p class="desc">
-Stylish astronaut design with RGB lighting,
-Bluetooth and multiple playback options.
-</p>
-
-<div class="price">
-
-<span class="offer">
-₹499
-</span>
-
-<span class="original">
-₹1,299
-</span>
-
-<span class="discount">
-62% OFF
-</span>
-
-</div>
-
-<div class="buy-row">
-
-<button
-class="buy"
-onclick="buyNow('Astronaut Bluetooth Speaker',499)">
-Buy Now
-</button>
-
-<button
-class="cart-btn"
-onclick="addToCart('Astronaut Bluetooth Speaker',499)">
-🛒
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div
-class="card"
-data-category="electronics gadgets">
-
-<img
-class="product-image"
-src="retro-speaker.jpg"
-alt="Premium Retro Wireless Speaker"
->
-
-<div class="info">
-
-<span class="tag">
-✨ PREMIUM
-</span>
-
-<h2>
-Premium Retro Wireless Speaker
-</h2>
-
-<p class="desc">
-Retro design with Bluetooth, FM Radio,
-USB, TF/SD card and Type-C charging.
-</p>
-
-<div class="price">
-
-<span class="offer">
-₹599
-</span>
-
-<span class="original">
-₹1,259
-</span>
-
-<span class="discount">
-52% OFF
-</span>
-
-</div>
-
-<div class="buy-row">
-
-<button
-class="buy"
-onclick="buyNow('Premium Retro Wireless Speaker',599)">
-Buy Now
-</button>
-
-<button
-class="cart-btn"
-onclick="addToCart('Premium Retro Wireless Speaker',599)">
-🛒
-</button>
-
-</div>
-
-</div>
-
-</div>
-
+<section class="products" id="products">
+
+  <div class="section-title">
+    <h2>Featured Products</h2>
+    <p>Discover our latest collection</p>
+  </div>
+
+  <div class="product-grid">
+
+    <!-- PRODUCT 1 -->
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=800&q=80">
+      <div class="product-info">
+        <h3>Premium Wireless Earbuds</h3>
+        <p>Clear sound • Stable connection • Long battery</p>
+        <div class="price">₹699</div>
+        <button class="add"
+          onclick="addToCart('Premium Wireless Earbuds',699,this.parentElement.parentElement.querySelector('img').src)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=800&q=80">
+      <div class="product-info">
+        <h3>Premium Wireless Speaker</h3>
+        <p>Powerful sound • Bluetooth • USB • TF</p>
+        <div class="price">₹999</div>
+        <button class="add"
+          onclick="addToCart('Premium Wireless Speaker',999,this.parentElement.parentElement.querySelector('img').src)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1612810436541-336d7e2c2f3c?auto=format&fit=crop&w=800&q=80">
+      <div class="product-info">
+        <h3>Fast Charging Cable</h3>
+        <p>Strong braided cable • Fast charging</p>
+        <div class="price">₹299</div>
+        <button class="add"
+          onclick="addToCart('Fast Charging Cable',299,this.parentElement.parentElement.querySelector('img').src)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- PRODUCT 4 -->
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1589003077984-894e133dabab?auto=format&fit=crop&w=800&q=80">
+      <div class="product-info">
+        <h3>Portable Mini Speaker</h3>
+        <p>Compact design • Wireless • Powerful output</p>
+        <div class="price">₹799</div>
+        <button class="add"
+          onclick="addToCart('Portable Mini Speaker',799,this.parentElement.parentElement.querySelector('img').src)">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+  </div>
 </section>
-
-
-<section class="feature">
-
-<div class="feature-box">
-
-<h2>
-Why shop with Smart Basket ❤️
-</h2>
-
-<div class="features">
-
-<div class="feature-item">
-<b>🚚 Fast Delivery</b>
-<span>
-Delivery to your doorstep.
-</span>
-</div>
-
-<div class="feature-item">
-<b>💵 COD Available</b>
-<span>
-Pay when your order arrives.
-</span>
-</div>
-
-<div class="feature-item">
-<b>📦 Secure Packaging</b>
-<span>
-Carefully packed products.
-</span>
-</div>
-
-<div class="feature-item">
-<b>🤝 Customer Support</b>
-<span>
-We're here to help.
-</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<footer>
-
-<h2>
-SmartBasket
-</h2>
-
-<p>
-Smart products. Better prices.
-</p>
-
-<div class="footer-links">
-
-<a href="mailto:irshadiqu@gmail.com">
-📧 irshadiqu@gmail.com
-</a>
-
-<a href="tel:8848763849">
-📞 8848763849
-</a>
-
-<a
-href="https://wa.me/918921678447"
-target="_blank">
-📲 WhatsApp
-</a>
-
-</div>
-
-<p>
-© 2026 Smart Basket. All Rights Reserved.
-</p>
-
-</footer>
-
-
-<!-- LOGIN -->
-
-<div
-class="modal-bg"
-id="authModal">
-
-<div class="modal">
-
-<button
-class="close"
-id="closeAuth"
-type="button">
-✕
-</button>
-
-<h2 id="authTitle">
-Login
-</h2>
-
-<p class="small-note">
-Login with your Smart Basket account.
-</p>
-
-<input
-class="form-input"
-id="authEmail"
-type="email"
-placeholder="Email address"
->
-
-<input
-class="form-input"
-id="authPassword"
-type="password"
-placeholder="Password"
->
-
-<button
-class="primary"
-id="authSubmit"
-type="button">
-Login
-</button>
-
-<button
-class="switch"
-id="authSwitch"
-type="button">
-Create a new account
-</button>
-
-<div
-class="message"
-id="authMessage">
-</div>
-
-</div>
-
-</div>
-
 
 <!-- CART -->
 
-<div
-class="modal-bg"
-id="cartModal">
+<div class="cart" id="cart">
 
-<div class="modal">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="close" onclick="closeCart()">✕</button>
+  </div>
 
-<button
-class="close"
-id="closeCart"
-type="button">
-✕
-</button>
+  <div id="cartItems"></div>
 
-<h2>
-🛒 Your Cart
-</h2>
+  <div class="total">
+    <div class="total-row">
+      <span>Subtotal</span>
+      <strong>₹<span id="subtotal">0</span></strong>
+    </div>
 
-<div id="cartItems">
-</div>
+    <div class="total-row">
+      <span>Shipping</span>
+      <strong>FREE</strong>
+    </div>
 
-<div class="total">
+    <div class="total-row grand">
+      <span>Total</span>
+      <span>₹<span id="total">0</span></span>
+    </div>
 
-<span>
-Total
-</span>
-
-<span id="cartTotal">
-₹0
-</span>
-
-</div>
-
-<button
-class="primary red-btn"
-id="cartOrder"
-type="button">
-Order on WhatsApp
-</button>
+    <button class="pay-btn" onclick="openCheckout()">
+      Proceed to Checkout
+    </button>
+  </div>
 
 </div>
 
+<!-- CHECKOUT -->
+
+<div class="checkout" id="checkout">
+
+  <div class="checkout-box">
+
+    <h2>Checkout</h2>
+
+    <input id="name" type="text" placeholder="Full Name">
+    <input id="phone" type="tel" placeholder="Mobile Number">
+    <textarea id="address" rows="4" placeholder="Full Delivery Address"></textarea>
+
+    <h3>Payment Method</h3>
+
+    <div class="payment active" onclick="selectPayment('upi')">
+      <label>
+        <input type="radio" name="payment" checked>
+        UPI Payment
+      </label>
+
+      <div class="upi-box" id="upiBox" style="display:block;">
+        <p>Pay securely using UPI</p>
+        <br>
+
+        <div class="upi-id">
+          k63653390@oksbi
+        </div>
+
+        <br>
+
+        <button class="pay-btn" onclick="payUPI()">
+          Pay with UPI
+        </button>
+      </div>
+    </div>
+
+    <div class="payment" onclick="selectPayment('cod')">
+      <label>
+        <input type="radio" name="payment">
+        Cash on Delivery
+      </label>
+
+      <p style="margin-top:8px;color:#777;">
+        COD available — ₹20 additional charge
+      </p>
+    </div>
+
+    <div id="codNotice"
+         style="display:none;background:#fff5e0;padding:12px;border-radius:10px;margin-top:10px;">
+      ⚠️ Cash on Delivery charge: <strong>₹20</strong>
+    </div>
+
+    <button class="pay-btn" onclick="placeOrder()">
+      Place Order
+    </button>
+
+    <button class="cancel" onclick="closeCheckout()">
+      Cancel
+    </button>
+
+  </div>
 </div>
 
+<!-- LOGIN -->
 
-<!-- CUSTOMER CHECKOUT -->
+<div class="login" id="login">
 
-<div
-class="modal-bg"
-id="checkoutModal">
+  <div class="login-box">
 
-<div class="modal">
+    <h2>Smart Basket Login</h2>
 
-<button
-class="close"
-id="closeCheckout"
-type="button">
-✕
-</button>
+    <input type="text" id="loginPhone" placeholder="Mobile Number">
 
-<h2>
-🛍️ Complete Order
-</h2>
+    <input type="password" id="loginPassword" placeholder="Password">
 
-<p
-class="small-note"
-id="checkoutSummary">
-</p>
+    <button class="pay-btn" onclick="loginUser()">
+      Login
+    </button>
 
-<div class="form-grid">
+    <button class="cancel" onclick="closeLogin()">
+      Close
+    </button>
 
-<input
-class="form-input"
-id="customerName"
-placeholder="Name"
->
-
-<input
-class="form-input"
-id="customerPhone"
-type="tel"
-placeholder="Mobile Number"
->
-
-<textarea
-class="form-input full"
-id="customerAddress"
-rows="3"
-placeholder="Address">
-</textarea>
-
-<input
-class="form-input"
-id="customerPin"
-inputmode="numeric"
-maxlength="6"
-placeholder="PIN Code"
->
-
-<input
-class="form-input"
-id="customerCity"
-placeholder="City"
->
-
-<input
-class="form-input full"
-id="customerState"
-placeholder="State"
->
+  </div>
 
 </div>
 
-<button
-class="primary red-btn"
-id="whatsappOrder"
-type="button">
-📲 Confirm Order on WhatsApp
-</button>
-
-</div>
-
-</div>
-
+<footer>
+  <strong>SMART BASKET</strong>
+  <br><br>
+  Premium Quality • Budget Friendly
+  <br><br>
+  © 2026 Smart Basket. All Rights Reserved.
+</footer>
 
 <script>
 
-/* =====================================
-SMART BASKET SETTINGS
-===================================== */
+let cart = [];
+let paymentMethod = "upi";
 
-const WHATSAPP_NUMBER =
-"918921678447";
+function addToCart(name,price,image){
 
-const CONTACT_EMAIL =
-"irshadiqu@gmail.com";
+  cart.push({
+    name:name,
+    price:price,
+    image:image
+  });
 
+  updateCart();
 
-/* =====================================
-ELEMENT HELPER
-===================================== */
-
-const $ = id =>
-document.getElementById(id);
-
-
-/* =====================================
-CART
-===================================== */
-
-let cart =
-JSON.parse(
-localStorage.getItem("smartbasket_cart") || "[]"
-);
-
-
-function saveCart(){
-
-localStorage.setItem(
-"smartbasket_cart",
-JSON.stringify(cart)
-);
-
-updateCartCount();
-
+  alert(name + " added to cart ✅");
 }
 
+function updateCart(){
 
-function updateCartCount(){
+  document.getElementById("cartCount").innerText = cart.length;
 
-const count =
-cart.reduce(
-(total,item)=>
-total + item.qty,
-0
-);
+  const container = document.getElementById("cartItems");
 
-$("cartCount").textContent =
-count;
+  container.innerHTML = "";
 
+  let subtotal = 0;
+
+  cart.forEach((item,index)=>{
+
+    subtotal += item.price;
+
+    container.innerHTML += `
+      <div class="cart-item">
+
+        <img src="${item.image}">
+
+        <div>
+          <h4>${item.name}</h4>
+          <p>₹${item.price}</p>
+
+          <button
+            onclick="removeItem(${index})"
+            style="border:0;background:#eee;padding:5px 9px;border-radius:6px;margin-top:7px;">
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+    `;
+  });
+
+  document.getElementById("subtotal").innerText = subtotal;
+  document.getElementById("total").innerText = subtotal;
 }
 
+function removeItem(index){
 
-function addToCart(name,price){
+  cart.splice(index,1);
 
-const existing =
-cart.find(
-item =>
-item.name === name
-);
-
-
-if(existing){
-
-existing.qty++;
-
-}else{
-
-cart.push({
-
-name:name,
-price:price,
-qty:1
-
-});
-
+  updateCart();
 }
-
-
-saveCart();
-
-openCart();
-
-}
-
-
-function changeQty(index,amount){
-
-if(!cart[index])
-return;
-
-
-cart[index].qty += amount;
-
-
-if(cart[index].qty <= 0){
-
-cart.splice(index,1);
-
-}
-
-
-saveCart();
-
-renderCart();
-
-}
-
-
-function renderCart(){
-
-const box =
-$("cartItems");
-
-
-if(cart.length === 0){
-
-box.innerHTML =
-"<p>Your cart is empty 🛒</p>";
-
-$("cartTotal").textContent =
-"₹0";
-
-return;
-
-}
-
-
-let total = 0;
-
-
-box.innerHTML =
-cart.map(
-(item,index)=>{
-
-total +=
-item.price *
-item.qty;
-
-
-return `
-
-<div class="cart-item">
-
-<div>
-
-<b>
-${escapeHtml(item.name)}
-</b>
-
-<br>
-
-<small>
-₹${item.price} × ${item.qty}
-</small>
-
-</div>
-
-<div class="qty">
-
-<button
-onclick="changeQty(${index},-1)">
-−
-</button>
-
-<b>
-${item.qty}
-</b>
-
-<button
-onclick="changeQty(${index},1)">
-+
-</button>
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
-
-
-$("cartTotal").textContent =
-"₹" +
-total.toLocaleString("en-IN");
-
-}
-
 
 function openCart(){
 
-renderCart();
-
-$("cartModal")
-.classList.add("show");
+  document.getElementById("cart").classList.add("open");
 
 }
-
 
 function closeCart(){
 
-$("cartModal")
-.classList.remove("show");
+  document.getElementById("cart").classList.remove("open");
 
 }
 
+function openCheckout(){
 
-/* =====================================
-BUY NOW
-===================================== */
+  if(cart.length === 0){
 
-let selectedProduct = null;
+    alert("Your cart is empty!");
 
+    return;
+  }
 
-function buyNow(name,price){
-
-selectedProduct = {
-
-name:name,
-price:price
-
-};
-
-
-$("checkoutSummary").textContent =
-"Product: " +
-name +
-" • ₹" +
-price.toLocaleString("en-IN");
-
-
-$("checkoutModal")
-.classList.add("show");
+  document.getElementById("checkout").style.display="block";
 
 }
-
 
 function closeCheckout(){
 
-$("checkoutModal")
-.classList.remove("show");
+  document.getElementById("checkout").style.display="none";
 
 }
 
+function selectPayment(type){
 
-/* =====================================
-CHECKOUT
-===================================== */
+  paymentMethod = type;
 
-function validateCustomer(){
+  document.querySelectorAll(".payment").forEach(el=>{
+    el.classList.remove("active");
+  });
 
-const fields = [
+  if(type==="upi"){
 
-"customerName",
-"customerPhone",
-"customerAddress",
-"customerPin",
-"customerCity",
-"customerState"
+    document.querySelectorAll(".payment")[0].classList.add("active");
 
-];
+    document.getElementById("upiBox").style.display="block";
 
+    document.getElementById("codNotice").style.display="none";
 
-return fields.every(
-id =>
-$(id).value.trim()
-);
+  }else{
+
+    document.querySelectorAll(".payment")[1].classList.add("active");
+
+    document.getElementById("upiBox").style.display="none";
+
+    document.getElementById("codNotice").style.display="block";
+
+  }
+}
+
+function payUPI(){
+
+  const total = cart.reduce((sum,item)=>sum+item.price,0);
+
+  const upiURL =
+  "upi://pay?pa=k63653390@oksbi" +
+  "&pn=Smart%20Basket" +
+  "&am="+total+
+  "&cu=INR";
+
+  window.location.href = upiURL;
+}
+
+function placeOrder(){
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+
+  if(!name || !phone || !address){
+
+    alert("Please enter your name, mobile number and address.");
+
+    return;
+  }
+
+  let subtotal = cart.reduce((sum,item)=>sum+item.price,0);
+
+  let finalTotal = subtotal;
+
+  if(paymentMethod==="cod"){
+
+    finalTotal += 20;
+
+  }
+
+  let orderText =
+  "SMART BASKET ORDER%0A%0A" +
+  "Name: " + encodeURIComponent(name) +
+  "%0APhone: " + encodeURIComponent(phone) +
+  "%0AAddress: " + encodeURIComponent(address) +
+  "%0A%0A";
+
+  cart.forEach(item=>{
+
+    orderText +=
+    encodeURIComponent(item.name) +
+    " - ₹" +
+    item.price +
+    "%0A";
+
+  });
+
+  orderText +=
+  "%0ASubtotal: ₹" + subtotal +
+  "%0APayment: " +
+  encodeURIComponent(paymentMethod==="cod" ? "Cash on Delivery" : "UPI") +
+  "%0A";
+
+  if(paymentMethod==="cod"){
+
+    orderText += "COD Charge: ₹20%0A";
+
+  }
+
+  orderText += "Total: ₹" + finalTotal;
+
+  /*
+    WhatsApp order number.
+    CHANGE THIS NUMBER TO YOUR BUSINESS WHATSAPP NUMBER.
+    Example: 919876543210
+  */
+
+  const whatsappNumber = "919876543210";
+
+  window.open(
+    "https://wa.me/" + whatsappNumber + "?text=" + orderText,
+    "_blank"
+  );
 
 }
 
+function openLogin(){
 
-function buildOrderMessage(){
-
-let message =
-"🛍️ SMART BASKET - NEW ORDER\n\n";
-
-
-let total = 0;
-
-
-if(cart.length){
-
-message +=
-"ORDER ITEMS:\n";
-
-
-cart.forEach(item=>{
-
-const subtotal =
-item.price *
-item.qty;
-
-
-total += subtotal;
-
-
-message +=
-"• " +
-item.name +
-" × " +
-item.qty +
-" = ₹" +
-subtotal +
-"\n";
-
-});
-
-
-message +=
-"\nTOTAL: ₹" +
-total.toLocaleString("en-IN") +
-"\n\n";
+  document.getElementById("login").style.display="block";
 
 }
 
+function closeLogin(){
 
-else if(selectedProduct){
-
-total =
-selectedProduct.price;
-
-
-message +=
-"PRODUCT: " +
-selectedProduct.name +
-"\n";
-
-message +=
-"PRICE: ₹" +
-selectedProduct.price +
-"\n\n";
+  document.getElementById("login").style.display="none";
 
 }
 
+function loginUser(){
 
-message +=
-"CUSTOMER DETAILS:\n";
+  const phone =
+  document.getElementById("loginPhone").value;
 
+  const password =
+  document.getElementById("loginPassword").value;
 
-message +=
-"Name: " +
-$("customerName").value.trim() +
-"\n";
+  if(!phone || !password){
 
+    alert("Please enter mobile number and password.");
 
-message +=
-"Mobile: " +
-$("customerPhone").value.trim() +
-"\n";
+    return;
+  }
 
-
-message +=
-"Address: " +
-$("customerAddress").value.trim() +
-"\n";
-
-
-message +=
-"PIN Code: " +
-$("customerPin").value.trim() +
-"\n";
-
-
-message +=
-"City: " +
-$("customerCity").value.trim() +
-"\n";
-
-
-message +=
-"State: " +
-$("customerState").value.trim() +
-"\n\n";
-
-
-message +=
-"Payment: Cash on Delivery";
-
-
-return message;
+  alert("Login system ready. Backend connection can be added next. ✅");
 
 }
-
-
-function sendWhatsAppOrder(){
-
-if(!validateCustomer()){
-
-alert(
-"Please fill all customer details."
-);
-
-return;
-
-}
-
-
-const message =
-buildOrderMessage();
-
-
-window.open(
-
-"https://wa.me/" +
-WHATSAPP_NUMBER +
-"?text=" +
-encodeURIComponent(message),
-
-"_blank"
-
-);
-
-
-cart = [];
-
-saveCart();
-
-closeCheckout();
-
-closeCart();
-
-}
-
-
-/* =====================================
-CART ORDER
-===================================== */
-
-function orderCart(){
-
-if(!cart.length){
-
-alert(
-"Your cart is empty."
-);
-
-return;
-
-}
-
-
-selectedProduct = null;
-
-
-$("checkoutSummary").textContent =
-"Your cart items are ready to order.";
-
-
-closeCart();
-
-
-$("checkoutModal")
-.classList.add("show");
-
-}
-
-
-/* =====================================
-LOGIN
-===================================== */
-
-function openAuth(){
-
-$("authModal")
-.classList.add("show");
-
-}
-
-
-function closeAuth(){
-
-$("authModal")
-.classList.remove("show");
-
-$("authMessage")
-.textContent = "";
-
-}
-
-
-let authMode = "login";
-
-
-function toggleAuth(){
-
-if(authMode === "login"){
-
-authMode = "signup";
-
-$("authTitle").textContent =
-"Create Account";
-
-$("authSubmit").textContent =
-"Sign Up";
-
-$("authSwitch").textContent =
-"Already have an account? Login";
-
-}else{
-
-authMode = "login";
-
-$("authTitle").textContent =
-"Login";
-
-$("authSubmit").textContent =
-"Login";
-
-$("authSwitch").textContent =
-"Create a new account";
-
-}
-
-}
-
-
-/*
-IMPORTANT:
-
-This Login popup works immediately.
-
-For Supabase authentication,
-add your Supabase URL and key
-later.
-*/
-
-async function submitAuth(){
-
-const email =
-$("authEmail").value.trim();
-
-const password =
-$("authPassword").value;
-
-
-if(!email || !password){
-
-$("authMessage").textContent =
-"Please enter email and password.";
-
-return;
-
-}
-
-
-if(password.length < 6){
-
-$("authMessage").textContent =
-"Password must contain at least 6 characters.";
-
-return;
-
-}
-
-
-/*
-Temporary browser login.
-
-Supabase can be connected later.
-*/
-
-localStorage.setItem(
-"smartbasket_user",
-email
-);
-
-
-$("userName").textContent =
-email;
-
-
-$("accountBtn").textContent =
-"Logout";
-
-
-$("accountBtn").onclick =
-logout;
-
-
-closeAuth();
-
-}
-
-
-function logout(){
-
-localStorage.removeItem(
-"smartbasket_user"
-);
-
-
-$("userName").textContent =
-"";
-
-
-$("accountBtn").textContent =
-"Login";
-
-
-$("accountBtn").onclick =
-openAuth;
-
-}
-
-
-/* =====================================
-SEARCH
-===================================== */
-
-$("search")
-.addEventListener(
-"input",
-function(){
-
-const query =
-this.value
-.toLowerCase()
-.trim();
-
-
-document
-.querySelectorAll(".card")
-.forEach(card=>{
-
-const text =
-card.innerText
-.toLowerCase();
-
-
-card.style.display =
-text.includes(query)
-? "inline-block"
-: "none";
-
-});
-
-});
-
-
-/* =====================================
-CATEGORY
-===================================== */
-
-document
-.querySelectorAll(".category")
-.forEach(button=>{
-
-button.addEventListener(
-"click",
-()=>{
-
-document
-.querySelectorAll(".category")
-.forEach(btn=>
-btn.classList.remove("active")
-);
-
-
-button.classList.add("active");
-
-
-const category =
-button.dataset.category;
-
-
-document
-.querySelectorAll(".card")
-.forEach(card=>{
-
-if(category === "all"){
-
-card.style.display =
-"inline-block";
-
-}else{
-
-card.style.display =
-card.dataset.category
-.includes(category)
-? "inline-block"
-: "none";
-
-}
-
-});
-
-});
-
-});
-
-
-/* =====================================
-MODAL BUTTONS
-===================================== */
-
-$("accountBtn").onclick =
-openAuth;
-
-
-$("cartButton").onclick =
-openCart;
-
-
-$("closeAuth").onclick =
-closeAuth;
-
-
-$("authSwitch").onclick =
-toggleAuth;
-
-
-$("authSubmit").onclick =
-submitAuth;
-
-
-$("closeCart").onclick =
-closeCart;
-
-
-$("cartOrder").onclick =
-orderCart;
-
-
-$("closeCheckout").onclick =
-closeCheckout;
-
-
-$("whatsappOrder").onclick =
-sendWhatsAppOrder;
-
-
-/* =====================================
-CLICK OUTSIDE MODAL
-===================================== */
-
-document
-.querySelectorAll(".modal-bg")
-.forEach(bg=>{
-
-bg.addEventListener(
-"click",
-function(event){
-
-if(event.target === bg){
-
-bg.classList.remove("show");
-
-}
-
-});
-
-});
-
-
-/* =====================================
-ESCAPE KEY
-===================================== */
-
-document.addEventListener(
-"keydown",
-function(event){
-
-if(event.key === "Escape"){
-
-document
-.querySelectorAll(".modal-bg")
-.forEach(modal=>
-modal.classList.remove("show")
-);
-
-}
-
-});
-
-
-/* =====================================
-LOAD USER
-===================================== */
-
-const savedUser =
-localStorage.getItem(
-"smartbasket_user"
-);
-
-
-if(savedUser){
-
-$("userName").textContent =
-savedUser;
-
-$("accountBtn").textContent =
-"Logout";
-
-$("accountBtn").onclick =
-logout;
-
-}
-
-
-/* =====================================
-START
-===================================== */
-
-updateCartCount();
 
 </script>
 
