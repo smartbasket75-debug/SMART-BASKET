@@ -4,13 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Smart Basket | Premium Quality. Smart Choices.</title>
+<title>Smart Basket | Premium Shopping</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+:root{
+    --black:#090909;
+    --dark:#111;
+    --gold:#d7b85b;
+    --gold2:#f0d98b;
+    --cream:#f6f4ef;
+    --white:#fff;
+    --muted:#777;
+    --line:#e7e3da;
+}
 
 *{
     margin:0;
@@ -24,273 +34,337 @@ html{
 
 body{
     font-family:Inter,Arial,sans-serif;
-    background:#f5f4f0;
+    background:var(--cream);
     color:#111;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
 }
 
 /* ================= HEADER ================= */
 
 header{
-    position:absolute;
+    position:sticky;
     top:0;
-    left:0;
-    width:100%;
-    z-index:50;
-    padding:22px 6%;
+    z-index:100;
+    background:rgba(9,9,9,.96);
+    backdrop-filter:blur(15px);
+    color:white;
+    padding:17px 6%;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    color:white;
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
-    font-size:22px;
+    font-size:21px;
     font-weight:900;
-    letter-spacing:-1.2px;
+    letter-spacing:-1px;
 }
 
 .logo span{
-    color:#d7b85b;
+    color:var(--gold);
 }
 
 nav{
     display:flex;
-    gap:28px;
+    gap:25px;
 }
 
 nav a{
-    color:white;
-    text-decoration:none;
-    font-size:12px;
-    font-weight:500;
+    color:#ddd;
+    font-size:11px;
+    font-weight:600;
 }
 
 nav a:hover{
-    color:#d7b85b;
+    color:var(--gold);
 }
 
-.header-buttons{
+.header-actions{
     display:flex;
     gap:8px;
 }
 
-.header-btn{
+.icon-btn{
     width:38px;
     height:38px;
+    border:1px solid #333;
     border-radius:50%;
-    border:1px solid rgba(255,255,255,.3);
-    background:rgba(255,255,255,.08);
+    background:#151515;
     color:white;
-    cursor:pointer;
+    position:relative;
+}
+
+.icon-btn:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+}
+
+.mini-count{
+    position:absolute;
+    top:-4px;
+    right:-4px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--gold);
+    color:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:9px;
+    font-weight:900;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    min-height:760px;
-    position:relative;
-    color:white;
-
     background:
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.95),
-        rgba(0,0,0,.62),
-        rgba(0,0,0,.15)
-    ),
-    url("images/hero.jpg") center/cover no-repeat;
+        radial-gradient(circle at 80% 20%,rgba(215,184,91,.18),transparent 30%),
+        linear-gradient(135deg,#090909,#171717 55%,#0b0b0b);
+    color:white;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    right:-180px;
+    bottom:-220px;
+    border:1px solid rgba(215,184,91,.25);
+    border-radius:50%;
+    box-shadow:
+        0 0 0 70px rgba(215,184,91,.03),
+        0 0 0 140px rgba(215,184,91,.02);
 }
 
 .hero-content{
-    padding:185px 7% 100px;
-    max-width:850px;
+    width:100%;
+    padding:85px 7%;
+    position:relative;
+    z-index:2;
 }
 
-.label{
-    color:#d7b85b;
+.eyebrow{
+    color:var(--gold);
     font-size:10px;
     letter-spacing:3px;
-    font-weight:700;
+    font-weight:800;
     text-transform:uppercase;
 }
 
 .hero h1{
-    margin-top:18px;
-    font-size:clamp(60px,9vw,140px);
-    line-height:.82;
-    font-weight:900;
+    font-size:clamp(58px,9vw,125px);
+    line-height:.83;
     letter-spacing:-7px;
+    margin-top:18px;
+    font-weight:900;
 }
 
 .hero h1 span{
     display:block;
-    color:#d7b85b;
+    color:var(--gold);
 }
 
-.hero-text{
-    max-width:390px;
-    margin-top:32px;
+.hero-description{
     color:#aaa;
+    max-width:470px;
     font-size:13px;
-    line-height:1.7;
+    line-height:1.8;
+    margin-top:30px;
 }
 
-.hero-buttons{
+.hero-actions{
     display:flex;
+    flex-wrap:wrap;
     gap:10px;
-    margin-top:28px;
+    margin-top:27px;
 }
 
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:14px 24px;
+    border:0;
     border-radius:30px;
-    text-decoration:none;
-    font-size:11px;
-    font-weight:800;
-    border:none;
-    cursor:pointer;
-    transition:.3s;
+    padding:14px 23px;
+    font-size:10px;
+    font-weight:900;
+    transition:.25s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:translateY(-2px);
 }
 
-.gold{
-    background:#d7b85b;
+.btn-gold{
+    background:var(--gold);
     color:#111;
 }
 
-.outline{
-    border:1px solid rgba(255,255,255,.35);
+.btn-dark{
+    background:#1c1c1c;
+    border:1px solid #444;
     color:white;
-    background:transparent;
 }
 
-.hero-side{
-    position:absolute;
-    right:7%;
-    top:42%;
-    max-width:250px;
-}
-
-.hero-side h3{
-    font-size:12px;
-    margin-bottom:8px;
-}
-
-.hero-side p{
-    color:#999;
-    font-size:10px;
-    line-height:1.6;
-}
-
-.filters{
+.hero-stats{
     display:flex;
-    gap:6px;
-    margin-top:15px;
+    gap:35px;
+    margin-top:50px;
 }
 
-.filter{
-    padding:7px 12px;
-    border:1px solid #555;
-    border-radius:30px;
+.stat strong{
+    display:block;
+    color:white;
+    font-size:22px;
+}
+
+.stat span{
+    display:block;
+    color:#777;
     font-size:9px;
+    margin-top:4px;
 }
 
-.filter.active{
-    background:#d7b85b;
-    border-color:#d7b85b;
-    color:#111;
+/* ================= SEARCH ================= */
+
+.search-section{
+    padding:25px 7% 0;
 }
 
-/* ================= TRUST ================= */
-
-.trust{
-    position:absolute;
-    bottom:35px;
-    left:7%;
+.search-box{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:5px;
     display:flex;
     align-items:center;
-    gap:12px;
+    box-shadow:0 10px 35px rgba(0,0,0,.04);
 }
 
-.avatars{
-    display:flex;
+.search-box input{
+    flex:1;
+    border:0;
+    outline:0;
+    background:transparent;
+    padding:13px 15px;
+    font-size:12px;
 }
 
-.avatar{
-    width:32px;
-    height:32px;
-    border-radius:50%;
-    background:#777;
-    border:2px solid #111;
-    margin-left:-7px;
-}
-
-.trust-text{
-    color:#aaa;
+.search-box button{
+    border:0;
+    background:#111;
+    color:white;
+    border-radius:13px;
+    padding:12px 18px;
     font-size:10px;
+    font-weight:800;
 }
 
-/* ================= SECTION ================= */
+/* ================= SECTIONS ================= */
 
 .section{
-    padding:90px 7%;
+    padding:75px 7%;
 }
 
-.section-heading{
+.section-head{
     display:flex;
-    align-items:flex-end;
     justify-content:space-between;
-    margin-bottom:40px;
+    align-items:end;
+    gap:30px;
+    margin-bottom:35px;
 }
 
-.section-heading h2{
-    font-size:clamp(42px,5vw,72px);
+.section-head h2{
+    font-size:clamp(38px,5vw,67px);
     line-height:.9;
     letter-spacing:-4px;
 }
 
-.section-heading p{
-    max-width:350px;
+.section-head p{
+    max-width:390px;
     color:#777;
-    font-size:12px;
-    line-height:1.7;
+    font-size:11px;
+    line-height:1.8;
 }
 
-/* ================= PRODUCT FILTER ================= */
+/* ================= CATEGORIES ================= */
 
-.product-filters{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-bottom:25px;
+.categories{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:10px;
 }
 
-.product-filter{
-    border:1px solid #ddd;
+.category-card{
     background:white;
-    color:#333;
-    padding:10px 17px;
-    border-radius:30px;
-    cursor:pointer;
-    font-size:10px;
-    font-weight:700;
-    transition:.3s;
+    border:1px solid var(--line);
+    border-radius:18px;
+    min-height:105px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.25s;
 }
 
-.product-filter:hover,
-.product-filter.active{
+.category-card:hover,
+.category-card.active{
     background:#111;
     color:white;
-    border-color:#111;
+    transform:translateY(-3px);
+}
+
+.category-icon{
+    font-size:25px;
+}
+
+.category-card span{
+    font-size:9px;
+    font-weight:800;
 }
 
 /* ================= PRODUCTS ================= */
+
+.products-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.result-count{
+    color:#888;
+    font-size:10px;
+}
+
+.sort{
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:9px 12px;
+    background:white;
+    font-size:10px;
+}
 
 .products{
     display:grid;
@@ -300,52 +374,98 @@ nav a:hover{
 
 .product{
     background:white;
-    border-radius:22px;
+    border:1px solid #eee;
+    border-radius:20px;
     overflow:hidden;
-    position:relative;
-    transition:.35s;
+    transition:.3s;
 }
 
 .product:hover{
-    transform:translateY(-7px);
-    box-shadow:0 20px 45px rgba(0,0,0,.1);
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(0,0,0,.09);
 }
 
-.product-image{
-    height:310px;
-    background:#eee;
-    overflow:hidden;
+.product-visual{
+    height:260px;
+    background:
+        radial-gradient(circle at 50% 40%,rgba(215,184,91,.2),transparent 38%),
+        linear-gradient(145deg,#202020,#090909);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
 }
 
-.product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
+.visual-symbol{
+    width:105px;
+    height:105px;
+    border-radius:28px;
+    background:linear-gradient(145deg,#f0d98b,#a8862e);
+    color:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    box-shadow:0 20px 45px rgba(0,0,0,.4);
 }
 
-.product:hover img{
-    transform:scale(1.06);
+.product-badge{
+    position:absolute;
+    top:13px;
+    left:13px;
+    background:var(--gold);
+    color:#111;
+    padding:6px 9px;
+    border-radius:20px;
+    font-size:8px;
+    font-weight:900;
+}
+
+.wishlist{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:34px;
+    height:34px;
+    border:1px solid #555;
+    background:rgba(0,0,0,.45);
+    color:white;
+    border-radius:50%;
+}
+
+.wishlist.active{
+    background:var(--gold);
+    color:#111;
+    border-color:var(--gold);
 }
 
 .product-info{
-    padding:18px;
+    padding:17px;
 }
 
-.category{
+.product-category{
     color:#999;
-    font-size:9px;
+    font-size:8px;
+    letter-spacing:1.3px;
     text-transform:uppercase;
-    letter-spacing:1.5px;
 }
 
 .product-name{
-    margin-top:7px;
-    font-size:15px;
-    font-weight:700;
+    margin-top:6px;
+    font-size:14px;
+    font-weight:800;
 }
 
-.product-bottom{
+.product-desc{
+    color:#888;
+    font-size:9px;
+    line-height:1.6;
+    margin-top:7px;
+    min-height:29px;
+}
+
+.product-row{
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -353,101 +473,85 @@ nav a:hover{
 }
 
 .price{
-    font-size:15px;
+    font-size:16px;
     font-weight:900;
 }
 
-.buy-now{
-    margin-top:13px;
+.add{
+    width:35px;
+    height:35px;
+    border:0;
+    border-radius:50%;
+    background:var(--gold);
+    font-size:19px;
+    font-weight:700;
+}
+
+.buy{
     width:100%;
+    margin-top:12px;
     padding:11px;
-    border:none;
+    border:0;
     border-radius:25px;
     background:#111;
     color:white;
-    font-size:10px;
-    font-weight:700;
-    cursor:pointer;
+    font-size:9px;
+    font-weight:900;
 }
 
-.buy-now:hover{
-    background:#d7b85b;
+.buy:hover{
+    background:var(--gold);
     color:#111;
 }
 
-.add-cart{
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    border:none;
-    background:#d7b85b;
-    color:#111;
-    font-size:20px;
-    cursor:pointer;
+/* ================= EMPTY ================= */
+
+.empty{
+    grid-column:1/-1;
+    background:white;
+    border:1px dashed #ccc;
+    border-radius:20px;
+    padding:50px 20px;
+    text-align:center;
+    color:#888;
+    font-size:12px;
 }
 
-/* ================= FEATURE ================= */
+/* ================= PROMO ================= */
 
-.feature{
-    padding:0 7% 100px;
-}
-
-.feature-box{
-    min-height:550px;
+.promo{
+    margin:0 7% 80px;
     border-radius:30px;
-    padding:70px;
-    display:flex;
-    align-items:center;
-    color:white;
-
+    padding:65px;
     background:
-    linear-gradient(
-        90deg,
-        rgba(0,0,0,.9),
-        rgba(0,0,0,.15)
-    ),
-    url("images/feature.jpg") center/cover no-repeat;
+        radial-gradient(circle at 85% 50%,rgba(215,184,91,.2),transparent 30%),
+        #0b0b0b;
+    color:white;
+    overflow:hidden;
 }
 
-.feature-content{
-    max-width:480px;
+.promo small{
+    color:var(--gold);
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:3px;
 }
 
-.feature-content h2{
-    margin:18px 0;
-    font-size:clamp(50px,6vw,85px);
-    line-height:.88;
+.promo h2{
+    font-size:clamp(45px,6vw,80px);
+    line-height:.9;
     letter-spacing:-5px;
+    margin:15px 0;
 }
 
-.feature-content p{
-    color:#aaa;
-    font-size:13px;
+.promo p{
+    color:#999;
+    max-width:390px;
+    font-size:12px;
     line-height:1.7;
-    max-width:360px;
 }
 
 /* ================= REVIEWS ================= */
-
-.reviews-section{
-    padding:0 7% 100px;
-}
-
-.reviews-heading{
-    margin-bottom:35px;
-}
-
-.reviews-heading h2{
-    font-size:clamp(42px,5vw,65px);
-    letter-spacing:-4px;
-    line-height:.9;
-}
-
-.reviews-heading p{
-    margin-top:15px;
-    color:#777;
-    font-size:12px;
-}
 
 .reviews{
     display:grid;
@@ -457,156 +561,117 @@ nav a:hover{
 
 .review{
     background:white;
+    border:1px solid var(--line);
     border-radius:20px;
-    padding:25px;
-    box-shadow:0 8px 30px rgba(0,0,0,.04);
+    padding:22px;
 }
 
 .stars{
-    color:#d7b85b;
+    color:#c99e28;
     letter-spacing:2px;
-    font-size:13px;
 }
 
-.review-text{
-    margin-top:15px;
+.review p{
+    margin-top:14px;
+    font-size:11px;
+    line-height:1.8;
     color:#555;
-    font-size:12px;
-    line-height:1.7;
 }
 
-.review-user{
-    margin-top:20px;
+.reviewer{
     display:flex;
     align-items:center;
     gap:10px;
+    margin-top:18px;
 }
 
-.review-avatar{
+.reviewer-avatar{
     width:38px;
     height:38px;
     border-radius:50%;
-    background:#111;
-    color:#d7b85b;
+    background:linear-gradient(145deg,#d7b85b,#333);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:800;
-    font-size:12px;
-}
-
-.review-user strong{
-    display:block;
+    color:white;
     font-size:11px;
+    font-weight:900;
 }
 
-.review-user span{
+.reviewer strong{
     display:block;
+    font-size:10px;
+}
+
+.reviewer span{
+    display:block;
+    font-size:8px;
     color:#999;
-    font-size:9px;
     margin-top:3px;
 }
 
-/* ================= HELP / FAQ ================= */
-
-.help-section{
-    padding:0 7% 100px;
-}
-
-.help-box{
-    background:#111;
-    color:white;
-    border-radius:28px;
-    padding:55px;
-}
-
-.help-box h2{
-    font-size:clamp(38px,5vw,65px);
-    letter-spacing:-4px;
-}
-
-.help-box-intro{
-    color:#999;
-    font-size:12px;
-    line-height:1.7;
-    max-width:500px;
-    margin-top:15px;
-}
-
-.faq-list{
-    margin-top:35px;
-    display:grid;
-    gap:10px;
-}
+/* ================= FAQ ================= */
 
 .faq{
-    border:1px solid #292929;
+    max-width:850px;
+}
+
+.faq-item{
+    background:white;
+    border:1px solid var(--line);
     border-radius:14px;
+    margin-bottom:9px;
     overflow:hidden;
 }
 
 .faq-question{
     width:100%;
-    background:#151515;
-    color:white;
-    border:none;
-    padding:18px;
+    padding:17px;
+    border:0;
+    background:white;
     text-align:left;
     font-size:11px;
-    font-weight:700;
-    cursor:pointer;
+    font-weight:800;
     display:flex;
     justify-content:space-between;
 }
 
 .faq-answer{
     display:none;
-    padding:0 18px 18px;
-    color:#999;
-    font-size:11px;
-    line-height:1.7;
-    background:#151515;
+    padding:0 17px 17px;
+    color:#777;
+    font-size:10px;
+    line-height:1.8;
 }
 
-.faq.open .faq-answer{
+.faq-item.open .faq-answer{
     display:block;
 }
 
-.faq-symbol{
-    color:#d7b85b;
-    font-size:17px;
+/* ================= INFO ================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
 }
 
-/* ================= CART ================= */
-
-.cart-button{
-    position:fixed;
-    right:22px;
-    bottom:22px;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    background:#d7b85b;
-    border:none;
-    z-index:100;
-    cursor:pointer;
-    font-size:20px;
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+.info-card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:25px;
 }
 
-.cart-count{
-    position:absolute;
-    top:-3px;
-    right:-3px;
-    width:21px;
-    height:21px;
-    border-radius:50%;
-    background:#111;
-    color:white;
-    font-size:9px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.info-card h3{
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.info-card p{
+    color:#777;
+    font-size:10px;
+    line-height:1.8;
 }
 
 /* ================= MODAL ================= */
@@ -615,7 +680,7 @@ nav a:hover{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.7);
+    background:rgba(0,0,0,.72);
     z-index:500;
     align-items:center;
     justify-content:center;
@@ -628,66 +693,148 @@ nav a:hover{
 
 .modal-box{
     width:100%;
-    max-width:550px;
+    max-width:560px;
     max-height:92vh;
-    overflow-y:auto;
+    overflow:auto;
     background:white;
-    border-radius:25px;
+    border-radius:24px;
     padding:28px;
     position:relative;
 }
 
+.close{
+    position:absolute;
+    right:17px;
+    top:17px;
+    width:34px;
+    height:34px;
+    border:0;
+    border-radius:50%;
+    background:#eee;
+}
+
 .modal-box h2{
-    font-size:28px;
-    margin-bottom:6px;
+    font-size:27px;
+    margin-bottom:5px;
 }
 
 .modal-subtitle{
     color:#888;
-    font-size:11px;
+    font-size:10px;
     margin-bottom:22px;
 }
 
-.close{
-    position:absolute;
-    right:18px;
-    top:18px;
-    width:35px;
-    height:35px;
-    border:none;
-    border-radius:50%;
+/* ================= CART ================= */
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-name{
+    font-size:11px;
+    font-weight:800;
+}
+
+.cart-item-price{
+    color:#888;
+    font-size:9px;
+    margin-top:4px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.quantity button{
+    width:27px;
+    height:27px;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:8px;
+}
+
+.remove{
+    border:0;
     background:#eee;
-    cursor:pointer;
+    width:27px;
+    height:27px;
+    border-radius:50%;
+}
+
+.total-box{
+    margin-top:18px;
+    background:#111;
+    color:white;
+    border-radius:15px;
+    padding:16px;
+}
+
+.total-line{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    margin:7px 0;
+}
+
+.total-final{
+    border-top:1px solid #444;
+    padding-top:11px;
+    margin-top:10px;
+    font-size:16px;
+    font-weight:900;
+}
+
+.checkout-btn{
+    width:100%;
+    border:0;
+    background:var(--gold);
+    color:#111;
+    padding:14px;
+    border-radius:28px;
+    margin-top:14px;
+    font-size:10px;
+    font-weight:900;
 }
 
 /* ================= FORM ================= */
 
 .form-group{
-    margin-bottom:14px;
+    margin-bottom:13px;
 }
 
 .form-group label{
     display:block;
     margin-bottom:6px;
-    font-size:10px;
-    font-weight:700;
+    font-size:9px;
+    font-weight:800;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select{
     width:100%;
-    padding:13px;
     border:1px solid #ddd;
     border-radius:10px;
+    padding:12px;
     outline:none;
-    font-family:inherit;
-    font-size:12px;
+    font-size:11px;
+    background:white;
 }
 
 .form-group textarea{
-    height:80px;
-    resize:none;
+    min-height:75px;
+    resize:vertical;
 }
 
 .form-row{
@@ -696,223 +843,195 @@ nav a:hover{
     gap:10px;
 }
 
-/* ================= PAYMENT ================= */
-
-.payment-options{
+.payment-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-top:8px;
+    gap:9px;
 }
 
-.payment-option{
-    padding:15px;
+.payment{
     border:1px solid #ddd;
     border-radius:12px;
-    cursor:pointer;
-    font-size:11px;
-    font-weight:700;
+    padding:14px;
     text-align:center;
+    font-size:10px;
+    font-weight:800;
 }
 
-.payment-option.selected{
-    border-color:#d7b85b;
-    background:#fff9e8;
+.payment.selected{
+    border-color:var(--gold);
+    background:#fff9e7;
 }
 
 .payment-info{
-    margin-top:15px;
-    padding:15px;
+    background:#f6f6f6;
     border-radius:12px;
-    background:#f5f5f5;
-    font-size:11px;
+    padding:14px;
+    margin-top:12px;
+    font-size:10px;
     line-height:1.7;
-}
-
-.order-total{
-    margin-top:20px;
-    padding:17px;
-    border-radius:15px;
-    background:#111;
-    color:white;
-}
-
-.total-row{
-    display:flex;
-    justify-content:space-between;
-    margin:7px 0;
-    font-size:12px;
-}
-
-.total-final{
-    border-top:1px solid #444;
-    margin-top:10px;
-    padding-top:12px;
-    font-size:16px;
-    font-weight:900;
-}
-
-.place-order{
-    width:100%;
-    margin-top:15px;
-    padding:15px;
-    border:none;
-    border-radius:30px;
-    background:#d7b85b;
-    color:#111;
-    font-weight:900;
-    cursor:pointer;
-}
-
-/* ================= LOGIN ================= */
-
-.login-tabs{
-    display:flex;
-    gap:8px;
-    margin-bottom:20px;
-}
-
-.login-tab{
-    flex:1;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    background:#eee;
-    font-size:11px;
-    font-weight:700;
-}
-
-.login-tab.active{
-    background:#111;
-    color:white;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    background:#090909;
+    background:#080808;
     color:white;
-    padding:70px 7% 25px;
+    padding:65px 7% 25px;
 }
 
 .footer-grid{
     display:grid;
     grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:45px;
+    gap:40px;
 }
 
 .footer-logo{
-    font-size:27px;
+    font-size:26px;
     font-weight:900;
 }
 
 .footer-logo span{
-    color:#d7b85b;
+    color:var(--gold);
+}
+
+.footer-description{
+    color:#777;
+    max-width:300px;
+    font-size:10px;
+    line-height:1.8;
+    margin-top:12px;
 }
 
 footer h4{
-    font-size:11px;
-    margin-bottom:18px;
+    font-size:10px;
+    margin-bottom:17px;
 }
 
 footer a{
     display:block;
     color:#777;
-    text-decoration:none;
-    font-size:11px;
+    font-size:10px;
     margin-bottom:11px;
 }
 
 footer a:hover{
-    color:#d7b85b;
-}
-
-.footer-description{
-    color:#777;
-    font-size:11px;
-    line-height:1.7;
-    max-width:300px;
-    margin-top:12px;
-}
-
-.contact-line{
-    margin-top:8px;
-}
-
-.contact-line a{
-    display:inline;
-    color:#d7b85b;
+    color:var(--gold);
 }
 
 .copyright{
     border-top:1px solid #222;
-    margin-top:50px;
+    margin-top:45px;
     padding-top:20px;
     color:#555;
+    font-size:9px;
+}
+
+/* ================= FLOATING CART ================= */
+
+.floating-cart{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:150;
+    width:58px;
+    height:58px;
+    border:0;
+    border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    font-size:20px;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translate(-50%,20px);
+    background:#111;
+    color:white;
+    padding:13px 20px;
+    border-radius:30px;
     font-size:10px;
+    opacity:0;
+    pointer-events:none;
+    z-index:1000;
+    transition:.3s;
+}
+
+.toast.show{
+    opacity:1;
+    transform:translate(-50%,0);
 }
 
 /* ================= MOBILE ================= */
 
-@media(max-width:850px){
+@media(max-width:900px){
 
     nav{
         display:none;
     }
 
-    .hero{
-        min-height:700px;
-    }
-
-    .hero-content{
-        padding:160px 7% 100px;
-    }
-
-    .hero-side{
-        display:none;
+    .categories{
+        grid-template-columns:repeat(3,1fr);
     }
 
     .products{
         grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
-
-    .product-image{
-        height:230px;
-    }
-
-    .section-heading{
-        display:block;
-    }
-
-    .section-heading p{
-        margin-top:18px;
-    }
-
-    .feature-box{
-        padding:45px 30px;
-        min-height:480px;
     }
 
     .reviews{
         grid-template-columns:1fr;
     }
 
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
     .footer-grid{
         grid-template-columns:1fr 1fr;
     }
-
 }
 
-@media(max-width:500px){
+@media(max-width:550px){
+
+    header{
+        padding:14px 5%;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .hero{
+        min-height:620px;
+    }
+
+    .hero-content{
+        padding:70px 7%;
+    }
 
     .hero h1{
-        font-size:58px;
+        font-size:57px;
         letter-spacing:-4px;
     }
 
+    .hero-stats{
+        gap:20px;
+    }
+
+    .stat strong{
+        font-size:17px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
     .products{
+        grid-template-columns:1fr 1fr;
         gap:8px;
     }
 
@@ -920,70 +1039,94 @@ footer a:hover{
         border-radius:15px;
     }
 
-    .product-image{
-        height:190px;
+    .product-visual{
+        height:185px;
+    }
+
+    .visual-symbol{
+        width:75px;
+        height:75px;
+        font-size:30px;
+        border-radius:20px;
     }
 
     .product-info{
-        padding:13px;
+        padding:12px;
     }
 
     .product-name{
-        font-size:12px;
+        font-size:11px;
     }
 
-    .form-row{
-        grid-template-columns:1fr;
+    .product-desc{
+        font-size:8px;
     }
 
-    .payment-options{
+    .price{
+        font-size:13px;
+    }
+
+    .section{
+        padding:55px 6%;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-head p{
+        margin-top:17px;
+    }
+
+    .promo{
+        margin:0 5% 55px;
+        padding:40px 25px;
+    }
+
+    .promo h2{
+        font-size:48px;
+    }
+
+    .form-row,
+    .payment-grid{
         grid-template-columns:1fr;
     }
 
     .footer-grid{
         grid-template-columns:1fr;
     }
-
-    .help-box{
-        padding:35px 22px;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
 
-
 <!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="logo">
+    <a href="#" class="logo">
         SMART<span>BASKET</span>
-    </div>
+    </a>
 
     <nav>
         <a href="#">Home</a>
         <a href="#shop">Shop</a>
+        <a href="#categories">Categories</a>
         <a href="#deals">Deals</a>
         <a href="#reviews">Reviews</a>
         <a href="#help">Help</a>
     </nav>
 
-    <div class="header-buttons">
+    <div class="header-actions">
 
-        <button
-            class="header-btn"
-            onclick="openLogin()">
+        <button class="icon-btn" onclick="openLogin()" aria-label="Login">
             ♙
         </button>
 
-        <button
-            class="header-btn"
-            onclick="openCart()">
+        <button class="icon-btn" onclick="openCart()" aria-label="Cart">
             🛒
+            <span class="mini-count" id="headerCount">0</span>
         </button>
 
     </div>
@@ -997,83 +1140,140 @@ footer a:hover{
 
     <div class="hero-content">
 
-        <div class="label">
+        <div class="eyebrow">
             SMART BASKET • PREMIUM STORE
         </div>
 
         <h1>
             SHOP
-            <span>SMARTER</span>
+            <span>SMARTER.</span>
         </h1>
 
-        <p class="hero-text">
-
-            Premium quality products,
-            smart choices and budget-friendly
-            prices — all in one place.
-
+        <p class="hero-description">
+            Smart Basket brings together useful, stylish and
+            value-focused products for everyday shopping —
+            carefully selected for quality and convenience.
         </p>
 
-        <div class="hero-buttons">
+        <div class="hero-actions">
 
-            <a
-                href="#shop"
-                class="btn gold">
+            <a href="#shop" class="btn btn-gold">
                 SHOP NOW
             </a>
 
-            <a
-                href="#deals"
-                class="btn outline">
-                EXPLORE
+            <a href="#categories" class="btn btn-dark">
+                EXPLORE CATEGORIES
             </a>
 
         </div>
 
+        <div class="hero-stats">
+
+            <div class="stat">
+                <strong>100+</strong>
+                <span>HAPPY CUSTOMERS</span>
+            </div>
+
+            <div class="stat">
+                <strong>1–10</strong>
+                <span>DAYS SHIPPING</span>
+            </div>
+
+            <div class="stat">
+                <strong>7 DAYS</strong>
+                <span>RETURN WINDOW</span>
+            </div>
+
+        </div>
+
     </div>
 
+</section>
 
-    <div class="hero-side">
 
-        <h3>
-            Smart Shopping. Better Value.
-        </h3>
+<!-- ================= SEARCH ================= -->
+
+<div class="search-section">
+
+    <div class="search-box">
+
+        <input
+            id="searchInput"
+            type="search"
+            placeholder="Search products..."
+            oninput="filterProducts()">
+
+        <button onclick="filterProducts()">
+            SEARCH
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section" id="categories">
+
+    <div class="section-head">
+
+        <div>
+            <div class="eyebrow" style="color:#999">
+                SHOP BY CATEGORY
+            </div>
+
+            <h2>
+                FIND<br>
+                YOUR PICK.
+            </h2>
+        </div>
 
         <p>
-            Carefully selected products
-            at prices that make sense.
+            Browse Smart Basket's product collection
+            by category or choose All Products to see
+            everything available in the store.
         </p>
-
-        <div class="filters">
-
-            <div class="filter active">
-                Premium
-            </div>
-
-            <div class="filter">
-                Trending
-            </div>
-
-            <div class="filter">
-                New
-            </div>
-
-        </div>
 
     </div>
 
+    <div class="categories">
 
-    <div class="trust">
+        <button class="category-card active"
+            onclick="selectCategory('All',this)">
+            <div class="category-icon">✦</div>
+            <span>All Products</span>
+        </button>
 
-        <div class="avatars">
-            <div class="avatar"></div>
-            <div class="avatar"></div>
-            <div class="avatar"></div>
-        </div>
+        <button class="category-card"
+            onclick="selectCategory('Electronics',this)">
+            <div class="category-icon">⚡</div>
+            <span>Electronics</span>
+        </button>
 
-        <div class="trust-text">
-            Trusted by 100+ customers
-        </div>
+        <button class="category-card"
+            onclick="selectCategory('Home',this)">
+            <div class="category-icon">⌂</div>
+            <span>Home</span>
+        </button>
+
+        <button class="category-card"
+            onclick="selectCategory('Lifestyle',this)">
+            <div class="category-icon">◆</div>
+            <span>Lifestyle</span>
+        </button>
+
+        <button class="category-card"
+            onclick="selectCategory('Beauty',this)">
+            <div class="category-icon">✿</div>
+            <span>Beauty</span>
+        </button>
+
+        <button class="category-card"
+            onclick="selectCategory('Accessories',this)">
+            <div class="category-icon">◇</div>
+            <span>Accessories</span>
+        </button>
 
     </div>
 
@@ -1082,463 +1282,164 @@ footer a:hover{
 
 <!-- ================= PRODUCTS ================= -->
 
-<section
-    class="section"
-    id="shop">
+<section class="section" id="shop">
 
-    <div class="section-heading">
+    <div class="section-head">
 
         <div>
-
-            <div
-                class="label"
-                style="color:#999">
-
-                SMART BASKET
-
+            <div class="eyebrow" style="color:#999">
+                SMART BASKET COLLECTION
             </div>
 
             <h2>
-                SHOP<br>
-                SMART.
+                ALL<br>
+                PRODUCTS.
             </h2>
-
         </div>
 
         <p>
-            Quality products selected for
-            smart everyday shopping at
-            budget-friendly prices.
+            Practical products, smart finds and everyday
+            essentials — selected to give you quality
+            without unnecessary pricing.
         </p>
 
     </div>
 
+    <div class="products-toolbar">
 
-    <!-- PRODUCT FILTERS -->
+        <div class="result-count" id="resultCount">
+            8 products
+        </div>
 
-    <div class="product-filters">
+        <select class="sort" id="sortSelect"
+            onchange="sortProducts()">
 
-        <button
-            class="product-filter active"
-            onclick="filterProducts('all',this)">
-            ALL PRODUCTS
-        </button>
+            <option value="default">Sort: Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Name: A–Z</option>
 
-        <button
-            class="product-filter"
-            onclick="filterProducts('Smart Gadget',this)">
-            SMART GADGETS
-        </button>
-
-        <button
-            class="product-filter"
-            onclick="filterProducts('Home',this)">
-            HOME
-        </button>
-
-        <button
-            class="product-filter"
-            onclick="filterProducts('Lifestyle',this)">
-            LIFESTYLE
-        </button>
-
-        <button
-            class="product-filter"
-            onclick="filterProducts('Accessories',this)">
-            ACCESSORIES
-        </button>
+        </select>
 
     </div>
 
-
-    <div class="products" id="productGrid">
-
-
-        <!-- PRODUCT 1 -->
-
-        <article
-            class="product"
-            data-category="Smart Gadget">
-
-            <div class="product-image">
-
-                <img
-                    src="images/product1.jpg"
-                    alt="Premium Smart Gadget">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="category">
-                    Smart Gadget
-                </div>
-
-                <div class="product-name">
-                    Premium Smart Gadget
-                </div>
-
-                <div class="product-bottom">
-
-                    <div class="price">
-                        ₹799
-                    </div>
-
-                    <button
-                        class="add-cart"
-                        onclick="addToCart(
-                        'Premium Smart Gadget',
-                        799
-                        )">
-                        +
-                    </button>
-
-                </div>
-
-                <button
-                    class="buy-now"
-                    onclick="buyNow(
-                    'Premium Smart Gadget',
-                    799
-                    )">
-                    BUY NOW
-                </button>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 2 -->
-
-        <article
-            class="product"
-            data-category="Home">
-
-            <div class="product-image">
-
-                <img
-                    src="images/product2.jpg"
-                    alt="Modern Home Essential">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="category">
-                    Home
-                </div>
-
-                <div class="product-name">
-                    Modern Home Essential
-                </div>
-
-                <div class="product-bottom">
-
-                    <div class="price">
-                        ₹599
-                    </div>
-
-                    <button
-                        class="add-cart"
-                        onclick="addToCart(
-                        'Modern Home Essential',
-                        599
-                        )">
-                        +
-                    </button>
-
-                </div>
-
-                <button
-                    class="buy-now"
-                    onclick="buyNow(
-                    'Modern Home Essential',
-                    599
-                    )">
-                    BUY NOW
-                </button>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 3 -->
-
-        <article
-            class="product"
-            data-category="Lifestyle">
-
-            <div class="product-image">
-
-                <img
-                    src="images/product3.jpg"
-                    alt="Premium Lifestyle Item">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="category">
-                    Lifestyle
-                </div>
-
-                <div class="product-name">
-                    Premium Lifestyle Item
-                </div>
-
-                <div class="product-bottom">
-
-                    <div class="price">
-                        ₹999
-                    </div>
-
-                    <button
-                        class="add-cart"
-                        onclick="addToCart(
-                        'Premium Lifestyle Item',
-                        999
-                        )">
-                        +
-                    </button>
-
-                </div>
-
-                <button
-                    class="buy-now"
-                    onclick="buyNow(
-                    'Premium Lifestyle Item',
-                    999
-                    )">
-                    BUY NOW
-                </button>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUCT 4 -->
-
-        <article
-            class="product"
-            data-category="Accessories">
-
-            <div class="product-image">
-
-                <img
-                    src="images/product4.jpg"
-                    alt="Smart Everyday Product">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="category">
-                    Accessories
-                </div>
-
-                <div class="product-name">
-                    Smart Everyday Product
-                </div>
-
-                <div class="product-bottom">
-
-                    <div class="price">
-                        ₹699
-                    </div>
-
-                    <button
-                        class="add-cart"
-                        onclick="addToCart(
-                        'Smart Everyday Product',
-                        699
-                        )">
-                        +
-                    </button>
-
-                </div>
-
-                <button
-                    class="buy-now"
-                    onclick="buyNow(
-                    'Smart Everyday Product',
-                    699
-                    )">
-                    BUY NOW
-                </button>
-
-            </div>
-
-        </article>
-
-    </div>
+    <div class="products" id="productGrid"></div>
 
 </section>
 
 
-<!-- ================= FEATURE ================= -->
+<!-- ================= DEAL ================= -->
 
-<section
-    class="feature"
-    id="deals">
+<section id="deals" class="promo">
 
-    <div class="feature-box">
+    <small>SMART BASKET VALUE</small>
 
-        <div class="feature-content">
+    <h2>
+        SMART<br>
+        FINDS.
+    </h2>
 
-            <div class="label">
-                SMART BASKET EXCLUSIVE
-            </div>
+    <p>
+        Premium-looking, useful products at prices
+        designed to stay budget friendly.
+    </p>
 
-            <h2>
-                PREMIUM<br>
-                FOR LESS.
-            </h2>
+    <br>
 
-            <p>
-                Premium quality products
-                at budget-friendly prices.
-                Shop smart without overspending.
-            </p>
-
-            <br>
-
-            <a
-                href="#shop"
-                class="btn gold">
-                VIEW PRODUCTS
-            </a>
-
-        </div>
-
-    </div>
+    <a href="#shop" class="btn btn-gold">
+        VIEW PRODUCTS
+    </a>
 
 </section>
 
 
 <!-- ================= REVIEWS ================= -->
 
-<section
-    class="reviews-section"
-    id="reviews">
+<section class="section" id="reviews">
 
-    <div class="reviews-heading">
+    <div class="section-head">
 
-        <div class="label" style="color:#999">
-            CUSTOMER LOVE
+        <div>
+            <div class="eyebrow" style="color:#999">
+                CUSTOMER LOVE
+            </div>
+
+            <h2>
+                WHAT<br>
+                THEY SAY.
+            </h2>
         </div>
 
-        <h2>
-            PEOPLE<br>
-            CHOOSE SMART.
-        </h2>
-
         <p>
-            Customer feedback from our growing
-            Smart Basket community.
+            A few sample customer-style reviews from
+            Kerala are shown here for the store design.
+            Replace them with verified customer reviews
+            after receiving real orders.
         </p>
 
     </div>
-
 
     <div class="reviews">
 
         <div class="review">
 
-            <div class="stars">
-                ★★★★★
-            </div>
+            <div class="stars">★★★★★</div>
 
-            <div class="review-text">
-                “Product quality nalla ishtapettu.
-                Price reasonable aanu and ordering
-                process was very easy.”
-            </div>
+            <p>
+                "Product quality was really good and
+                delivery was smooth. Good experience
+                ordering from Smart Basket."
+            </p>
 
-            <div class="review-user">
-
-                <div class="review-avatar">
-                    AK
-                </div>
+            <div class="reviewer">
+                <div class="reviewer-avatar">AR</div>
 
                 <div>
-                    <strong>
-                        Arun K.
-                    </strong>
-
-                    <span>
-                        Trivandrum, Kerala
-                    </span>
+                    <strong>Arun R.</strong>
+                    <span>Thiruvananthapuram, Kerala</span>
                 </div>
-
             </div>
 
         </div>
 
-
         <div class="review">
 
-            <div class="stars">
-                ★★★★★
-            </div>
+            <div class="stars">★★★★★</div>
 
-            <div class="review-text">
-                “Expected quality thanne kitti.
-                Packagingum delivery experienceum
-                nannayirunnu.”
-            </div>
+            <p>
+                "Price was reasonable and the product
+                looked exactly as expected. Customer
+                support through WhatsApp was helpful."
+            </p>
 
-            <div class="review-user">
-
-                <div class="review-avatar">
-                    NS
-                </div>
+            <div class="reviewer">
+                <div class="reviewer-avatar">AS</div>
 
                 <div>
-                    <strong>
-                        Nithin S.
-                    </strong>
-
-                    <span>
-                        Kollam, Kerala
-                    </span>
+                    <strong>Anjali S.</strong>
+                    <span>Kollam, Kerala</span>
                 </div>
-
             </div>
 
         </div>
 
-
         <div class="review">
 
-            <div class="stars">
-                ★★★★★
-            </div>
+            <div class="stars">★★★★★</div>
 
-            <div class="review-text">
-                “Good products and budget-friendly
-                prices. WhatsApp ordering was
-                simple and convenient.”
-            </div>
+            <p>
+                "Nice shopping experience. Simple
+                ordering and good packaging. Will
+                definitely check the new products."
+            </p>
 
-            <div class="review-user">
-
-                <div class="review-avatar">
-                    AM
-                </div>
+            <div class="reviewer">
+                <div class="reviewer-avatar">VK</div>
 
                 <div>
-                    <strong>
-                        Amal M.
-                    </strong>
-
-                    <span>
-                        Kochi, Kerala
-                    </span>
+                    <strong>Vishnu K.</strong>
+                    <span>Kochi, Kerala</span>
                 </div>
-
             </div>
 
         </div>
@@ -1550,171 +1451,167 @@ footer a:hover{
 
 <!-- ================= HELP / FAQ ================= -->
 
-<section
-    class="help-section"
-    id="help">
+<section class="section" id="help">
 
-    <div class="help-box">
+    <div class="section-head">
 
-        <div class="label">
-            HELP & SUPPORT
+        <div>
+            <div class="eyebrow" style="color:#999">
+                HELP CENTER
+            </div>
+
+            <h2>
+                NEED<br>
+                HELP?
+            </h2>
         </div>
 
-        <h2>
-            NEED<br>
-            HELP?
-        </h2>
-
-        <p class="help-box-intro">
-            Find quick answers about ordering,
-            delivery, returns, COD and contacting
-            Smart Basket.
+        <p>
+            Find quick answers about shipping, returns,
+            payments, COD and ordering.
         </p>
 
+    </div>
 
-        <div class="faq-list">
+    <div class="faq">
 
+        <div class="faq-item">
 
-            <div class="faq">
+            <button class="faq-question"
+                onclick="toggleFaq(this)">
+                How long does shipping take?
+                <span>+</span>
+            </button>
 
-                <button
-                    class="faq-question"
-                    onclick="toggleFAQ(this)">
-
-                    How long does delivery take?
-
-                    <span class="faq-symbol">
-                        +
-                    </span>
-
-                </button>
-
-                <div class="faq-answer">
-                    Standard delivery usually takes
-                    1 to 10 days depending on your
-                    location and product availability.
-                </div>
-
+            <div class="faq-answer">
+                Standard delivery usually takes
+                1 to 10 days depending on your location
+                and product availability.
             </div>
 
+        </div>
 
-            <div class="faq">
+        <div class="faq-item">
 
-                <button
-                    class="faq-question"
-                    onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                onclick="toggleFaq(this)">
+                What is the return policy?
+                <span>+</span>
+            </button>
 
-                    Is Cash on Delivery available?
-
-                    <span class="faq-symbol">
-                        +
-                    </span>
-
-                </button>
-
-                <div class="faq-answer">
-                    Yes. Cash on Delivery is available
-                    on eligible orders. A ₹20 COD advance
-                    payment is required before dispatch.
-                </div>
-
+            <div class="faq-answer">
+                Returns are accepted within 7 days of
+                delivery, subject to product condition
+                and applicable product-specific rules.
+                Contact Smart Basket before sending
+                the product back.
             </div>
 
+        </div>
 
-            <div class="faq">
+        <div class="faq-item">
 
-                <button
-                    class="faq-question"
-                    onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                onclick="toggleFaq(this)">
+                Is Cash on Delivery available?
+                <span>+</span>
+            </button>
 
-                    Why is there a ₹20 COD advance?
-
-                    <span class="faq-symbol">
-                        +
-                    </span>
-
-                </button>
-
-                <div class="faq-answer">
-                    A ₹20 advance is collected to confirm
-                    COD orders. The remaining product
-                    amount is payable during delivery.
-                </div>
-
+            <div class="faq-answer">
+                Yes. COD is available. A ₹20 advance
+                payment is required before processing
+                a COD order. The remaining product
+                amount is payable on delivery.
             </div>
 
+        </div>
 
-            <div class="faq">
+        <div class="faq-item">
 
-                <button
-                    class="faq-question"
-                    onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                onclick="toggleFaq(this)">
+                Can I pay through UPI?
+                <span>+</span>
+            </button>
 
-                    What is your return policy?
-
-                    <span class="faq-symbol">
-                        +
-                    </span>
-
-                </button>
-
-                <div class="faq-answer">
-                    Returns are accepted within 7 days
-                    of delivery, subject to the product
-                    being eligible and meeting the return
-                    conditions.
-                </div>
-
+            <div class="faq-answer">
+                Yes. UPI payments are supported through
+                the checkout flow using the Smart Basket
+                UPI ID shown during checkout.
             </div>
 
+        </div>
 
-            <div class="faq">
+        <div class="faq-item">
 
-                <button
-                    class="faq-question"
-                    onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                onclick="toggleFaq(this)">
+                How do I place an order?
+                <span>+</span>
+            </button>
 
-                    How can I place an order?
-
-                    <span class="faq-symbol">
-                        +
-                    </span>
-
-                </button>
-
-                <div class="faq-answer">
-                    Select a product, use Buy Now or add
-                    products to your basket, enter your
-                    delivery details and continue with
-                    UPI or COD checkout.
-                </div>
-
+            <div class="faq-answer">
+                Add your products to the basket, open
+                checkout, enter your delivery details,
+                choose UPI or COD, and follow the payment
+                and WhatsApp confirmation steps.
             </div>
 
+        </div>
 
-            <div class="faq">
+        <div class="faq-item">
 
-                <button
-                    class="faq-question"
-                    onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                onclick="toggleFaq(this)">
+                How can I contact Smart Basket?
+                <span>+</span>
+            </button>
 
-                    How can I contact Smart Basket?
-
-                    <span class="faq-symbol">
-                        +
-                    </span>
-
-                </button>
-
-                <div class="faq-answer">
-                    You can contact Smart Basket through
-                    WhatsApp at +91 89216 78447 or email
-                    smartbasket75@gmail.com.
-                </div>
-
+            <div class="faq-answer">
+                WhatsApp:
+                +91 89216 78447<br><br>
+                Email:
+                smartbasket75@gmail.com
             </div>
 
+        </div>
 
+    </div>
+
+</section>
+
+
+<!-- ================= STORE INFO ================= -->
+
+<section class="section">
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <h3>🚚 Shipping</h3>
+            <p>
+                Delivery is normally completed within
+                1–10 days depending on destination,
+                courier availability and product.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>↩️ Returns</h3>
+            <p>
+                Return requests can be accepted within
+                7 days of delivery, subject to applicable
+                return conditions.
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>💬 Support</h3>
+            <p>
+                Need help with an order?
+                Contact Smart Basket through WhatsApp
+                or email for assistance.
+            </p>
         </div>
 
     </div>
@@ -1724,21 +1621,16 @@ footer a:hover{
 
 <!-- ================= CART MODAL ================= -->
 
-<div
-    class="modal"
-    id="cartModal">
+<div class="modal" id="cartModal">
 
     <div class="modal-box">
 
-        <button
-            class="close"
+        <button class="close"
             onclick="closeModal('cartModal')">
             ×
         </button>
 
-        <h2>
-            Your Basket
-        </h2>
+        <h2>Your Basket</h2>
 
         <div class="modal-subtitle">
             Review your products before checkout.
@@ -1746,52 +1638,28 @@ footer a:hover{
 
         <div id="cartItems"></div>
 
-        <div class="order-total">
+        <div class="total-box">
 
-            <div class="total-row">
-
-                <span>
-                    Subtotal
-                </span>
-
-                <span id="cartSubtotal">
-                    ₹0
-                </span>
-
+            <div class="total-line">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">₹0</span>
             </div>
 
-            <div class="total-row">
-
-                <span>
-                    Delivery
-                </span>
-
-                <span>
-                    FREE
-                </span>
-
+            <div class="total-line">
+                <span>Delivery</span>
+                <span>FREE</span>
             </div>
 
-            <div class="total-row total-final">
-
-                <span>
-                    Total
-                </span>
-
-                <span id="cartTotal">
-                    ₹0
-                </span>
-
+            <div class="total-line total-final">
+                <span>Total</span>
+                <span id="cartTotal">₹0</span>
             </div>
 
         </div>
 
-        <button
-            class="place-order"
+        <button class="checkout-btn"
             onclick="openCheckout()">
-
             PROCEED TO CHECKOUT
-
         </button>
 
     </div>
@@ -1799,129 +1667,77 @@ footer a:hover{
 </div>
 
 
-<!-- ================= CHECKOUT ================= -->
+<!-- ================= CHECKOUT MODAL ================= -->
 
-<div
-    class="modal"
-    id="checkoutModal">
+<div class="modal" id="checkoutModal">
 
     <div class="modal-box">
 
-        <button
-            class="close"
+        <button class="close"
             onclick="closeModal('checkoutModal')">
             ×
         </button>
 
-        <h2>
-            Checkout
-        </h2>
+        <h2>Checkout</h2>
 
         <div class="modal-subtitle">
             Enter your delivery details.
         </div>
 
-
         <div class="form-group">
-
-            <label>
-                Full Name *
-            </label>
-
-            <input
-                id="customerName"
+            <label>FULL NAME *</label>
+            <input id="customerName"
                 type="text"
-                placeholder="Your name">
-
+                placeholder="Your full name">
         </div>
 
-
         <div class="form-group">
-
-            <label>
-                Mobile Number *
-            </label>
-
-            <input
-                id="customerPhone"
+            <label>MOBILE NUMBER *</label>
+            <input id="customerPhone"
                 type="tel"
                 maxlength="10"
                 placeholder="10 digit mobile number">
-
         </div>
 
-
         <div class="form-group">
-
-            <label>
-                Email *
-            </label>
-
-            <input
-                id="customerEmail"
+            <label>EMAIL *</label>
+            <input id="customerEmail"
                 type="email"
                 placeholder="your@email.com">
-
         </div>
-
 
         <div class="form-group">
-
-            <label>
-                Address *
-            </label>
-
-            <textarea
-                id="customerAddress"
+            <label>ADDRESS *</label>
+            <textarea id="customerAddress"
                 placeholder="House / building / street"></textarea>
-
         </div>
-
 
         <div class="form-row">
 
             <div class="form-group">
-
-                <label>
-                    City *
-                </label>
-
-                <input
-                    id="customerCity"
+                <label>CITY *</label>
+                <input id="customerCity"
                     type="text"
                     placeholder="City">
-
             </div>
 
-
             <div class="form-group">
-
-                <label>
-                    PIN Code *
-                </label>
-
-                <input
-                    id="customerPin"
+                <label>PIN CODE *</label>
+                <input id="customerPin"
                     type="text"
                     maxlength="6"
-                    placeholder="PIN">
-
+                    placeholder="PIN code">
             </div>
 
         </div>
 
-
         <div class="form-group">
 
-            <label>
-                State *
-            </label>
+            <label>STATE *</label>
 
             <select id="customerState">
 
-                <option value="">
-                    Select State
-                </option>
+                <option value="">Select State</option>
 
                 <option>Kerala</option>
                 <option>Tamil Nadu</option>
@@ -1934,97 +1750,58 @@ footer a:hover{
                 <option>Rajasthan</option>
                 <option>West Bengal</option>
                 <option>Uttar Pradesh</option>
+                <option>Other</option>
 
             </select>
 
         </div>
 
-
-        <h3 style="margin-top:20px;font-size:15px">
+        <h3 style="font-size:14px;margin:20px 0 9px">
             Payment Method
         </h3>
 
+        <div class="payment-grid">
 
-        <div class="payment-options">
-
-            <div
-                class="payment-option selected"
-                id="upiOption"
+            <button class="payment selected"
+                id="upiPayment"
                 onclick="selectPayment('UPI')">
-
                 💳 UPI
+            </button>
 
-            </div>
-
-            <div
-                class="payment-option"
-                id="codOption"
+            <button class="payment"
+                id="codPayment"
                 onclick="selectPayment('COD')">
-
-                📦 Cash on Delivery
-
-            </div>
+                📦 COD
+            </button>
 
         </div>
 
+        <div class="payment-info" id="paymentInfo"></div>
 
-        <div
-            class="payment-info"
-            id="paymentInfo">
+        <div class="total-box">
 
-        </div>
-
-
-        <div class="order-total">
-
-            <div class="total-row">
-
-                <span>
-                    Product Total
-                </span>
-
-                <span id="checkoutSubtotal">
-                    ₹0
-                </span>
-
+            <div class="total-line">
+                <span>Product Total</span>
+                <span id="checkoutSubtotal">₹0</span>
             </div>
 
-            <div
-                class="total-row"
+            <div class="total-line"
                 id="codChargeRow"
                 style="display:none">
-
-                <span>
-                    COD Advance
-                </span>
-
-                <span>
-                    ₹20
-                </span>
-
+                <span>COD Advance</span>
+                <span>₹20</span>
             </div>
 
-            <div class="total-row total-final">
-
-                <span>
-                    Pay Now
-                </span>
-
-                <span id="payNowAmount">
-                    ₹0
-                </span>
-
+            <div class="total-line total-final">
+                <span>Pay Now</span>
+                <span id="payNowAmount">₹0</span>
             </div>
 
         </div>
 
-
-        <button
-            class="place-order"
+        <button class="checkout-btn"
             onclick="placeOrder()">
-
             CONTINUE TO PAYMENT
-
         </button>
 
     </div>
@@ -2032,99 +1809,74 @@ footer a:hover{
 </div>
 
 
-<!-- ================= LOGIN ================= -->
+<!-- ================= LOGIN MODAL ================= -->
 
-<div
-    class="modal"
-    id="loginModal">
+<div class="modal" id="loginModal">
 
     <div class="modal-box">
 
-        <button
-            class="close"
+        <button class="close"
             onclick="closeModal('loginModal')">
             ×
         </button>
 
-        <h2>
-            Smart Basket
-        </h2>
+        <h2>Smart Basket</h2>
 
         <div class="modal-subtitle">
             Login to manage your orders.
         </div>
 
-
-        <div class="login-tabs">
-
-            <button
-                class="login-tab active">
-                LOGIN
-            </button>
-
-            <button
-                class="login-tab">
-                REGISTER
-            </button>
-
-        </div>
-
-
         <div class="form-group">
 
-            <label>
-                Mobile / Email
-            </label>
+            <label>MOBILE / EMAIL</label>
 
-            <input
-                id="loginEmail"
+            <input id="loginEmail"
                 type="text"
                 placeholder="Mobile or Email">
 
         </div>
 
-
         <div class="form-group">
 
-            <label>
-                Password
-            </label>
+            <label>PASSWORD</label>
 
-            <input
-                id="loginPassword"
+            <input id="loginPassword"
                 type="password"
                 placeholder="Password">
 
         </div>
 
-
-        <button
-            class="place-order"
+        <button class="checkout-btn"
             onclick="loginUser()">
-
             LOGIN
-
         </button>
+
+        <p style="
+            margin-top:15px;
+            color:#999;
+            font-size:9px;
+            line-height:1.6;
+        ">
+            This is a front-end demo login.
+            Real customer authentication requires
+            a secure backend/database.
+        </p>
 
     </div>
 
 </div>
 
 
-<!-- ================= CART BUTTON ================= -->
+<!-- ================= FLOATING CART ================= -->
 
-<button
-    class="cart-button"
+<button class="floating-cart"
     onclick="openCart()">
-
     🛒
-
-    <span
-        class="cart-count"
-        id="cartCount">
+    <span class="mini-count"
+        id="floatingCount"
+        style="top:-3px;right:-3px">
         0
     </span>
-
 </button>
 
 
@@ -2146,110 +1898,63 @@ footer a:hover{
                 Smart choices.
                 Budget friendly.
 
-                <div class="contact-line">
-                    WhatsApp:
-                    <a
-                        href="https://wa.me/918921678447"
-                        target="_blank">
-                        +91 89216 78447
-                    </a>
-                </div>
+                <br><br>
 
-                <div class="contact-line">
-                    Email:
-                    <a
-                        href="mailto:smartbasket75@gmail.com">
-                        smartbasket75@gmail.com
-                    </a>
-                </div>
+                WhatsApp:
+                +91 89216 78447
 
-                <div class="contact-line">
-                    Shipping:
-                    1–10 days
-                </div>
+                <br>
 
-                <div class="contact-line">
-                    Returns:
-                    Within 7 days
-                </div>
+                Email:
+                smartbasket75@gmail.com
 
             </div>
 
         </div>
 
-
         <div>
 
-            <h4>
-                SHOP
-            </h4>
+            <h4>SHOP</h4>
 
-            <a
-                href="#shop"
-                onclick="showAllProducts()">
-                All Products
-            </a>
-
-            <a href="#shop">
-                New Arrivals
-            </a>
-
-            <a href="#shop">
-                Best Sellers
-            </a>
-
-            <a href="#deals">
-                Deals
-            </a>
+            <a href="#shop">All Products</a>
+            <a href="#categories">Categories</a>
+            <a href="#deals">Deals</a>
 
         </div>
 
-
         <div>
 
-            <h4>
-                HELP
-            </h4>
+            <h4>HELP</h4>
 
-            <a href="#help">
+            <a href="#help">FAQ</a>
+            <a href="#help">Shipping</a>
+            <a href="#help">Returns</a>
+
+            <a href="mailto:smartbasket75@gmail.com">
                 Contact
             </a>
 
-            <a href="#help">
-                Shipping
-            </a>
-
-            <a href="#help">
-                Returns
-            </a>
-
-            <a href="#help">
-                FAQ
-            </a>
-
         </div>
-
 
         <div>
 
-            <h4>
-                CONNECT
-            </h4>
+            <h4>CONNECT</h4>
 
             <a
                 href="https://www.instagram.com/smart__.basket?igsh=MTF5eWtiaXl4bDNjZw=="
-                target="_blank">
+                target="_blank"
+                rel="noopener">
                 Instagram
             </a>
 
             <a
                 href="https://wa.me/918921678447"
-                target="_blank">
+                target="_blank"
+                rel="noopener">
                 WhatsApp
             </a>
 
-            <a
-                href="mailto:smartbasket75@gmail.com">
+            <a href="mailto:smartbasket75@gmail.com">
                 Email
             </a>
 
@@ -2257,59 +1962,397 @@ footer a:hover{
 
     </div>
 
-
     <div class="copyright">
-
-        © 2026 Smart Basket.
-        All Rights Reserved.
-
+        © 2026 Smart Basket. All Rights Reserved.
     </div>
 
 </footer>
 
 
+<div class="toast" id="toast"></div>
+
+
 <script>
 
-/* ==========================================
+/* =====================================================
    SMART BASKET SETTINGS
-   ========================================== */
+   ===================================================== */
 
-const WHATSAPP_NUMBER =
-    "918921678447";
+const WHATSAPP_NUMBER = "918921678447";
 
 const BUSINESS_EMAIL =
     "smartbasket75@gmail.com";
 
 const UPI_ID =
-"k63653390@oksbi";
+    "k63653390@oksbi";
+
+const COD_ADVANCE = 20;
 
 
+/* =====================================================
+   PRODUCTS
+   Replace names/prices/categories here when your
+   actual products are ready.
+   No images are required.
+   ===================================================== */
 
-/* ==========================================
-   CART
-   ========================================== */
+const products = [
+
+    {
+        id:1,
+        name:"Smart Wireless Gadget",
+        category:"Electronics",
+        price:799,
+        symbol:"⚡",
+        badge:"TRENDING",
+        description:"A useful everyday gadget for smart living."
+    },
+
+    {
+        id:2,
+        name:"Compact Home Essential",
+        category:"Home",
+        price:599,
+        symbol:"⌂",
+        badge:"POPULAR",
+        description:"A practical addition for your everyday home."
+    },
+
+    {
+        id:3,
+        name:"Premium Lifestyle Pick",
+        category:"Lifestyle",
+        price:999,
+        symbol:"◆",
+        badge:"PREMIUM",
+        description:"A stylish everyday lifestyle product."
+    },
+
+    {
+        id:4,
+        name:"Everyday Smart Accessory",
+        category:"Accessories",
+        price:699,
+        symbol:"◇",
+        badge:"NEW",
+        description:"Simple, useful and made for everyday use."
+    },
+
+    {
+        id:5,
+        name:"Beauty Care Essential",
+        category:"Beauty",
+        price:449,
+        symbol:"✿",
+        badge:"NEW",
+        description:"A simple beauty and personal-care essential."
+    },
+
+    {
+        id:6,
+        name:"Portable Tech Accessory",
+        category:"Electronics",
+        price:899,
+        symbol:"◉",
+        badge:"HOT",
+        description:"A convenient accessory for your devices."
+    },
+
+    {
+        id:7,
+        name:"Modern Home Utility",
+        category:"Home",
+        price:749,
+        symbol:"▣",
+        badge:"VALUE",
+        description:"Useful home utility designed for convenience."
+    },
+
+    {
+        id:8,
+        name:"Premium Daily Accessory",
+        category:"Accessories",
+        price:549,
+        symbol:"◇",
+        badge:"SMART PICK",
+        description:"A clean and practical accessory for daily use."
+    }
+
+];
+
+
+/* =====================================================
+   STATE
+   ===================================================== */
 
 let cart = [];
+
+let selectedCategory = "All";
 
 let selectedPayment = "UPI";
 
 let buyNowProduct = null;
 
 
-function addToCart(name,price){
+/* =====================================================
+   HELPERS
+   ===================================================== */
+
+function money(value){
+
+    return "₹" +
+        Number(value).toLocaleString("en-IN");
+
+}
+
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },2200);
+
+}
+
+
+/* =====================================================
+   RENDER PRODUCTS
+   ===================================================== */
+
+function renderProducts(list = products){
+
+    const grid =
+        document.getElementById("productGrid");
+
+    if(!list.length){
+
+        grid.innerHTML = `
+            <div class="empty">
+                No products found.
+                Try another search or category.
+            </div>
+        `;
+
+        document.getElementById(
+            "resultCount"
+        ).innerText = "0 products";
+
+        return;
+    }
+
+    grid.innerHTML = list.map(product => `
+
+        <article class="product">
+
+            <div class="product-visual">
+
+                <div class="product-badge">
+                    ${product.badge}
+                </div>
+
+                <button
+                    class="wishlist"
+                    id="wish-${product.id}"
+                    onclick="toggleWishlist(${product.id})">
+                    ♡
+                </button>
+
+                <div class="visual-symbol">
+                    ${product.symbol}
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    ${product.category}
+                </div>
+
+                <div class="product-name">
+                    ${product.name}
+                </div>
+
+                <div class="product-desc">
+                    ${product.description}
+                </div>
+
+                <div class="product-row">
+
+                    <div class="price">
+                        ${money(product.price)}
+                    </div>
+
+                    <button
+                        class="add"
+                        onclick="addToCart(${product.id})">
+                        +
+                    </button>
+
+                </div>
+
+                <button
+                    class="buy"
+                    onclick="buyNow(${product.id})">
+                    BUY NOW
+                </button>
+
+            </div>
+
+        </article>
+
+    `).join("");
+
+    document.getElementById(
+        "resultCount"
+    ).innerText =
+        list.length + " product" +
+        (list.length === 1 ? "" : "s");
+
+    restoreWishlistVisuals();
+
+}
+
+
+/* =====================================================
+   SEARCH + CATEGORY
+   ===================================================== */
+
+function selectCategory(category,element){
+
+    selectedCategory = category;
+
+    document
+        .querySelectorAll(".category-card")
+        .forEach(card =>
+            card.classList.remove("active")
+        );
+
+    element.classList.add("active");
+
+    filterProducts();
+
+    document
+        .getElementById("shop")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+function filterProducts(){
+
+    const query =
+        document.getElementById(
+            "searchInput"
+        ).value
+        .trim()
+        .toLowerCase();
+
+    let filtered =
+        products.filter(product => {
+
+            const categoryMatch =
+                selectedCategory === "All" ||
+                product.category === selectedCategory;
+
+            const searchMatch =
+                !query ||
+                product.name.toLowerCase()
+                    .includes(query) ||
+                product.category.toLowerCase()
+                    .includes(query) ||
+                product.description.toLowerCase()
+                    .includes(query);
+
+            return categoryMatch && searchMatch;
+
+        });
+
+    const sort =
+        document.getElementById(
+            "sortSelect"
+        ).value;
+
+    filtered = sortList(filtered,sort);
+
+    renderProducts(filtered);
+
+}
+
+
+function sortList(list,sort){
+
+    const copy = [...list];
+
+    if(sort === "low"){
+
+        copy.sort((a,b)=>a.price-b.price);
+
+    }
+
+    if(sort === "high"){
+
+        copy.sort((a,b)=>b.price-a.price);
+
+    }
+
+    if(sort === "name"){
+
+        copy.sort((a,b)=>
+            a.name.localeCompare(b.name)
+        );
+
+    }
+
+    return copy;
+
+}
+
+
+function sortProducts(){
+
+    filterProducts();
+
+}
+
+
+/* =====================================================
+   CART
+   ===================================================== */
+
+function addToCart(productId){
+
+    const product =
+        products.find(
+            p => p.id === productId
+        );
+
+    if(!product) return;
 
     const existing =
-        cart.find(item => item.name === name);
+        cart.find(
+            item => item.id === productId
+        );
 
     if(existing){
 
-        existing.quantity++;
+        existing.quantity += 1;
 
     }else{
 
         cart.push({
-            name:name,
-            price:price,
+            ...product,
             quantity:1
         });
 
@@ -2317,8 +2360,8 @@ function addToCart(name,price){
 
     updateCartCount();
 
-    alert(
-        name +
+    showToast(
+        product.name +
         " added to your basket."
     );
 
@@ -2327,193 +2370,154 @@ function addToCart(name,price){
 
 function updateCartCount(){
 
-    let count = 0;
-
-    cart.forEach(item=>{
-        count += item.quantity;
-    });
+    const count =
+        cart.reduce(
+            (sum,item)=>
+                sum + item.quantity,
+            0
+        );
 
     document.getElementById(
-        "cartCount"
+        "headerCount"
+    ).innerText = count;
+
+    document.getElementById(
+        "floatingCount"
     ).innerText = count;
 
 }
 
 
-function cartTotal(){
+function getCartTotal(){
 
     return cart.reduce(
-        (total,item)=>
-        total +
-        (item.price * item.quantity),
+        (sum,item)=>
+            sum +
+            item.price *
+            item.quantity,
         0
     );
 
 }
 
 
-/* ==========================================
-   BUY NOW
-   ========================================== */
+function changeQuantity(id,change){
 
-function buyNow(name,price){
+    const item =
+        cart.find(
+            product => product.id === id
+        );
 
-    buyNowProduct = {
-        name:name,
-        price:price,
-        quantity:1
-    };
+    if(!item) return;
 
-    openCheckout();
+    item.quantity += change;
+
+    if(item.quantity <= 0){
+
+        cart =
+            cart.filter(
+                product =>
+                    product.id !== id
+            );
+
+    }
+
+    updateCartCount();
+
+    openCart();
 
 }
 
 
-/* ==========================================
-   OPEN CART
-   ========================================== */
+function removeFromCart(id){
+
+    cart =
+        cart.filter(
+            item => item.id !== id
+        );
+
+    updateCartCount();
+
+    openCart();
+
+}
+
 
 function openCart(){
-
-    buyNowProduct = null;
 
     const box =
         document.getElementById(
             "cartItems"
         );
 
-
-    if(cart.length === 0){
+    if(!cart.length){
 
         box.innerHTML = `
-            <div style="
-                padding:30px;
-                text-align:center;
-                color:#888;
-                font-size:12px;
-            ">
+            <div class="empty">
                 Your basket is empty.
+                <br><br>
+                Add a product to continue.
             </div>
         `;
 
     }else{
 
-        box.innerHTML = cart.map(
-            (item,index)=>`
+        box.innerHTML =
+            cart.map(item=>`
 
-            <div style="
-                display:flex;
-                justify-content:space-between;
-                align-items:center;
-                padding:14px 0;
-                border-bottom:1px solid #eee;
-            ">
+                <div class="cart-item">
 
-                <div>
+                    <div class="cart-item-info">
 
-                    <b style="font-size:12px">
-                        ${item.name}
-                    </b>
+                        <div class="cart-item-name">
+                            ${item.name}
+                        </div>
 
-                    <div style="
-                        color:#888;
-                        font-size:10px;
-                        margin-top:4px;
-                    ">
-                        ₹${item.price}
+                        <div class="cart-item-price">
+                            ${money(item.price)}
+                        </div>
+
                     </div>
 
-                    <div style="
-                        display:flex;
-                        align-items:center;
-                        gap:8px;
-                        margin-top:8px;
-                    ">
+                    <div class="quantity">
 
                         <button
-                            onclick="changeQuantity(${index},-1)"
-                            style="
-                                width:25px;
-                                height:25px;
-                                border:1px solid #ddd;
-                                border-radius:50%;
-                                background:white;
-                                cursor:pointer;
-                            ">
+                            onclick="changeQuantity(${item.id},-1)">
                             −
                         </button>
 
-                        <span style="
-                            font-size:11px;
-                            font-weight:700;
-                        ">
+                        <strong style="font-size:10px">
                             ${item.quantity}
-                        </span>
+                        </strong>
 
                         <button
-                            onclick="changeQuantity(${index},1)"
-                            style="
-                                width:25px;
-                                height:25px;
-                                border:1px solid #ddd;
-                                border-radius:50%;
-                                background:white;
-                                cursor:pointer;
-                            ">
+                            onclick="changeQuantity(${item.id},1)">
                             +
                         </button>
 
                     </div>
 
-                </div>
-
-                <div style="
-                    text-align:right;
-                ">
-
-                    <b style="font-size:12px">
-                        ₹${item.price * item.quantity}
-                    </b>
-
-                    <br>
-
                     <button
-                        onclick="removeItem(${index})"
-                        style="
-                            margin-top:7px;
-                            border:none;
-                            background:#eee;
-                            border-radius:50%;
-                            width:28px;
-                            height:28px;
-                            cursor:pointer;
-                        ">
+                        class="remove"
+                        onclick="removeFromCart(${item.id})">
                         ×
                     </button>
 
                 </div>
 
-            </div>
-
-        `).join("");
+            `).join("");
 
     }
 
-
-    const total = cartTotal();
-
+    const total = getCartTotal();
 
     document.getElementById(
         "cartSubtotal"
-    ).innerText =
-        "₹" + total;
-
+    ).innerText = money(total);
 
     document.getElementById(
         "cartTotal"
-    ).innerText =
-        "₹" + total;
-
+    ).innerText = money(total);
 
     document.getElementById(
         "cartModal"
@@ -2522,62 +2526,54 @@ function openCart(){
 }
 
 
-function changeQuantity(index,change){
+/* =====================================================
+   BUY NOW
+   ===================================================== */
 
-    cart[index].quantity += change;
+function buyNow(productId){
 
-    if(cart[index].quantity <= 0){
+    const product =
+        products.find(
+            p => p.id === productId
+        );
 
-        cart.splice(index,1);
+    if(!product) return;
 
-    }
+    buyNowProduct = {
+        ...product,
+        quantity:1
+    };
 
-    updateCartCount();
-
-    openCart();
-
-}
-
-
-function removeItem(index){
-
-    cart.splice(index,1);
-
-    updateCartCount();
-
-    openCart();
+    openCheckout();
 
 }
 
 
-/* ==========================================
+/* =====================================================
    CHECKOUT
-   ========================================== */
+   ===================================================== */
 
-function openCheckout(){
-
-    closeModal("cartModal");
-
-
-    let total = 0;
-
+function getCheckoutTotal(){
 
     if(buyNowProduct){
 
-        total =
-            buyNowProduct.price *
+        return buyNowProduct.price *
             buyNowProduct.quantity;
-
-    }else{
-
-        total = cartTotal();
 
     }
 
+    return getCartTotal();
 
-    if(total === 0){
+}
 
-        alert(
+
+function openCheckout(){
+
+    if(!buyNowProduct && !cart.length){
+
+        closeModal("cartModal");
+
+        showToast(
             "Please add a product first."
         );
 
@@ -2585,15 +2581,9 @@ function openCheckout(){
 
     }
 
-
-    document.getElementById(
-        "checkoutSubtotal"
-    ).innerText =
-        "₹" + total;
-
+    closeModal("cartModal");
 
     updatePaymentDisplay();
-
 
     document.getElementById(
         "checkoutModal"
@@ -2602,39 +2592,35 @@ function openCheckout(){
 }
 
 
-/* ==========================================
+/* =====================================================
    PAYMENT
-   ========================================== */
+   ===================================================== */
 
 function selectPayment(method){
 
     selectedPayment = method;
 
+    document.getElementById(
+        "upiPayment"
+    ).classList.remove("selected");
 
-    document
-    .getElementById("upiOption")
-    .classList.remove("selected");
-
-
-    document
-    .getElementById("codOption")
-    .classList.remove("selected");
-
+    document.getElementById(
+        "codPayment"
+    ).classList.remove("selected");
 
     if(method === "UPI"){
 
-        document
-        .getElementById("upiOption")
-        .classList.add("selected");
+        document.getElementById(
+            "upiPayment"
+        ).classList.add("selected");
 
     }else{
 
-        document
-        .getElementById("codOption")
-        .classList.add("selected");
+        document.getElementById(
+            "codPayment"
+        ).classList.add("selected");
 
     }
-
 
     updatePaymentDisplay();
 
@@ -2643,279 +2629,337 @@ function selectPayment(method){
 
 function updatePaymentDisplay(){
 
-    let total = 0;
+    const total =
+        getCheckoutTotal();
 
-
-    if(buyNowProduct){
-
-        total =
-            buyNowProduct.price *
-            buyNowProduct.quantity;
-
-    }else{
-
-        total = cartTotal();
-
-    }
-
+    document.getElementById(
+        "checkoutSubtotal"
+    ).innerText =
+        money(total);
 
     const info =
         document.getElementById(
             "paymentInfo"
         );
 
-
     const codRow =
         document.getElementById(
             "codChargeRow"
         );
-
 
     const payNow =
         document.getElementById(
             "payNowAmount"
         );
 
-
     if(selectedPayment === "UPI"){
 
         info.innerHTML = `
 
-            <b>UPI PAYMENT</b><br><br>
+            <strong>UPI PAYMENT</strong><br><br>
 
             UPI ID:
-            <b>${UPI_ID}</b>
+            <strong>${UPI_ID}</strong>
 
             <br><br>
 
-            Pay the displayed amount using
-            any UPI app.
+            You will be redirected to your
+            available UPI app to make the payment.
 
             <br><br>
 
-            After payment, continue with
-            WhatsApp order confirmation.
+            Amount to pay:
+            <strong>${money(total)}</strong>
 
         `;
 
-        codRow.style.display =
-            "none";
+        codRow.style.display = "none";
 
         payNow.innerText =
-            "₹" + total;
+            money(total);
 
     }else{
 
         info.innerHTML = `
 
-            <b>CASH ON DELIVERY</b><br><br>
+            <strong>CASH ON DELIVERY</strong><br><br>
 
             COD is available.
 
             <br><br>
 
-            <strong>
-                ₹20 COD advance payment is required first.
-            </strong>
+            A <strong>₹20 advance</strong> is required
+            before processing the COD order.
 
             <br><br>
 
-            The remaining product amount
-            will be collected during delivery.
+            Remaining amount on delivery:
+            <strong>${money(total)}</strong>
 
         `;
 
-        codRow.style.display =
-            "flex";
+        codRow.style.display = "flex";
 
         payNow.innerText =
-            "₹20";
+            money(COD_ADVANCE);
 
     }
 
 }
 
 
-/* ==========================================
-   PLACE ORDER
-   ========================================== */
+/* =====================================================
+   ORDER
+   ===================================================== */
 
-function placeOrder(){
+function getCustomerDetails(){
 
-    const name =
-        document.getElementById(
-            "customerName"
-        ).value.trim();
+    return {
+
+        name:
+            document.getElementById(
+                "customerName"
+            ).value.trim(),
+
+        phone:
+            document.getElementById(
+                "customerPhone"
+            ).value.trim(),
+
+        email:
+            document.getElementById(
+                "customerEmail"
+            ).value.trim(),
+
+        address:
+            document.getElementById(
+                "customerAddress"
+            ).value.trim(),
+
+        city:
+            document.getElementById(
+                "customerCity"
+            ).value.trim(),
+
+        pin:
+            document.getElementById(
+                "customerPin"
+            ).value.trim(),
+
+        state:
+            document.getElementById(
+                "customerState"
+            ).value
+
+    };
+
+}
 
 
-    const phone =
-        document.getElementById(
-            "customerPhone"
-        ).value.trim();
-
-
-    const email =
-        document.getElementById(
-            "customerEmail"
-        ).value.trim();
-
-
-    const address =
-        document.getElementById(
-            "customerAddress"
-        ).value.trim();
-
-
-    const city =
-        document.getElementById(
-            "customerCity"
-        ).value.trim();
-
-
-    const pin =
-        document.getElementById(
-            "customerPin"
-        ).value.trim();
-
-
-    const state =
-        document.getElementById(
-            "customerState"
-        ).value;
-
+function validateCustomer(data){
 
     if(
-        !name ||
-        !phone ||
-        !email ||
-        !address ||
-        !city ||
-        !pin ||
-        !state
+        !data.name ||
+        !data.phone ||
+        !data.email ||
+        !data.address ||
+        !data.city ||
+        !data.pin ||
+        !data.state
     ){
 
         alert(
             "Please fill all customer details."
         );
 
-        return;
+        return false;
 
     }
 
-
-    if(!/^[0-9]{10}$/.test(phone)){
+    if(!/^\d{10}$/.test(data.phone)){
 
         alert(
             "Please enter a valid 10 digit mobile number."
         );
 
-        return;
+        return false;
 
     }
 
-
-    if(!/^[0-9]{6}$/.test(pin)){
+    if(!/^\d{6}$/.test(data.pin)){
 
         alert(
             "Please enter a valid 6 digit PIN code."
         );
 
-        return;
+        return false;
 
     }
 
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){
 
-    let products = "";
+        alert(
+            "Please enter a valid email address."
+        );
 
+        return false;
+
+    }
+
+    return true;
+
+}
+
+
+function getOrderProducts(){
 
     if(buyNowProduct){
 
-        products =
-            buyNowProduct.name +
-            " × " +
-            buyNowProduct.quantity +
-            " = ₹" +
-            buyNowProduct.price;
-
-    }else{
-
-        products =
-            cart.map(item=>
-
-                item.name +
-                " × " +
-                item.quantity +
-                " = ₹" +
-                (
-                    item.price *
-                    item.quantity
-                )
-
-            ).join("\n");
+        return [{
+            ...buyNowProduct
+        }];
 
     }
 
+    return cart.map(
+        item => ({...item})
+    );
 
-    const total =
-        buyNowProduct
-        ? buyNowProduct.price
-        : cartTotal();
+}
 
 
-    let paymentText = "";
+function createOrderId(){
 
+    const random =
+        Math.floor(
+            100000 +
+            Math.random()*900000
+        );
+
+    return "SB-" + random;
+
+}
+
+
+function buildWhatsAppMessage(
+    customer,
+    orderId,
+    orderProducts,
+    total
+){
+
+    const productText =
+        orderProducts.map(
+            item =>
+                `${item.name} × ${item.quantity} = ${money(item.price * item.quantity)}`
+        ).join("\n");
+
+    let paymentText;
 
     if(selectedPayment === "COD"){
 
         paymentText =
-
-        "Payment: CASH ON DELIVERY\n" +
-
-        "COD Advance: ₹20\n" +
-
-        "Remaining on Delivery: ₹" +
-        total;
+            `Payment: CASH ON DELIVERY
+COD Advance: ₹20
+Remaining on Delivery: ${money(total)}`;
 
     }else{
 
         paymentText =
-
-        "Payment: UPI\n" +
-
-        "Amount to Pay: ₹" +
-        total;
+            `Payment: UPI
+Amount: ${money(total)}
+UPI ID: ${UPI_ID}`;
 
     }
 
+    return `🛍️ *SMART BASKET ORDER*
 
-    const message =
+Order ID: ${orderId}
 
-`🛍️ SMART BASKET ORDER
-
-Customer Details
+*CUSTOMER DETAILS*
 ------------------------
-Name: ${name}
-Mobile: ${phone}
-Email: ${email}
+Name: ${customer.name}
+Mobile: ${customer.phone}
+Email: ${customer.email}
 
-Address
+*DELIVERY ADDRESS*
 ------------------------
-${address}
-City: ${city}
-State: ${state}
-PIN: ${pin}
+${customer.address}
+City: ${customer.city}
+State: ${customer.state}
+PIN: ${customer.pin}
 
-Products
+*PRODUCTS*
 ------------------------
-${products}
+${productText}
 
+*PAYMENT*
+------------------------
 ${paymentText}
 
 Shipping: 1–10 days
-Return Policy: 7 days
+Return: Within 7 days
 
-------------------------
 Thank you for shopping with Smart Basket!`;
+
+}
+
+
+function placeOrder(){
+
+    const customer =
+        getCustomerDetails();
+
+    if(!validateCustomer(customer)){
+        return;
+    }
+
+    const orderProducts =
+        getOrderProducts();
+
+    const total =
+        getCheckoutTotal();
+
+    const orderId =
+        createOrderId();
+
+    const message =
+        buildWhatsAppMessage(
+            customer,
+            orderId,
+            orderProducts,
+            total
+        );
+
+    /*
+        Save a local copy of the order.
+        For a real store, connect this to
+        a secure backend/database.
+    */
+
+    const savedOrders =
+        JSON.parse(
+            localStorage.getItem(
+                "smartBasketOrders"
+            ) || "[]"
+        );
+
+    savedOrders.push({
+
+        orderId,
+        customer,
+        products:orderProducts,
+        total,
+        payment:selectedPayment,
+        createdAt:
+            new Date().toISOString()
+
+    });
+
+    localStorage.setItem(
+        "smartBasketOrders",
+        JSON.stringify(savedOrders)
+    );
 
 
     const whatsappURL =
@@ -2925,97 +2969,170 @@ Thank you for shopping with Smart Basket!`;
         encodeURIComponent(message);
 
 
-    if(selectedPayment === "COD"){
-
-        const upiLink =
-            "upi://pay?" +
-            "pa=" +
-            encodeURIComponent(UPI_ID) +
-            "&pn=" +
-            encodeURIComponent(
-                "Smart Basket"
-            ) +
-            "&am=20" +
-            "&cu=INR" +
-            "&tn=" +
-            encodeURIComponent(
-                "Smart Basket COD Advance"
-            );
+    let upiAmount =
+        selectedPayment === "COD"
+            ? COD_ADVANCE
+            : total;
 
 
-        alert(
-            "COD order selected.\n\n" +
-            "First pay ₹20 COD advance using UPI.\n\n" +
-            "After payment, WhatsApp will open."
+    const upiURL =
+        "upi://pay?" +
+        "pa=" +
+        encodeURIComponent(UPI_ID) +
+        "&pn=" +
+        encodeURIComponent("Smart Basket") +
+        "&am=" +
+        encodeURIComponent(upiAmount) +
+        "&cu=INR" +
+        "&tn=" +
+        encodeURIComponent(
+            "Smart Basket " + orderId
         );
 
 
-        window.location.href =
-            upiLink;
+    if(selectedPayment === "COD"){
 
-
-        setTimeout(()=>{
-
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
-
-        },2000);
-
+        alert(
+            "Order " +
+            orderId +
+            " created.\n\n" +
+            "Please pay ₹20 COD advance first.\n\n" +
+            "After payment, use WhatsApp to confirm the order."
+        );
 
     }else{
 
-        const upiLink =
-            "upi://pay?" +
-            "pa=" +
-            encodeURIComponent(UPI_ID) +
-            "&pn=" +
-            encodeURIComponent(
-                "Smart Basket"
-            ) +
-            "&am=" +
-            total +
-            "&cu=INR" +
-            "&tn=" +
-            encodeURIComponent(
-                "Smart Basket Order"
-            );
-
-
         alert(
-            "UPI payment will open.\n\n" +
+            "Order " +
+            orderId +
+            " created.\n\n" +
+            "UPI payment will open next.\n\n" +
             "After payment, confirm your order through WhatsApp."
         );
 
-
-        window.location.href =
-            upiLink;
-
-
-        setTimeout(()=>{
-
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
-
-        },2000);
-
     }
+
+
+    /*
+        Open UPI app where supported.
+    */
+
+    window.location.href = upiURL;
+
+
+    /*
+        Give the browser a chance to open WhatsApp.
+        Some mobile browsers may block the second
+        navigation; the WhatsApp button below is
+        also provided as fallback.
+    */
+
+    setTimeout(()=>{
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    },1800);
 
 }
 
 
-/* ==========================================
+/* =====================================================
+   WISHLIST
+   ===================================================== */
+
+function getWishlist(){
+
+    return JSON.parse(
+        localStorage.getItem(
+            "smartBasketWishlist"
+        ) || "[]"
+    );
+
+}
+
+
+function saveWishlist(list){
+
+    localStorage.setItem(
+        "smartBasketWishlist",
+        JSON.stringify(list)
+    );
+
+}
+
+
+function toggleWishlist(id){
+
+    let list =
+        getWishlist();
+
+    if(list.includes(id)){
+
+        list =
+            list.filter(
+                item => item !== id
+            );
+
+        showToast(
+            "Removed from wishlist."
+        );
+
+    }else{
+
+        list.push(id);
+
+        showToast(
+            "Added to wishlist."
+        );
+
+    }
+
+    saveWishlist(list);
+
+    restoreWishlistVisuals();
+
+}
+
+
+function restoreWishlistVisuals(){
+
+    const list =
+        getWishlist();
+
+    list.forEach(id=>{
+
+        const button =
+            document.getElementById(
+                "wish-" + id
+            );
+
+        if(button){
+
+            button.classList.add(
+                "active"
+            );
+
+            button.innerText = "♥";
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
    LOGIN
-   ========================================== */
+   ===================================================== */
 
 function openLogin(){
 
-    document
-    .getElementById("loginModal")
-    .classList.add("show");
+    document.getElementById(
+        "loginModal"
+    ).classList.add("show");
 
 }
 
@@ -3027,177 +3144,97 @@ function loginUser(){
             "loginEmail"
         ).value.trim();
 
-
     const password =
         document.getElementById(
             "loginPassword"
         ).value.trim();
 
-
     if(!email || !password){
 
         alert(
-            "Please enter login details."
+            "Please enter your login details."
         );
 
         return;
 
     }
 
-
     localStorage.setItem(
         "smartBasketUser",
         email
     );
 
-
     alert(
-        "Login successful!"
+        "Demo login successful!"
     );
-
 
     closeModal("loginModal");
 
 }
 
 
-/* ==========================================
-   PRODUCT FILTER
-   ========================================== */
-
-function filterProducts(category,button){
-
-    const products =
-        document.querySelectorAll(
-            ".product"
-        );
-
-
-    document
-    .querySelectorAll(
-        ".product-filter"
-    )
-    .forEach(btn=>{
-        btn.classList.remove(
-            "active"
-        );
-    });
-
-
-    button.classList.add("active");
-
-
-    products.forEach(product=>{
-
-        if(
-            category === "all" ||
-            product.dataset.category === category
-        ){
-
-            product.style.display =
-                "";
-
-        }else{
-
-            product.style.display =
-                "none";
-
-        }
-
-    });
-
-
-    document
-    .getElementById("shop")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-function showAllProducts(){
-
-    const allButton =
-        document.querySelector(
-            ".product-filter"
-        );
-
-    filterProducts(
-        "all",
-        allButton
-    );
-
-}
-
-
-/* ==========================================
+/* =====================================================
    FAQ
-   ========================================== */
+   ===================================================== */
 
-function toggleFAQ(button){
+function toggleFaq(button){
 
-    const faq =
+    const item =
         button.parentElement;
 
-
-    faq.classList.toggle("open");
-
+    item.classList.toggle("open");
 
     const symbol =
-        button.querySelector(
-            ".faq-symbol"
-        );
+        button.querySelector("span");
 
-
-    if(faq.classList.contains("open")){
-
-        symbol.innerText =
-            "−";
-
-    }else{
-
-        symbol.innerText =
-            "+";
-
-    }
+    symbol.innerText =
+        item.classList.contains("open")
+            ? "−"
+            : "+";
 
 }
 
 
-/* ==========================================
+/* =====================================================
    MODALS
-   ========================================== */
+   ===================================================== */
 
 function closeModal(id){
 
-    document
-    .getElementById(id)
-    .classList.remove("show");
+    document.getElementById(
+        id
+    ).classList.remove("show");
 
 }
 
 
-window.onclick = function(event){
+window.addEventListener(
+    "click",
+    function(event){
 
-    if(
-        event.target.classList.contains(
-            "modal"
-        )
-    ){
+        if(
+            event.target.classList.contains(
+                "modal"
+            )
+        ){
 
-        event.target.classList.remove(
-            "show"
-        );
+            event.target.classList.remove(
+                "show"
+            );
+
+        }
 
     }
+);
 
-};
 
+/* =====================================================
+   INITIALIZE
+   ===================================================== */
 
-/* ==========================================
-   INITIAL PAYMENT DISPLAY
-   ========================================== */
+renderProducts();
+
+updateCartCount();
 
 updatePaymentDisplay();
 
